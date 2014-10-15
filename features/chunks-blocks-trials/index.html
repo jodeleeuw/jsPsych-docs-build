@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>Creating an Experiment: Chunks, Blocks, & Trials - jsPsych</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">jsPsych</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../tutorials/flanker-task">Demo Experiment: Choice Response Time Task</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../tutorials/flanker-task">Demo Experiment: Flanker Task</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Core Library API <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../core_library/overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../core_library/jspsych-core">jsPsych core</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../core_library/jspsych-data">jsPsych.data</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../core_library/jspsych-randomization">jsPsych.randomization</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../core_library/jspsych-mturk">jsPsych.mturk</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../core_library/jspsych-pluginAPI">jsPsych.pluginAPI</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Plugins <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../plugins/overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/creating-a-plugin">Creating a New Plugin</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-animation">jspsych-animation</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-call-function">jspsych-call-function</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-categorize">jspsych-categorize</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-categorize-animation">jspsych-categorize-animation</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-free-sort">jspsych-free-sort</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-html">jspsych-html</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-palmer">jspsych-palmer</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-same-different">jspsych-same-different</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-single-stim">jspsych-single-stim</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-suvey-likert">jspsych-suvey-likert</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-survey-text">jspsych-survey-text</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-text">jspsych-text</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-visual-search-circle">jspsych-visual-search-circle</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-vsl-animate-occlusion">jspsych-vsl-animate-occlusion</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-vsl-grid-scene">jspsych-vsl-grid-scene</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-xab">jspsych-xab</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li class="active">
+                            <a href=".">Creating an Experiment: Chunks, Blocks, & Trials</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../progress-bar">Automatic Progress Bar</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../mturk">Integrating with Mechanical Turk</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../data">Data Storage</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../randomization-repetition">Randomization & Repetition</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../functions-as-parameters">Using Functions as Plugin Parameters</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../data">Event-related Callback Functions</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../image-preloading">Image Preloading</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../about/about">About jsPsych</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../about/license">License</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../about/about">Contributing to jsPsych</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../../plugins/jspsych-xab">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../progress-bar">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/jodeleeuw/jsPsych">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#creating-an-experiment-chunks-blocks-trials">Creating an Experiment: Chunks, Blocks, &amp; Trials</a></li>
+        
+            <li><a href="#the-timeline-analogy">The timeline analogy</a></li>
+        
+            <li><a href="#defining-an-experiment">Defining an experiment</a></li>
+        
+            <li><a href="#getting-formal-about-definitions">Getting formal about definitions</a></li>
+        
+            <li><a href="#chunk-types">Chunk types</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="creating-an-experiment-chunks-blocks-trials">Creating an Experiment: Chunks, Blocks, &amp; Trials</h1>
+<p>To create an experiment in jsPsych, you'll need to define the experiment structure. jsPsych experiments consist of three different structures: chunks, blocks, &amp; trials. This page goes into detail about each kind of structure, and the features related to each.</p>
+<h2 id="the-timeline-analogy">The timeline analogy</h2>
+<p>A useful analogy for understanding chunks, blocks, &amp; trials is a timeline. We can think of an experiment as being drawn on a timeline. The simplest version of the timeline would mark the occurrence of each <strong>trial</strong> in the experiment:</p>
+<p>Sometimes, we might repeat the same kind of trial over and over again, just changing what stimulus is shown or with some other minor modification. jsPsych can group these trials together into a <strong>block</strong>, making it faster to define the structure of the experiment. With blocks, a timeline might look something like this:</p>
+<p>But, what if we wanted to group trials together that weren't the same kind (i.e. didn't use the same plugin) but shared some other relationship? This is what a <strong>chunk</strong> does. Chunks are simply groups of blocks, but conceptually they are treated as if they are a whole separate timeline in jsPsych. This allows for more complex experiment designs, such as loops and conditional <em>if</em> statemens. With chunks, timelines can get very complicated if needed:</p>
+<h2 id="defining-an-experiment">Defining an experiment</h2>
+<p>The <code>jsPsych.init</code> method requires that an experiment definition is passed in as the value of the <code>experiment_structure</code> parameter.</p>
+<pre class="prettyprint well"><code class="javascript">jsPsych.init({
+    experiment_structure: exp
+})
+</code></pre>
+
+<p>The <code>exp</code> variable above needs to be an array, with each element of the array being either a chunk or a block.</p>
+<p>To create a block, define a JavaScript object with a <code>type</code> property set to the particular plugin that the block uses. For example, to create a block using the <code>jspsych-single-stim</code> plugin, the corresponding object would look something like:</p>
+<pre class="prettyprint well"><code class="javascript">var single_stim_block = {
+    type: 'single-stim',
+    stimulus: ['img/happy_face.png', 'img/sad_face.png']
+}
+
+jsPsych.init({
+    experiment_structure: [single_stim_block]
+})
+</code></pre>
+
+<p>The above block contains two trials. The first trial will show the image file <code>img/happy_face.png</code> and the second will show <code>img/sad_face.png</code>. Different plugins have different methods for specifying multiple trials within a block. Check the documentation of the plugin that you are using for more details about how that plugin works.</p>
+<p>To show instructions before the faces appear, define another block and add it to the <code>experiment_structure</code> array:</p>
+<pre class="prettyprint well"><code class="javascript">var instructions_block = {
+    type: 'text',
+    text: 'Press H if the face is happy. Press S if the face is sad.'
+}
+
+var single_stim_block = {
+    type: 'single-stim',
+    stimulus: ['img/happy_face.png', 'img/sad_face.png']
+}
+
+jsPsych.init({
+    experiment_structure: [instructions_block, single_stim_block]
+})
+</code></pre>
+
+<p>Let's imagine that we want subjects to keep viewing the faces until they get the correct response for each one. We can use a chunk to loop over the trials. To create a chunk, create an object with a <code>chunk_type</code> property set to a <a href="../../">valid chunk type</a> and a <code>timeline</code> property containing an array of chunks and blocks within the chunk. Some chunk types will require other properties to be set as well:</p>
+<pre class="prettyprint well"><code class="javascript">var instructions_block = {
+    type: 'text',
+    text: 'Press H if the face is happy. Press S if the face is sad.'
+}
+
+var single_stim_block = {
+    type: 'single-stim',
+    stimulus: ['img/happy_face.png', 'img/sad_face.png']
+}
+
+var looping_chunk = {
+    chunk_type: 'while',
+    timeline: [single_stim_block],
+    continue_function: function(data){
+        // code here to check if they got both answers correct.
+        // this is a bit too complicated for a simple tutorial 
+        // about chunks and blocks, so imagine that the variable
+        // correct is true is they got both answers right, and
+        // false otherwise.
+
+        if(correct) { return false; }
+        else { return true; }
+    }
+}
+
+jsPsych.init({
+    experiment_structure: [instructions_block, looping_chunk]
+})
+</code></pre>
+
+<h2 id="getting-formal-about-definitions">Getting formal about definitions</h2>
+<p>What <strong>exactly</strong> are chunks, blocks, and trials?</p>
+<p>A <strong>trial</strong> defines the parameters that will be used for a single execution of a plugin's <code>plugin.trial</code> method. Since all experiments are defined in terms of plugins, this is the atomic unit of a jsPsych experiment.</p>
+<p>A <strong>block</strong> is a collection of trials in which each trial uses the same plugin. Since it is very common in behavioral research to have multiple trials of the same type in a row with different stimuli, jsPsych experiments are defined at the block level by default. When creating the <code>experiment_structure</code> array for the <code>jsPsych.init</code> method, each element of the array can be either a block or a chunk.</p>
+<p>A <strong>chunk</strong> is a collection of chunks or blocks that will be run in order. There are a few different kinds of chunks, which can be used to create experiments that loop or experiments that change which parts execute based on what the subject has done so far. </p>
+<p>All three types are defined as JavaScript objects within the jsPsych code. </p>
+<h2 id="chunk-types">Chunk types</h2>
+<p>There are different types of chunks; each defines a different way of executing the chunk's timeline. To specify the chunk type, set the <code>chunk_type</code> property of the chunk definition object.</p>
+<pre class="prettyprint well"><code class="javascript">var chunk = {
+    chunk_type: 'linear',
+    timeline: [block1, block2]
+}
+</code></pre>
+
+<h3 id="linear">Linear</h3>
+<p>A linear chunk executes the timeline once and then is complete. </p>
+<p>If the <code>experiment_structure</code> property in <code>jsPsych.init</code> contains blocks, they will be converted to linear chunks internally. </p>
+<h3 id="while">While</h3>
+<p>A while chunk can be used for looping. It executes the timeline and then calls the <code>continue_function</code> to see if it should execute the timeline again. If the <code>continue_function</code> returns <code>true</code>, then the chunk executes again. If the function returns <code>false</code>, the chunk is complete. </p>
+<p>The <code>continue_function</code> will be passed the data generated by the most recent execution of the chunk as the first parameter. The data will be an array; each item in the array will be the data for a single trial. </p>
+<pre class="prettyprint well"><code class="javascript">var while_chunk = {
+    chunk_type: 'while',
+    timeline: [block1, block2],
+    continue_function: function(data){
+        // check to see if the average RT was under 1s
+        var sum_rt = 0;
+        for(var i=0; i &lt; data.length; i++){
+            sum_rt += data.rt;
+        }
+        var average_rt = sum_rt / data.length;
+        if(average_rt &lt; 1000){
+            // end the loop
+            return false;
+        } else {
+            // keep going until they are faster!
+            return true;
+        }
+    }
+}
+</code></pre>
+
+<h3 id="if">If</h3>
+<p>An if chunk will only execute if some condition is met. </p>
+</div>
+        </div>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../js/extra.js"></script>
+    </body>
+</html>

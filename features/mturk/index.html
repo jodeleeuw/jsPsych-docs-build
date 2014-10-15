@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>Integrating with Mechanical Turk - jsPsych</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">jsPsych</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../tutorials/flanker-task">Demo Experiment: Choice Response Time Task</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../tutorials/flanker-task">Demo Experiment: Flanker Task</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Core Library API <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../core_library/overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../core_library/jspsych-core">jsPsych core</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../core_library/jspsych-data">jsPsych.data</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../core_library/jspsych-randomization">jsPsych.randomization</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../core_library/jspsych-mturk">jsPsych.mturk</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../core_library/jspsych-pluginAPI">jsPsych.pluginAPI</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Plugins <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../plugins/overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/creating-a-plugin">Creating a New Plugin</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-animation">jspsych-animation</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-call-function">jspsych-call-function</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-categorize">jspsych-categorize</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-categorize-animation">jspsych-categorize-animation</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-free-sort">jspsych-free-sort</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-html">jspsych-html</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-palmer">jspsych-palmer</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-same-different">jspsych-same-different</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-single-stim">jspsych-single-stim</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-suvey-likert">jspsych-suvey-likert</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-survey-text">jspsych-survey-text</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-text">jspsych-text</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-visual-search-circle">jspsych-visual-search-circle</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-vsl-animate-occlusion">jspsych-vsl-animate-occlusion</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-vsl-grid-scene">jspsych-vsl-grid-scene</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-xab">jspsych-xab</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../chunks-blocks-trials">Creating an Experiment: Chunks, Blocks, & Trials</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../progress-bar">Automatic Progress Bar</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href=".">Integrating with Mechanical Turk</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../data">Data Storage</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../randomization-repetition">Randomization & Repetition</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../functions-as-parameters">Using Functions as Plugin Parameters</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../data">Event-related Callback Functions</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../image-preloading">Image Preloading</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../about/about">About jsPsych</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../about/license">License</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../about/about">Contributing to jsPsych</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../progress-bar">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../data">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/jodeleeuw/jsPsych">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#integrating-with-mechanical-turk">Integrating with Mechanical Turk</a></li>
+        
+            <li><a href="#the-jspsychmturk-module">The jsPsych.mturk module</a></li>
+        
+            <li><a href="#creating-an-advertisement-page">Creating an advertisement page</a></li>
+        
+            <li><a href="#getting-the-worker-id">Getting the worker ID</a></li>
+        
+            <li><a href="#submitting-results-to-mechanical-turk">Submitting results to Mechanical Turk</a></li>
+        
+            <li><a href="#limitations">Limitations</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="integrating-with-mechanical-turk">Integrating with Mechanical Turk</h1>
+<p>A common use of jsPsych is to build an online experiment and find subjects using <a href="http://www.mturk.com/">Mechanical Turk</a>. Once an experiment is available through a web server and data is being <a href="../../">saved on the server</a>, connecting the experiment with Mechanical Turk takes only a few additional steps. jsPsych has some built-in functionality to assist with this process. </p>
+<h2 id="the-jspsychmturk-module">The jsPsych.mturk module</h2>
+<p>The <code>jsPsych.mturk</code> module contains functions that are relevant for experiments running on Mechanical Turk.</p>
+<h2 id="creating-an-advertisement-page">Creating an advertisement page</h2>
+<p>When potential subjects view your experiment on Mechanical Turk, they will be able to see a single webpage before deciding whether or not to accept the HIT (start the experiment). This first page is often used as an advertisement for the experiment, similar to posting a flier in a department hallway. The important thing to remember about this page is that potential subjects will be able to interact with it even if they haven't accepted the HIT. Therefore, it can be useful to change the content of the page depending on whether the HIT has been accepted or not. This is relatively easy to do using jsPsych and jQuery:</p>
+<pre class="prettyprint well"><code class="html">&lt;div id=&quot;experiment_link&quot;&gt;You must accept the HIT to begin the experiment&lt;/div&gt;.
+
+&lt;script&gt;
+// jsPsych has a method turkInfo() which can determine whether or not the 
+// HIT has been accepted.
+var turkInfo = jsPsych.turkInfo();
+
+// turkInfo.previewMode is true in two cases: when the HIT has not been
+// accepted yet OR when the page is viewed outside of mechanical turk.
+// The second property, outsideTurk, is true when the page is viewed
+// outside of mechanical turk, so together, the statement will be true
+// only when in Turk and when the HIT is not accepted yet.
+if(turkInfo.previewMode &amp;&amp; !turkInfo.outsideTurk) {
+  $('#turkInfo').html('&lt;a href=&quot;link_to_experiment.html&quot; target=&quot;_blank&quot;&gt;Click Here to Start Experiment&lt;/a&gt;');
+}
+&lt;/script&gt;
+</code></pre>
+
+<p>One important issue with advertisement pages is that they must be served using the https protocol, which requires having an SSL certificate on the web server hosting the page. Instructions for how to do this vary depending on what kind of server you are using, so the best advice is to simply Google for instructions on how to acquire and install an SSL certificate on your particular server.</p>
+<h2 id="getting-the-worker-id">Getting the worker ID</h2>
+<p>Every account on Mechanical Turk is given a unique identification string. Recording this ID is a useful way to keep track of who is doing your experiment. In particular, while Turk has built in tools for preventing the same person from doing a HIT more than once, there may be cases where you don't want subjects to complete related experiments. If you store the worker ID of every person who starts an experiment in a database, then you can exclude people by running a query on the database to check for the ID. jsPsych can get the workerID, assignmentID, and hitID with the turkInfo method.</p>
+<pre class="prettyprint well"><code class="javascript">var turkInfo = jsPsych.turk.turkInfo();
+
+// workerID
+turkInfo.workerId
+
+// hitID
+turkInfo.hitId
+
+// assignmentID
+turkInfo.assignmentId
+</code></pre>
+
+<p>Recording the workerId at the start of the experiment is also a good way to track dropouts.</p>
+<h2 id="submitting-results-to-mechanical-turk">Submitting results to Mechanical Turk</h2>
+<h2 id="limitations">Limitations</h2>
+<p>jsPsych is not designed to communicate with the Mechanical Turk API in a comprehensive manner. If you are looking for software to help you post and manage HITs, then you may want to look at <a href="http://www.psiturk.org">PsiTurk</a>. jsPsych and PsiTurk complement each other nicely, and there is <a href="https://psiturk.org/ee/W4v3TPAsiD6FUVY8PDyajH">an example of combining the two platforms</a> on PsiTurk's experiment exchange.</p>
+</div>
+        </div>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../js/extra.js"></script>
+    </body>
+</html>

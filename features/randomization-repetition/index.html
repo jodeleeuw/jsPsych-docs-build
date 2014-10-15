@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>Randomization & Repetition - jsPsych</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">jsPsych</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../tutorials/flanker-task">Demo Experiment: Choice Response Time Task</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../tutorials/flanker-task">Demo Experiment: Flanker Task</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Core Library API <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../core_library/overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../core_library/jspsych-core">jsPsych core</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../core_library/jspsych-data">jsPsych.data</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../core_library/jspsych-randomization">jsPsych.randomization</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../core_library/jspsych-mturk">jsPsych.mturk</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../core_library/jspsych-pluginAPI">jsPsych.pluginAPI</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Plugins <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../plugins/overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/creating-a-plugin">Creating a New Plugin</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-animation">jspsych-animation</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-call-function">jspsych-call-function</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-categorize">jspsych-categorize</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-categorize-animation">jspsych-categorize-animation</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-free-sort">jspsych-free-sort</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-html">jspsych-html</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-palmer">jspsych-palmer</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-same-different">jspsych-same-different</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-single-stim">jspsych-single-stim</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-suvey-likert">jspsych-suvey-likert</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-survey-text">jspsych-survey-text</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-text">jspsych-text</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-visual-search-circle">jspsych-visual-search-circle</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-vsl-animate-occlusion">jspsych-vsl-animate-occlusion</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-vsl-grid-scene">jspsych-vsl-grid-scene</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-xab">jspsych-xab</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../chunks-blocks-trials">Creating an Experiment: Chunks, Blocks, & Trials</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../progress-bar">Automatic Progress Bar</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../mturk">Integrating with Mechanical Turk</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../data">Data Storage</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href=".">Randomization & Repetition</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../functions-as-parameters">Using Functions as Plugin Parameters</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../data">Event-related Callback Functions</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../image-preloading">Image Preloading</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../about/about">About jsPsych</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../about/license">License</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../about/about">Contributing to jsPsych</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../data">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../functions-as-parameters">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/jodeleeuw/jsPsych">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#randomization-repetition">Randomization &amp; Repetition</a></li>
+        
+            <li><a href="#randomizing-the-order-of-trials-within-a-block">Randomizing the order of trials within a block</a></li>
+        
+            <li><a href="#repeating-a-block-of-trials">Repeating a block of trials</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="randomization-repetition">Randomization &amp; Repetition</h1>
+<p>Experiments often involve presenting a set of trials in a random order. It also might be necessary to present a set of trials multiple times. jsPsych makes both of these tasks very easy to do.</p>
+<h2 id="randomizing-the-order-of-trials-within-a-block">Randomizing the order of trials within a block</h2>
+<p>To randomize the order of trials within a block, add the <code>randomize_order</code> property to the block definition with a value of <code>true</code>. This option works for all plugins.</p>
+<pre class="prettyprint well"><code class="javascript">var block = {
+    type: 'single-stim',
+    stimuli: ['img/happy_face.png', 'img/sad_face.png'],
+    randomize_order: true
+}
+</code></pre>
+
+<p>In the above example, there would be two trials, one with a happy face and one with a sad face, and the order of presentation would be random.</p>
+<p>You can only specify the <code>randomize_order</code> option for blocks. It doesn't work for chunks.</p>
+<p>The randomization operation is performed immediately before the first trial in the block executes. This means that the order of trials is impossible to know until right before the first trial begins. It also means that the order will be re-randomized if the block is started multiple times (e.g. if the block appeas in a while chunk).</p>
+<h2 id="repeating-a-block-of-trials">Repeating a block of trials</h2>
+<p>To repeat a block multiple times, add the <code>repetitions</code> property to the block with the value being the number of repetitions. This option works for all plugins.</p>
+<pre class="prettyprint well"><code class="javascript">var block = {
+    type: 'single-stim',
+    stimuli: ['img/happy_face.png', 'img/sad_face.png'],
+    randomize_order: true,
+    repetitions: 5
+}
+</code></pre>
+
+<p>In the above example, there are two trials in the block. Both trials will occur (in a random order), and then the block will repeat 4 more times. The randomized order only applies to each individual repetition, so each set of two trials will contain one happy face and one sad face.</p>
+</div>
+        </div>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../js/extra.js"></script>
+    </body>
+</html>

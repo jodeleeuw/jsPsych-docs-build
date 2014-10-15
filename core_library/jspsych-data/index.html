@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>jsPsych.data - jsPsych</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">jsPsych</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../tutorials/flanker-task">Demo Experiment: Choice Response Time Task</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../tutorials/flanker-task">Demo Experiment: Flanker Task</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Core Library API <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../jspsych-core">jsPsych core</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href=".">jsPsych.data</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../jspsych-randomization">jsPsych.randomization</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../jspsych-mturk">jsPsych.mturk</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../jspsych-pluginAPI">jsPsych.pluginAPI</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Plugins <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../plugins/overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/creating-a-plugin">Creating a New Plugin</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-animation">jspsych-animation</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-call-function">jspsych-call-function</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-categorize">jspsych-categorize</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-categorize-animation">jspsych-categorize-animation</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-free-sort">jspsych-free-sort</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-html">jspsych-html</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-palmer">jspsych-palmer</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-same-different">jspsych-same-different</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-single-stim">jspsych-single-stim</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-suvey-likert">jspsych-suvey-likert</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-survey-text">jspsych-survey-text</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-text">jspsych-text</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-visual-search-circle">jspsych-visual-search-circle</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-vsl-animate-occlusion">jspsych-vsl-animate-occlusion</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-vsl-grid-scene">jspsych-vsl-grid-scene</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-xab">jspsych-xab</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../features/chunks-blocks-trials">Creating an Experiment: Chunks, Blocks, & Trials</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../features/progress-bar">Automatic Progress Bar</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../features/mturk">Integrating with Mechanical Turk</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../features/data">Data Storage</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../features/randomization-repetition">Randomization & Repetition</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../features/functions-as-parameters">Using Functions as Plugin Parameters</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../features/data">Event-related Callback Functions</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../features/image-preloading">Image Preloading</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../about/about">About jsPsych</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../about/license">License</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../about/about">Contributing to jsPsych</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../jspsych-core">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../jspsych-randomization">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/jodeleeuw/jsPsych">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#the-jspsych-core-library">The jsPsych core library</a></li>
+        
+            <li><a href="#core-library-api">Core library API</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="the-jspsych-core-library">The jsPsych core library</h1>
+<p>Every jsPsych experiment utilizes the core library (contained in the <code>jspsych.js</code> file). The core library is the glue that holds all of the various plugins together. There are also several modules that are contained in the core library for tasks that are common to many different experiments. These modules are available whenever the <code>jspsych.js</code> file is loaded.</p>
+<h2 id="core-library-api">Core library API</h2>
+<h3 id="core">Core</h3>
+<ul>
+<li>jsPsych.init</li>
+<li>jsPsych.progress</li>
+<li>jsPsych.startTime</li>
+<li>jsPsych.totalTime</li>
+<li>jsPsych.preloadImages</li>
+<li>jsPsych.getDisplayElement</li>
+<li>jsPsych.finishTrial</li>
+<li>jsPsych.currentTrial</li>
+<li>jsPsych.initSettings</li>
+<li>jsPsych.currentChunkID</li>
+</ul>
+<h3 id="data-module">Data module</h3>
+<ul>
+<li>jsPsych.data.getData</li>
+<li>jsPsych.data.write</li>
+<li>jsPsych.data.dataAsCSV</li>
+<li>jsPsych.data.localSave</li>
+<li>jsPsych.data.getTrialsOfType</li>
+<li>jsPsych.data.getTrialsFromChunk</li>
+<li>jsPsych.data.getLastTrialData</li>
+<li>jsPsych.data.getLastChunkData</li>
+<li>jsPsych.data.displayData</li>
+</ul>
+<h3 id="turk-module">Turk module</h3>
+<ul>
+<li>jsPsych.turk.turkInfo</li>
+<li>jsPsych.turk.submitToTurk</li>
+</ul>
+<h3 id="randomization-module">Randomization module</h3>
+<ul>
+<li>jsPsych.randomization.repeat</li>
+<li>jsPsych.randomization.factorial</li>
+</ul>
+<h3 id="pluginapi-module">PluginAPI module</h3>
+<ul>
+<li>jsPsych.pluginAPI.getKeyboardResponse</li>
+<li>jsPsych.pluginAPI.cancelKeyboardResponse</li>
+<li>jsPsych.pluginAPI.cancelAllKeyboardResponses</li>
+<li>jsPsych.pluginAPI.normalizeTrialVariables</li>
+<li>jsPsych.pluginAPI.enforceArray</li>
+</ul>
+</div>
+        </div>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../js/extra.js"></script>
+    </body>
+</html>
