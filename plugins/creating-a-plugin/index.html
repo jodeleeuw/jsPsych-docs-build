@@ -87,7 +87,7 @@
                         </li>
                     
                         <li >
-                            <a href="../../core_library/jspsych-mturk">jsPsych.mturk</a>
+                            <a href="../../core_library/jspsych-turk">jsPsych.turk</a>
                         </li>
                     
                         <li >
@@ -213,7 +213,7 @@
                         </li>
                     
                         <li >
-                            <a href="../../features/data">Event-related Callback Functions</a>
+                            <a href="../../features/callbacks">Event-related Callback Functions</a>
                         </li>
                     
                         <li >
@@ -221,6 +221,12 @@
                         </li>
                     
                     </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../support">Support</a>
                 </li>
             
             
@@ -238,7 +244,7 @@
                         </li>
                     
                         <li >
-                            <a href="../../about/about">Contributing to jsPsych</a>
+                            <a href="../../about/contributing">Contributing to jsPsych</a>
                         </li>
                     
                     </ul>
@@ -279,56 +285,14 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#plugins">Plugins</a></li>
-        
-            <li><a href="#using-a-plugin">Using a plugin</a></li>
-        
-            <li><a href="#list-of-available-plugins">List of available plugins</a></li>
-        
-            <li><a href="#creating-a-plugin">Creating a plugin</a></li>
+        <li class="main active"><a href="#creating-a-new-plugin">Creating a new plugin</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="plugins">Plugins</h1>
-<p>In jsPsych, plugins define the kinds of tasks that subjects perform in experiments. Some plugins define very general tasks, like displaying instructions or displaying a visual stimulus and getting a keyboard response. Other plugins are more specific, displaying particular kinds of interactive stimuli, or running a specific kind of perceptual discrimination task. Creating an experiment with jsPsych involves figuring out which plugins are needed for the kinds of tasks you want to have your subjects perform.</p>
-<p>Plugins provide a structure for a particular task. For example, the <code>jspsych-single-stim</code> plugin defines a simple structure for showing a visual stimulus and collecting a keyboard response. To use the plugin, you need to specify the content, such as what the stimulus is, what keys the subject is allowed to press, and how long the stimulus should be on the screen. Many of these content options have reasonable default values; even though the <code>jspsych-single-stim</code> plugin has over a dozen options, you only <em>need</em> to specify the stimulus in order to use it. Each plugin has its own documentation page, which describes what the plugin does and what options are available.</p>
-<h2 id="using-a-plugin">Using a plugin</h2>
-<p>To use a plugin, you'll need to load the plugin's JavaScript file on your experiment page:</p>
-<pre class="prettyprint well"><code class="html">&lt;script src=&quot;jspsych/plugins/jspsych-single-stim.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
-</code></pre>
-
-<p>Once a plugin is loaded, you can define a block that uses that plugin. The following JavaScript code defines a trial using the <code>jspsych-single-stim</code> plugin to display an image file ('images/happy_face.jpg'). This trial uses the default values for valid keys, length of display, and so on (Learn more about creating blocks).</p>
-<pre class="prettyprint well"><code class="javascript">var single_stim_block = {
-    type: 'single-stim',
-    stimuli: 'images/happy_face.jpg'
-}
-</code></pre>
-
-<h2 id="list-of-available-plugins">List of available plugins</h2>
-<p>This table is a list of all plugins that are currently bundled with jsPsych releases. Click on the name of a plugin to view its documentation page.</p>
-<table>
-<thead>
-<tr>
-<th>Plugin</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>jspsych-animation</td>
-<td>In jsPsych, plugins define the kinds of tasks that subjects perform in experiments. Some plugins define very general tasks, like displaying instructions or displaying a visual stimulus and getting a keyboard response.</td>
-</tr>
-<tr>
-<td>jspsych-single-stim</td>
-<td>In jsPsych, plugins define the kinds of tasks that subjects perform in experiments. Some plugins define very general tasks, like displaying instructions or displaying a visual stimulus and getting a keyboard response.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="creating-a-plugin">Creating a plugin</h2>
-<p>There are many plugins that are bundled with jsPsych, but you aren't limited by what's currently available. Creating a </p>
+<h1 id="creating-a-new-plugin">Creating a new plugin</h1>
 </div>
         </div>
 

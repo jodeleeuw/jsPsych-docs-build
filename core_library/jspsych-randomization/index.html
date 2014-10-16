@@ -87,7 +87,7 @@
                         </li>
                     
                         <li >
-                            <a href="../jspsych-mturk">jsPsych.mturk</a>
+                            <a href="../jspsych-turk">jsPsych.turk</a>
                         </li>
                     
                         <li >
@@ -213,7 +213,7 @@
                         </li>
                     
                         <li >
-                            <a href="../../features/data">Event-related Callback Functions</a>
+                            <a href="../../features/callbacks">Event-related Callback Functions</a>
                         </li>
                     
                         <li >
@@ -221,6 +221,12 @@
                         </li>
                     
                     </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../support">Support</a>
                 </li>
             
             
@@ -238,7 +244,7 @@
                         </li>
                     
                         <li >
-                            <a href="../../about/about">Contributing to jsPsych</a>
+                            <a href="../../about/contributing">Contributing to jsPsych</a>
                         </li>
                     
                     </ul>
@@ -256,7 +262,7 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../jspsych-mturk">
+                    <a rel="prev" href="../jspsych-turk">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -279,61 +285,227 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#the-jspsych-core-library">The jsPsych core library</a></li>
+        <li class="main active"><a href="#jspsychrandomization">jsPsych.randomization</a></li>
         
-            <li><a href="#core-library-api">Core library API</a></li>
+            <li><a href="#jspsychrandomizationfactorial">jsPsych.randomization.factorial</a></li>
+        
+            <li><a href="#jspsychrandomizationrepeat">jsPsych.randomization.repeat</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="the-jspsych-core-library">The jsPsych core library</h1>
-<p>Every jsPsych experiment utilizes the core library (contained in the <code>jspsych.js</code> file). The core library is the glue that holds all of the various plugins together. There are also several modules that are contained in the core library for tasks that are common to many different experiments. These modules are available whenever the <code>jspsych.js</code> file is loaded.</p>
-<h2 id="core-library-api">Core library API</h2>
-<h3 id="core">Core</h3>
-<ul>
-<li>jsPsych.init</li>
-<li>jsPsych.progress</li>
-<li>jsPsych.startTime</li>
-<li>jsPsych.totalTime</li>
-<li>jsPsych.preloadImages</li>
-<li>jsPsych.getDisplayElement</li>
-<li>jsPsych.finishTrial</li>
-<li>jsPsych.currentTrial</li>
-<li>jsPsych.initSettings</li>
-<li>jsPsych.currentChunkID</li>
-</ul>
-<h3 id="data-module">Data module</h3>
-<ul>
-<li>jsPsych.data.getData</li>
-<li>jsPsych.data.write</li>
-<li>jsPsych.data.dataAsCSV</li>
-<li>jsPsych.data.localSave</li>
-<li>jsPsych.data.getTrialsOfType</li>
-<li>jsPsych.data.getTrialsFromChunk</li>
-<li>jsPsych.data.getLastTrialData</li>
-<li>jsPsych.data.getLastChunkData</li>
-<li>jsPsych.data.displayData</li>
-</ul>
-<h3 id="turk-module">Turk module</h3>
-<ul>
-<li>jsPsych.turk.turkInfo</li>
-<li>jsPsych.turk.submitToTurk</li>
-</ul>
-<h3 id="randomization-module">Randomization module</h3>
-<ul>
-<li>jsPsych.randomization.repeat</li>
-<li>jsPsych.randomization.factorial</li>
-</ul>
-<h3 id="pluginapi-module">PluginAPI module</h3>
-<ul>
-<li>jsPsych.pluginAPI.getKeyboardResponse</li>
-<li>jsPsych.pluginAPI.cancelKeyboardResponse</li>
-<li>jsPsych.pluginAPI.cancelAllKeyboardResponses</li>
-<li>jsPsych.pluginAPI.normalizeTrialVariables</li>
-<li>jsPsych.pluginAPI.enforceArray</li>
-</ul>
+<h1 id="jspsychrandomization">jsPsych.randomization</h1>
+<p>The jsPsych.randomization module contains methods that are useful for generating random lists of trial variables.</p>
+<hr />
+<h2 id="jspsychrandomizationfactorial">jsPsych.randomization.factorial</h2>
+<pre class="prettyprint well"><code>jsPsych.randomization.factorial(factors, repetitions, unpack)
+</code></pre>
+
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>factors</td>
+<td>object</td>
+<td>The <code>factors</code> object should contain a property for each different factor. Each property-factor should have a value of an array, with each element of the array corresponding to a level of the factor.</td>
+</tr>
+<tr>
+<td>repetitions</td>
+<td>integer</td>
+<td>The number of times to repeat each unique combination of the factors in the output sample.</td>
+</tr>
+<tr>
+<td>unpack</td>
+<td>boolean</td>
+<td>If <code>true</code> then the output will be an object with a property for each factor in the original <code>factors</code> object. The value of each property-factor will be an array containing the levels of the factor in a random order. The order will be consistent across each property-factor (e.g. the first element of each property-factor will specify one unique combination of the factors). If <code>false</code>, then the return value will be an array of objects where each property-factor contains only a single value.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-value">Return value</h3>
+<p>The return value depends on the <code>unpack</code> parameter. See description of the parameter above, and examples below.</p>
+<h3 id="description">Description</h3>
+<p>This method takes a list of factors and their levels, and creates a full factorial design by creating each unique combination of the factors. The returned set of combinations is in a random order.</p>
+<h3 id="examples">Examples</h3>
+<h4 id="create-full-factorial-design">Create full factorial design</h4>
+<pre class="prettyprint well"><code class="javascript">var factors = {
+    stimulus: ['a.jpg', 'b.jpg'],
+    ms_delay: [100, 200]
+}
+
+var full_design = jsPsych.randomization.factorial(factors, 1);
+
+/* 
+output:
+full_design = [
+    {stimulus: 'a.jpg', ms_delay: 200},
+    {stimulus: 'b.jpg', ms_delay: 200},
+    {stimulus: 'b.jpg', ms_delay: 100},
+    {stimulus: 'a.jpg', ms_delay: 100},
+]
+*/
+</code></pre>
+
+<h4 id="create-full-factorial-design-with-repeats">Create full factorial design with repeats</h4>
+<pre class="prettyprint well"><code class="javascript">var factors = {
+    stimulus: ['a.jpg', 'b.jpg'],
+    ms_delay: [100, 200]
+}
+
+var full_design = jsPsych.randomization.factorial(factors, 2);
+
+/* 
+output:
+full_design = [
+    {stimulus: 'b.jpg', ms_delay: 200},
+    {stimulus: 'b.jpg', ms_delay: 100},
+    {stimulus: 'b.jpg', ms_delay: 100},
+    {stimulus: 'a.jpg', ms_delay: 100},
+    {stimulus: 'a.jpg', ms_delay: 200},
+    {stimulus: 'b.jpg', ms_delay: 200},
+    {stimulus: 'a.jpg', ms_delay: 100},
+    {stimulus: 'a.jpg', ms_delay: 200},
+]
+*/
+</code></pre>
+
+<h4 id="create-full-factorial-design-unpacked">Create full factorial design, unpacked</h4>
+<pre class="prettyprint well"><code class="javascript">var factors = {
+    stimulus: ['a.jpg', 'b.jpg'],
+    ms_delay: [100, 200]
+}
+
+var full_design = jsPsych.randomization.factorial(factors, 1, true);
+
+/* 
+output:
+full_design = {
+    stimulus: ['a.jpg','b.jpg','b.jpg','a.jpg'],
+    ms_delay: [200, 100, 200, 100]
+]
+*/
+</code></pre>
+
+<hr />
+<h2 id="jspsychrandomizationrepeat">jsPsych.randomization.repeat</h2>
+<pre class="prettyprint well"><code>jsPsych.randomization.repeat(array, repetitions, unpack)
+</code></pre>
+
+<h3 id="parameters_1">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>array</td>
+<td>array</td>
+<td>The array of values to randomize &amp; repeat.</td>
+</tr>
+<tr>
+<td>repetitions</td>
+<td>integer or array</td>
+<td>The number of times to repeat each element of the <code>array</code> in the final sample. If this parameter is defined as an integer, then each element of <code>array</code> is repeated the same number of times. This parameter can also be an array of the same length as <code>array</code>, in which case each element of <code>array</code> will be repeated the number of times defined in the corresponding position of the <code>repetitions</code> array.</td>
+</tr>
+<tr>
+<td>unpack</td>
+<td>boolean</td>
+<td>If each element of <code>array</code> is an object with an equivalent set of properties, then setting <code>unpack</code> to <code>true</code> will make the return value an object with a property for each of the unique properties among the elements of the <code>array</code>. Each property in the output object will be an array containing the values for that property in the randomized order. The order will be consistent across properties. If this is <code>false</code> then the output is just an array containing a randomized order of the original <code>array</code> elements.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-value_1">Return value</h3>
+<p>The return value depends on the <code>unpack</code> parameter. See description of the parameter above, and examples below.</p>
+<h3 id="description_1">Description</h3>
+<p>This method takes an array of values and generates a new random order of the array, with the option of repeating each element of the array a specified number of times.</p>
+<p>If the array elements are objects with the same set of properties, then this method can optionally return a single object where each property is a randomized order of the properties defined in the original set of objects. This is useful for randomizing sets of parameters that are used to define a jsPsych block.</p>
+<h3 id="examples_1">Examples</h3>
+<h4 id="shuffle-an-array-no-repeats">Shuffle an array, no repeats</h4>
+<pre class="prettyprint well"><code class="javascript">
+var myArray = [1,2,3,4,5];
+var shuffledArray = jsPsych.randomization.repeat(myArray, 1);
+
+// output: shuffledArray = [3,2,4,1,5]
+</code></pre>
+
+<h4 id="shuffle-an-array-with-repeats">Shuffle an array with repeats</h4>
+<pre class="prettyprint well"><code class="javascript">
+var myArray = [1,2,3,4,5];
+var shuffledArray = jsPsych.randomization.repeat(myArray, 2);
+
+// output: shuffledArray = [1,3,4,2,2,4,5,1,5,3]
+</code></pre>
+
+<h4 id="shuffle-an-array-of-objects">Shuffle an array of objects</h4>
+<pre class="prettyprint well"><code class="javascript">
+var trial1 = {
+    stimulus: 'img/faceA.jpg',
+    correct_key: 80,
+    person_name: 'Joe'
+}
+
+var trial2 = {
+    stimulus: 'img/faceB.jpg',
+    correct_key: 80,
+    person_name: 'Fred'
+}
+
+var trial3 = {
+    stimulus: 'img/faceC.jpg',
+    correct_key: 81,
+    person_name: 'Mary'
+}
+
+var myArray = [ trial1, trial2, trial3 ];
+var shuffledArray = jsPsych.randomization.repeat(myArray, 2);
+
+// output: shuffledArray = [ trial1, trial3, trial3, trial2, trial1, trial2 ]
+</code></pre>
+
+<h4 id="shuffle-an-array-of-objects-with-unpack">Shuffle an array of objects, with unpack</h4>
+<pre class="prettyprint well"><code class="javascript">
+var trial1 = {
+    stimulus: 'img/faceA.jpg',
+    correct_key: 80,
+    person_name: 'Joe'
+}
+
+var trial2 = {
+    stimulus: 'img/faceB.jpg',
+    correct_key: 80,
+    person_name: 'Fred'
+}
+
+var trial3 = {
+    stimulus: 'img/faceC.jpg',
+    correct_key: 81,
+    person_name: 'Mary'
+}
+
+var myArray = [ trial1, trial2, trial3 ];
+var shuffledArray = jsPsych.randomization.repeat(myArray, 2, true);
+
+/*
+output: shuffledArray = {
+    stimulus: ['img/faceB.jpg','img/faceA.jpg','img/faceC.jpg','img/faceA.jpg','img/faceC.jpg','img/faceB.jpg'],
+    correct_key: [80, 80, 81, 80, 81, 80],
+    person_name: ['Fred','Joe', 'Mary', 'Joe', 'Mary', 'Fred']
+}
+*/
+</code></pre>
+
 </div>
         </div>
 
