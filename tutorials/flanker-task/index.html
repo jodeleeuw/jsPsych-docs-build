@@ -54,7 +54,7 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href=".">Demo Experiment: Choice Response Time Task</a>
+                            <a href="../go-nogo-task">Demo Experiment: Go / No-Go Task</a>
                         </li>
                     
                         <li class="active">
@@ -152,7 +152,7 @@
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-suvey-likert">jspsych-suvey-likert</a>
+                            <a href="../../plugins/jspsych-survey-likert">jspsych-survey-likert</a>
                         </li>
                     
                         <li >
@@ -257,7 +257,7 @@
             <ul class="nav navbar-nav navbar-right">
                 
                 <li >
-                    <a rel="next" href=".">
+                    <a rel="next" href="../go-nogo-task">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
@@ -285,66 +285,14 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#jspsych">jsPsych</a></li>
-        
-            <li><a href="#overview">Overview</a></li>
-        
-            <li><a href="#loading-jspsych">Loading jsPsych</a></li>
-        
-            <li><a href="#creating-an-experiment">Creating an experiment</a></li>
+        <li class="main active"><a href="#tutorial-coming-soon">Tutorial coming soon.</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="jspsych">jsPsych</h1>
-<h2 id="overview">Overview</h2>
-<p>jsPsych is a JavaScript library for creating and running behavioral experiments in a web browser. The library provides a flexible framework for building a wide range of laboratory-like experiments that can be run online. </p>
-<p>jsPsych prvoides the <em>structure</em> for an experiment. It handles things like determining which trial to run next, storing data, and randomizing factors/order of presentation. It also provides a set of <em>plugins</em>, which are ready-made templates for simple experimental tasks like displaying instructions or displaying a stimulus and collecting a keyboard response. A full experiment created with jsPsych will be a collection of different plugins that define the different tasks that a subject will complete. </p>
-<p>To build an experiment with jsPsych, you'll specify the structure of the experiment using JavaScript code. You'll also need to provide the <em>content</em> that defines your experiment, such as the actual text that subjects see when they are shown instructions and the images that they will view. You can also specify a wide-range of parameters to control things like stimulus duration, which keyboard keys subjects are allowed to press, and so on.</p>
-<p>This page gives a broad overview of how jsPsych works. More detail is available on most of the topics on this page by using the navigation above, or by following the links within the documentation.</p>
-<h2 id="loading-jspsych">Loading jsPsych</h2>
-<p>To use jsPsych, you'll need to load a few JavaScript files in an HTML document. At a minimum, you'll be loading three files: the jQuery library, the main jsPsych.js library, and at least one jsPsych plugin. A bare-bones jsPsych-ready document (with the single-stim plugin loaded) will look something like the following:</p>
-<pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;script src=&quot;js/jquery.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;js/jspsych/jspsych.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;js/jspsych/plugins/jspsych-single-stim.js&quot;&gt;&lt;/script&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
-<h2 id="creating-an-experiment">Creating an experiment</h2>
-<p>To use jsPsych, you'll need to create a description of your experiment in JavaScript. This description is an array; each element of the array is a <strong>block</strong> or a <strong>chunk</strong>. Chunks and blocks are special objects in jsPsych. They define sets of trials that should be grouped together (learn more about <a href="../../">chunks and blocks</a>).</p>
-<pre class="prettyprint well"><code class="javascript">// defining an empty array to contain the experiment description
-var experiment = [];
-</code></pre>
-
-<p>Blocks are created by defining a JavaScript object with a <code>type</code> property that corresponds to a particular <a href="../../">plugin</a>. The other properties of the block object will depend on which plugin is used. Each plugin has different options.</p>
-<p>The code below will create a block that contains two trials. The first trial will display the image file <code>img/happy_face.jpg</code> and the second trial will display the image file <code>img/sad_face.jpg</code>.</p>
-<pre class="prettyprint well"><code class="javascript">// create a block using the 'single-stim' plugin
-var block = {
-    type: 'single-stim',
-    stimuli: ['img/happy_face.jpg','img/sad_face.jpg']
-};
-</code></pre>
-
-<p>To add the block to the experiment description, we need to change the <code>experiment</code> array. There are several ways to do this in JavaScript, but we'll use the <code>.push()</code> function for generalizability.</p>
-<pre class="prettyprint well"><code class="javascript">// add the block to the experiment description
-experiment.push(block);
-</code></pre>
-
-<p>Once you have the experiment description defined, you can tell jsPsych to run the experiment by calling <code>jsPsych.init()</code> and passing your description as the value for the <code>experiment_structure</code> parameter:</p>
-<pre class="prettyprint well"><code class="javascript">jsPsych.init({
-    experiment_structure: experiment
-})
-</code></pre>
-
-<p>For a more in-depth tutorial about creating an experiment, take a look at the <a href="../../">tutorials</a>.</p>
+<h1 id="tutorial-coming-soon">Tutorial coming soon.</h1>
 </div>
         </div>
 

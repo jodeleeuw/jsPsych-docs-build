@@ -54,7 +54,7 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../tutorials/flanker-task">Demo Experiment: Choice Response Time Task</a>
+                            <a href="../../tutorials/go-nogo-task">Demo Experiment: Go / No-Go Task</a>
                         </li>
                     
                         <li >
@@ -152,7 +152,7 @@
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-suvey-likert">jspsych-suvey-likert</a>
+                            <a href="../../plugins/jspsych-survey-likert">jspsych-survey-likert</a>
                         </li>
                     
                         <li >
@@ -297,30 +297,30 @@
 <h1 id="the-jspsych-core-library">The jsPsych core library</h1>
 <p>Every jsPsych experiment utilizes the core library (contained in the <code>jspsych.js</code> file). The core library is the glue that holds all of the various plugins together. There are also several modules that are contained in the core library for tasks that are common to many different experiments. These modules are available whenever the <code>jspsych.js</code> file is loaded.</p>
 <h2 id="core-library-api">Core library API</h2>
-<h3 id="core">Core</h3>
+<h3 id="core"><a href="../jspsych-core">Core</a></h3>
 <ul>
-<li>jsPsych.init</li>
-<li>jsPsych.progress</li>
-<li>jsPsych.startTime</li>
-<li>jsPsych.totalTime</li>
-<li>jsPsych.preloadImages</li>
-<li>jsPsych.getDisplayElement</li>
-<li>jsPsych.finishTrial</li>
-<li>jsPsych.currentTrial</li>
-<li>jsPsych.initSettings</li>
-<li>jsPsych.currentChunkID</li>
+<li><a href="../jspsych-core#jspsychcurrentchunkID">jsPsych.currentChunkID</a></li>
+<li><a href="../jspsych-core#jspsychcurrenttrial">jsPsych.currentTrial</a></li>
+<li><a href="../jspsych-core#jspsychfinishtrial">jsPsych.finishTrial</a></li>
+<li><a href="../jspsych-core#jspsychgetdisplayelement">jsPsych.getDisplayElement</a></li>
+<li><a href="../jspsych-core#jspsychinit">jsPsych.init</a></li>
+<li><a href="../jspsych-core#jspsychinitSettings">jsPsych.initSettings</a></li>
+<li><a href="../jspsych-core#jspsychpreloadimages">jsPsych.preloadImages</a></li>
+<li><a href="../jspsych-core#jspsychprogress">jsPsych.progress</a></li>
+<li><a href="../jspsych-core#jspsychstarttime">jsPsych.startTime</a></li>
+<li><a href="../jspsych-core#jspsychtotaltime">jsPsych.totalTime</a></li>
 </ul>
-<h3 id="data-module">Data module</h3>
+<h3 id="data-module"><a href="../jspsych-data">Data module</a></h3>
 <ul>
-<li>jsPsych.data.getData</li>
-<li>jsPsych.data.write</li>
-<li>jsPsych.data.dataAsCSV</li>
-<li>jsPsych.data.localSave</li>
-<li>jsPsych.data.getTrialsOfType</li>
-<li>jsPsych.data.getTrialsFromChunk</li>
-<li>jsPsych.data.getLastTrialData</li>
-<li>jsPsych.data.getLastChunkData</li>
-<li>jsPsych.data.displayData</li>
+<li><a href="../jspsych-data#jspsychdatadataascsv">jsPsych.data.dataAsCSV</a></li>
+<li><a href="../jspsych-data#jspsychdatadisplaydata">jsPsych.data.displayData</a></li>
+<li><a href="../jspsych-data#jspsychdatagetdata">jsPsych.data.getData</a></li>
+<li><a href="../jspsych-data#jspsychdatagetlastchunkdata">jsPsych.data.getLastChunkData</a></li>
+<li><a href="../jspsych-data#jspsychdatagetlasttrialdata">jsPsych.data.getLastTrialData</a></li>
+<li><a href="../jspsych-data#jspsychdatagettrialsoftype">jsPsych.data.getTrialsOfType</a></li>
+<li><a href="../jspsych-data#jspsychdatagettrialsfromchunk">jsPsych.data.getTrialsFromChunk</a></li>
+<li><a href="../jspsych-data#jspsychdatalocalsave">jsPsych.data.localSave</a></li>
+<li><a href="../jspsych-data#jspsychdatawrite">jsPsych.data.write</a></li>
 </ul>
 <h3 id="turk-module"><a href="../jspsych-turk">Turk module</a></h3>
 <ul>
@@ -332,13 +332,13 @@
 <li><a href="../jspsych-randomization#jspsychrandomizationfactorial">jsPsych.randomization.factorial</a></li>
 <li><a href="../jspsych-randomization#jspsychrandomizationrepeat">jsPsych.randomization.repeat</a></li>
 </ul>
-<h3 id="pluginapi-module">PluginAPI module</h3>
+<h3 id="pluginapi-module"><a href="../jspsych-pluginAPI">PluginAPI module</a></h3>
 <ul>
-<li>jsPsych.pluginAPI.getKeyboardResponse</li>
-<li>jsPsych.pluginAPI.cancelKeyboardResponse</li>
-<li>jsPsych.pluginAPI.cancelAllKeyboardResponses</li>
-<li>jsPsych.pluginAPI.normalizeTrialVariables</li>
-<li>jsPsych.pluginAPI.enforceArray</li>
+<li><a href="../jspsych-pluginAPI#jspsychpluginapicancelallkeyboardresponses">jsPsych.pluginAPI.cancelAllKeyboardResponses</a></li>
+<li><a href="../jspsych-pluginAPI#jspsychpluginapicancelkeyboardresponse">jsPsych.pluginAPI.cancelKeyboardResponse</a></li>
+<li><a href="../jspsych-pluginAPI#jspsychpluginapienforcearray">jsPsych.pluginAPI.enforceArray</a></li>
+<li><a href="../jspsych-pluginAPI#jspsychpluginapigetkeyboardresponse">jsPsych.pluginAPI.getKeyboardResponse</a></li>
+<li><a href="../jspsych-pluginAPI#jspsychpluginapinormalizetrialvariables">jsPsych.pluginAPI.normalizeTrialVariables</a></li>
 </ul>
 </div>
         </div>

@@ -54,7 +54,7 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../tutorials/flanker-task">Demo Experiment: Choice Response Time Task</a>
+                            <a href="../../tutorials/go-nogo-task">Demo Experiment: Go / No-Go Task</a>
                         </li>
                     
                         <li >
@@ -152,7 +152,7 @@
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-suvey-likert">jspsych-suvey-likert</a>
+                            <a href="../../plugins/jspsych-survey-likert">jspsych-survey-likert</a>
                         </li>
                     
                         <li >
@@ -291,6 +291,8 @@
         
             <li><a href="#repeating-a-block-of-trials">Repeating a block of trials</a></li>
         
+            <li><a href="#generating-random-orders-of-parameter-values">Generating random orders of parameter values</a></li>
+        
     
     </ul>
 </div></div>
@@ -321,6 +323,8 @@
 </code></pre>
 
 <p>In the above example, there are two trials in the block. Both trials will occur (in a random order), and then the block will repeat 4 more times. The randomized order only applies to each individual repetition, so each set of two trials will contain one happy face and one sad face.</p>
+<h2 id="generating-random-orders-of-parameter-values">Generating random orders of parameter values</h2>
+<p>The <a href="../../core_library/jspsych-randomization">jsPsych.randomization</a> module in the core library contains functions that assist with generating random orders of trial parameters.</p>
 </div>
         </div>
 
