@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>jsPsych core - jsPsych</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">jsPsych</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../tutorials/go-nogo-task">Demo Experiment: Go / No-Go Task</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../tutorials/flanker-task">Demo Experiment: Flanker Task</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Core Library API <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../overview">Overview</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href=".">jsPsych core</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../jspsych-data">jsPsych.data</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../jspsych-randomization">jsPsych.randomization</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../jspsych-turk">jsPsych.turk</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../jspsych-pluginAPI">jsPsych.pluginAPI</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Plugins <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../plugins/overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/creating-a-plugin">Creating a New Plugin</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-animation">jspsych-animation</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-call-function">jspsych-call-function</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-categorize">jspsych-categorize</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-categorize-animation">jspsych-categorize-animation</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-free-sort">jspsych-free-sort</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-html">jspsych-html</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-palmer">jspsych-palmer</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-same-different">jspsych-same-different</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-single-stim">jspsych-single-stim</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-survey-likert">jspsych-survey-likert</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-survey-text">jspsych-survey-text</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-text">jspsych-text</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-visual-search-circle">jspsych-visual-search-circle</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-vsl-animate-occlusion">jspsych-vsl-animate-occlusion</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-vsl-grid-scene">jspsych-vsl-grid-scene</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-xab">jspsych-xab</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../features/chunks-blocks-trials">Creating an Experiment: Chunks, Blocks, & Trials</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../features/progress-bar">Automatic Progress Bar</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../features/mturk">Integrating with Mechanical Turk</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../features/data">Data Storage</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../features/randomization-repetition">Randomization & Repetition</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../features/functions-as-parameters">Using Functions as Plugin Parameters</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../features/callbacks">Event-related Callback Functions</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../features/image-preloading">Image Preloading</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../support">Support</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../about/about">About jsPsych</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../about/license">License</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../about/contributing">Contributing to jsPsych</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../overview">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../jspsych-data">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/jodeleeuw/jsPsych">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#the-jspsych-core-library">The jsPsych core library</a></li>
+        
+            <li><a href="#jspsychcurrentchunkid">jsPsych.currentChunkID</a></li>
+        
+            <li><a href="#jspsychcurrenttrial">jsPsych.currentTrial</a></li>
+        
+            <li><a href="#jspsychfinishtrial">jsPsych.finishTrial</a></li>
+        
+            <li><a href="#jspsychgetdisplayelement">jsPsych.getDisplayElement</a></li>
+        
+            <li><a href="#jspsychinit">jsPsych.init</a></li>
+        
+            <li><a href="#jspsychinitsettings">jsPsych.initSettings</a></li>
+        
+            <li><a href="#jspsychpreloadimages">jsPsych.preloadImages</a></li>
+        
+            <li><a href="#jspsychprogress">jsPsych.progress</a></li>
+        
+            <li><a href="#jspsychstarttime">jsPsych.startTime</a></li>
+        
+            <li><a href="#jspsychtotaltime">jsPsych.totalTime</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="the-jspsych-core-library">The jsPsych core library</h1>
+<hr />
+<h2 id="jspsychcurrentchunkid">jsPsych.currentChunkID</h2>
+<pre class="prettyprint well"><code>jsPsych.currentChunkID()
+</code></pre>
+
+<h3 id="parameters">Parameters</h3>
+<p>None.</p>
+<h3 id="return-value">Return value</h3>
+<p>Returns the chunk ID of the chunk that is currently active.</p>
+<h3 id="description">Description</h3>
+<p>Gets the chunk ID of the active chunk. The chunk ID is a string that follows a specific format:</p>
+<ul>
+<li><code>"0-0"</code> is the chunk ID of the first top-level chunk</li>
+<li><code>"1-0"</code> is the chunk ID of the second top-level chunk</li>
+<li><code>"2-0"</code> is the chunk ID of the third top-level chunk, and so on...</li>
+</ul>
+<p>If a chunk iterates multiple times (in a while chunk, for example), then the iterations are indicated in the second number:</p>
+<ul>
+<li><code>"0-0"</code> is the chunk ID of the first top-level chunk during the first iteration</li>
+<li><code>"0-1"</code> is the chunk ID of the first top-level chunk during the second iteration</li>
+<li><code>"0-2"</code> is the chunk ID of the first top-level chunk during the third iteration, and so on...</li>
+</ul>
+<p>If chunks are nested in other chunks, then the hierarchical structure is shown with <code>"."</code>:</p>
+<ul>
+<li><code>"0-0.1-0"</code> is the chunk ID of the second chunk on the timeline of the first top-level chunk.</li>
+<li><code>"0-0.2-0"</code> is the chunk ID of the third chunk on the timeline of the first top-level chunk, and so on...</li>
+</ul>
+<p>The rules about iterations apply throughout the hierarchical ID:</p>
+<ul>
+<li><code>"0-2.1-3"</code> is the chunk ID of the second chunk, executing for the fourth time, on the timeline of the first top-level chunk, executing for the third time.</li>
+</ul>
+<h3 id="example">Example</h3>
+<pre class="prettyprint well"><code class="javascript">var chunkid = jsPsych.currentChunkID();
+
+console.log('The current chunk ID is '+chunkid);
+</code></pre>
+
+<hr />
+<h2 id="jspsychcurrenttrial">jsPsych.currentTrial</h2>
+<pre class="prettyprint well"><code>jsPsych.currentTrial()
+</code></pre>
+
+<h3 id="parameters_1">Parameters</h3>
+<p>None.</p>
+<h3 id="return-value_1">Return value</h3>
+<p>Returns the object describing the current trial. The object will contain all of the parameters associated with the current trial.</p>
+<h3 id="description_1">Description</h3>
+<p>Get a description of the current trial</p>
+<h3 id="example_1">Example</h3>
+<pre class="prettyprint well"><code class="javascript">
+var trial = jsPsych.currentTrial();
+
+console.log('The current trial is using the '+trial.type+' plugin');
+</code></pre>
+
+<hr />
+<h2 id="jspsychfinishtrial">jsPsych.finishTrial</h2>
+<pre class="prettyprint well"><code>jsPsych.finishTrial()
+</code></pre>
+
+<h3 id="parameters_2">Parameters</h3>
+<p>None.</p>
+<h3 id="return-value_2">Return value</h3>
+<p>Returns nothing.</p>
+<h3 id="description_2">Description</h3>
+<p>This method tells jsPsych that the current trial is over. It is used in all of the plugins to end the current trial. When the trial ends a few things happen:</p>
+<ul>
+<li>The on_finish callback function is executed for the trial</li>
+<li>The on_trial_finish callback function is executed</li>
+<li>The progress bar is updated if it is being displayed</li>
+<li>The experiment ends if the trial is the last one (and the on_finish callback function is executed).</li>
+<li>The next trial, if one exists, is started.</li>
+</ul>
+<h3 id="example_2">Example</h3>
+<pre class="prettyprint well"><code class="javascript">
+// this code would be in a plugin
+jsPsych.finishTrial();
+
+</code></pre>
+
+<hr />
+<h2 id="jspsychgetdisplayelement">jsPsych.getDisplayElement</h2>
+<pre class="prettyprint well"><code>jsPsych.getDisplayElement
+</code></pre>
+
+<h3 id="parameters_3">Parameters</h3>
+<p>None.</p>
+<h3 id="return-value_3">Return value</h3>
+<p>Returns the jQuery-object that contains the DOM element used for displaying the experiment.</p>
+<h3 id="description_3">Description</h3>
+<p>Get the DOM element that displays the experiment.</p>
+<h3 id="example_3">Example</h3>
+<pre class="prettyprint well"><code class="javascript">var el = jsPsych.getDisplayElement();
+
+// hide the jsPsych display
+el.hide();
+</code></pre>
+
+<hr />
+<h2 id="jspsychinit">jsPsych.init</h2>
+<pre class="prettyprint well"><code>jsPsych.init(settings)
+</code></pre>
+
+<h3 id="parameters_4">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>settings</td>
+<td>object</td>
+<td>The settings object for initializing jsPsych. See table below.</td>
+</tr>
+</tbody>
+</table>
+<p>The settings object can contain several parameters. The only <em>required</em> parameter is <code>experiment_structure</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>experiment_structure</td>
+<td>array</td>
+<td>An array containing the chunks and/or blocks that describe the experiment to run. See <a href="../../../features/chunks-blocks-trials">Creating an Experiment: Chunks, Blocks, &amp; Trials</a>.</td>
+</tr>
+<tr>
+<td>display_element</td>
+<td>jQuery object</td>
+<td>A jQuery-selected DOM element, e.g. <code>$('#target')</code> selects the element with the <code>id='target'</code> attribute. If left blank, then jsPsych will use the <code>&lt;body&gt;</code> element to display content (creating it if necessary).</td>
+</tr>
+<tr>
+<td>on_finish</td>
+<td>function</td>
+<td>Function to execute when the experiment ends.</td>
+</tr>
+<tr>
+<td>on_trial_start</td>
+<td>function</td>
+<td>Function to execute when a new trial begins.</td>
+</tr>
+<tr>
+<td>on_trial_finish</td>
+<td>function</td>
+<td>Function to execute when a trial ends.</td>
+</tr>
+<tr>
+<td>on_data_update</td>
+<td>function</td>
+<td>Function to execute every time data is stored using the <code>jsPsych.data.write</code> method. All plugins use this method to save data, so this function runs every time a plugin stores new data.</td>
+</tr>
+<tr>
+<td>show_progress_bar</td>
+<td>boolean</td>
+<td>If true, then <a href="../../features/progress-bar">a progress bar</a> is shown at the top of the page.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-value_4">Return value</h3>
+<p>Returns nothing.</p>
+<h3 id="description_4">Description</h3>
+<p>This method configures and starts the experiment. </p>
+<h3 id="example_4">Example</h3>
+<pre class="prettyprint well"><code class="javascript">
+</code></pre>
+
+<hr />
+<h2 id="jspsychinitsettings">jsPsych.initSettings</h2>
+<pre class="prettyprint well"><code>jsPsych.initSettings()
+</code></pre>
+
+<h3 id="parameters_5">Parameters</h3>
+<p>None</p>
+<h3 id="return-value_5">Return value</h3>
+<p>Returns the settings object used to initialize the experiment.</p>
+<h3 id="description_5">Description</h3>
+<p>Gets the object containing the settings for the current experiment. </p>
+<h3 id="example_5">Example</h3>
+<pre class="prettyprint well"><code class="javascript">var settings = jsPsych.initSettings();
+
+// check the experiment structure
+console.log(JSON.stringify(settings.experiment_structure));
+</code></pre>
+
+<hr />
+<h2 id="jspsychpreloadimages">jsPsych.preloadImages</h2>
+<pre class="prettyprint well"><code>jsPsych.preloadImages(images, callback_complete, callback_load)
+</code></pre>
+
+<h3 id="parameters_6">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>images</td>
+<td>array</td>
+<td>An array of image paths to load. The array can be nested (e.g. if images are in multiple arrays to help sort by condition or task).</td>
+</tr>
+<tr>
+<td>callback_complete</td>
+<td>function</td>
+<td>A function to execute when all the images have been loaded.</td>
+</tr>
+<tr>
+<td>callback_load</td>
+<td>function</td>
+<td>A function to execute after each image has been loaded. A single parameter is passed to this function which contains the number of images that have been loaded so far.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-value_6">Return value</h3>
+<p>Returns nothing.</p>
+<h3 id="description_6">Description</h3>
+<p>Use this function to preload image files. See <a href="../../features/image-preloading">Image Preloading</a> in the documentation.</p>
+<p>It is possible to run this function without specifying a callback function. However, in this case the code will continue executing while the images are loaded. Thus, it is possible that an image would be required for display before it is done preloading. The <code>callback_complete</code> function will only exectute after all the images are loaded, and can be used to control the flow of the experiment (e.g. by starting the experiment in the <code>callback_complete</code> function).</p>
+<p>The <code>callback_load</code> function can be used to indicate progress, if the number of images to be loaded is known ahead of time. See example below.</p>
+<h3 id="examples">Examples</h3>
+<h4 id="basic-use">Basic use</h4>
+<pre class="prettyprint well"><code class="javascript">
+var images = ['img/file1.png', 'img/file2.png', 'img/file3.png'];
+
+jsPsych.preloadImages(images, function(){ startExperiment(); });
+
+function startExperiment(){
+    jsPsych.init({
+        experiment_structure: exp
+    });
+}
+
+</code></pre>
+
+<h4 id="show-progress-of-loading">Show progress of loading</h4>
+<pre class="prettyprint well"><code class="javascript">var images = ['img/file1.png', 'img/file2.png', 'img/file3.png'];
+
+jsPsych.preloadImages(images, function(){ startExperiment(); }, function(nLoaded) { updateLoadedCount(nLoaded); });
+
+function updateLoadedCount(nLoaded){
+    var percentcomplete = nLoaded / images.length * 100;
+
+    // could put something fancier here, like a progress bar
+    // or updating text in the DOM.
+    console.log('Loaded '+percentcomplete+'% of images');
+}
+
+function startExperiment(){
+    jsPsych.init({
+        experiment_structure: exp
+    });
+}
+</code></pre>
+
+<hr />
+<h2 id="jspsychprogress">jsPsych.progress</h2>
+<pre class="prettyprint well"><code>jsPsych.progress()
+</code></pre>
+
+<h3 id="parameters_7">Parameters</h3>
+<p>None.</p>
+<h3 id="return-value_7">Return value</h3>
+<p>Returns an object with the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total_trials</td>
+<td>numeric</td>
+<td>Indicates the number of trials in the experiment. Note that this does not count possible loops or skipped trials due to conditional statements.</td>
+</tr>
+<tr>
+<td>current_trial_global</td>
+<td>numeric</td>
+<td>Returns the trial index of the current trial in a global scope. Every trial will increase this count by 1.</td>
+</tr>
+<tr>
+<td>current_trial_local</td>
+<td>numeric</td>
+<td>Returns the trial index of the current trial relative to the current chunk. For example, if the trial is the 4th trial to execute within a chunk, then the value of this will be <code>4</code>.</td>
+</tr>
+<tr>
+<td>total_chunks</td>
+<td>numeric</td>
+<td>Returns the total number of top-level chunks. (Chunks embedded in other chunks don't count).</td>
+</tr>
+<tr>
+<td>current_chunk</td>
+<td>numeric</td>
+<td>Returns the index of the current top-level chunk.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="description_7">Description</h3>
+<p>This method returns information about the length of the experiment and the subject's current location in the experiment timeline.</p>
+<h3 id="example_6">Example</h3>
+<pre class="prettyprint well"><code class="javascript">
+var progress = jsPsych.progress();
+
+var percent_complete = progress.current_chunk / progress.total_chunks * 100;
+
+alert('You have completed approximately '+percent_complete+'% of the experiment');
+
+</code></pre>
+
+<hr />
+<h2 id="jspsychstarttime">jsPsych.startTime</h2>
+<pre class="prettyprint well"><code>jsPsych.startTime()
+</code></pre>
+
+<h3 id="parameters_8">Parameters</h3>
+<p>None.</p>
+<h3 id="return-value_8">Return value</h3>
+<p>Returns a <code>Date</code> object indicating when the experiment began.</p>
+<h3 id="description_8">Description</h3>
+<p>Get the time that the experiment began.</p>
+<h3 id="example_7">Example</h3>
+<pre class="prettyprint well"><code class="javascript">var start_time = jsPsych.startTime();
+</code></pre>
+
+<hr />
+<h2 id="jspsychtotaltime">jsPsych.totalTime</h2>
+<pre class="prettyprint well"><code>jsPsych.totalTime()
+</code></pre>
+
+<h3 id="parameters_9">Parameters</h3>
+<p>None.</p>
+<h3 id="return-value_9">Return value</h3>
+<p>Returns a numeric value indicating the number of milliseconds since <code>jsPsych.init</code> was called.</p>
+<h3 id="description_9">Description</h3>
+<p>Gets the total time the subject has been in the experiment.</p>
+<h3 id="example_8">Example</h3>
+<pre class="prettyprint well"><code class="javascript">
+var time = jsPsych.totalTime();
+
+</code></pre>
+
+</div>
+        </div>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../js/extra.js"></script>
+    </body>
+</html>
