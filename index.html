@@ -54,6 +54,10 @@
                     <ul class="dropdown-menu">
                     
                         <li >
+                            <a href="tutorials/hello-world/">The Basics: Hello World</a>
+                        </li>
+                    
+                        <li >
                             <a href="tutorials/go-nogo-task/">Demo Experiment: Go / No-Go Task</a>
                         </li>
                     
@@ -262,7 +266,7 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="tutorials/go-nogo-task/">
+                    <a rel="prev" href="tutorials/hello-world/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -287,7 +291,7 @@
     
         <li class="main active"><a href="#jspsych">jsPsych</a></li>
         
-            <li><a href="#conceptual-overview">Conceptual Overview</a></li>
+            <li><a href="#download-jspsych">Download jsPsych</a></li>
         
             <li><a href="#loading-jspsych">Loading jsPsych</a></li>
         
@@ -303,7 +307,9 @@
 <p>jsPsych prvoides the <em>structure</em> for an experiment. It handles things like determining which trial to run next, storing data, and randomizing factors/order of presentation. It also provides a set of <em>plugins</em>, which are ready-made templates for simple experimental tasks like displaying instructions or displaying a stimulus and collecting a keyboard response. A full experiment created with jsPsych will be a collection of different plugins that define the different tasks that a subject will complete. </p>
 <p>To build an experiment with jsPsych, you'll specify the structure of the experiment using JavaScript code. You'll also need to provide the <em>content</em> that defines your experiment, such as the actual text that subjects see when they are shown instructions and the images that they will view. You can also specify a wide-range of parameters to control things like stimulus duration, which keyboard keys subjects are allowed to press, and so on.</p>
 <p>This page gives a broad overview of how jsPsych works. More detail is available on most of the topics on this page by using the navigation above, or by following the links within the documentation.</p>
-<h2 id="conceptual-overview">Conceptual Overview</h2>
+<h2 id="download-jspsych">Download jsPsych</h2>
+<p><a href="https://github.com/jodeleeuw/jsPsych/archive/v4.0.zip" class="btn btn-primary" role="button">Download jsPsych v4.0 (zip)</a></p>
+<p>jsPsych is hosted at <a href="http://github.com/jodeleeuw/jsPsych">GitHub</a>. You can find all other jsPsych releases there.</p>
 <h2 id="loading-jspsych">Loading jsPsych</h2>
 <p>To use jsPsych, you'll need to load a few JavaScript files in an HTML document. At a minimum, you'll be loading three files: the jQuery library, the main jsPsych.js library, and at least one jsPsych plugin. A bare-bones jsPsych-ready document (with the single-stim plugin loaded) will look something like the following:</p>
 <pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
@@ -319,12 +325,12 @@
 </code></pre>
 
 <h2 id="creating-an-experiment">Creating an experiment</h2>
-<p>To use jsPsych, you'll need to create a description of your experiment in JavaScript. This description is an array; each element of the array is a <strong>block</strong> or a <strong>chunk</strong>. Chunks and blocks are special objects in jsPsych. They define sets of trials that should be grouped together (learn more about <a href="./">chunks and blocks</a>).</p>
+<p>To use jsPsych, you'll need to create a description of your experiment in JavaScript. This description is an array; each element of the array is a <strong>block</strong> or a <strong>chunk</strong>. Chunks and blocks are special objects in jsPsych. They define sets of trials that should be grouped together (learn more about <a href="features/chunks-blocks-trials/">chunks and blocks</a>).</p>
 <pre class="prettyprint well"><code class="javascript">// defining an empty array to contain the experiment description
 var experiment = [];
 </code></pre>
 
-<p>Blocks are created by defining a JavaScript object with a <code>type</code> property that corresponds to a particular <a href="./">plugin</a>. The other properties of the block object will depend on which plugin is used. Each plugin has different options.</p>
+<p>Blocks are created by defining a JavaScript object with a <code>type</code> property that corresponds to a particular <a href="plugins/overview/">plugin</a>. The other properties of the block object will depend on which plugin is used. Each plugin has different options.</p>
 <p>The code below will create a block that contains two trials. The first trial will display the image file <code>img/happy_face.jpg</code> and the second trial will display the image file <code>img/sad_face.jpg</code>.</p>
 <pre class="prettyprint well"><code class="javascript">// create a block using the 'single-stim' plugin
 var block = {
@@ -344,7 +350,6 @@ experiment.push(block);
 })
 </code></pre>
 
-<p>For a more in-depth tutorial about creating an experiment, take a look at the <a href="./">tutorials</a>.</p>
 </div>
         </div>
 
@@ -355,6 +360,5 @@ experiment.push(block);
         <script src="./js/prettify-1.0.min.js"></script>
         <script src="./js/base.js"></script>
         <script src="./js/extra.js"></script>
-        <script src="./js/analytics.js"></script>
     </body>
 </html>
