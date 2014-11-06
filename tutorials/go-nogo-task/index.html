@@ -289,14 +289,873 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#tutorial-coming-soon">Tutorial coming soon.</a></li>
+        <li class="main active"><a href="#summary-of-tutorial-content">Summary of Tutorial Content</a></li>
+        
+            <li><a href="#part-1-creating-a-blank-experiment">Part 1: Creating a blank experiment</a></li>
+        
+            <li><a href="#part-2-display-welcome-message">Part 2: Display welcome message</a></li>
+        
+            <li><a href="#part-3-show-instructions">Part 3: Show instructions</a></li>
+        
+            <li><a href="#part-4-displaying-stimuli-and-getting-responses">Part 4: Displaying stimuli and getting responses</a></li>
+        
+            <li><a href="#part-5-modifying-timing-parameters">Part 5: Modifying timing parameters</a></li>
+        
+            <li><a href="#part-6-generating-a-random-order-of-trials">Part 6: Generating a random order of trials</a></li>
+        
+            <li><a href="#part-7-displaying-the-data">Part 7: Displaying the data</a></li>
+        
+            <li><a href="#part-8-using-the-optional-data-object">Part 8: Using the optional data object</a></li>
+        
+            <li><a href="#part-9-using-functions-as-parameters">Part 9: Using functions as parameters</a></li>
+        
+            <li><a href="#part-10-displaying-data-to-the-subject">Part 10: Displaying data to the subject</a></li>
+        
+            <li><a href="#the-final-code">The final code</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="tutorial-coming-soon">Tutorial coming soon.</h1>
+<h1 id="summary-of-tutorial-content">Summary of Tutorial Content</h1>
+<p>This tutorial will step through the creation of a simple go/no-go task. The subject is asked to respond to blue circles by pressing the F key, but to not respond to orange circles. The concepts covered in the tutorial include:</p>
+<ul>
+<li>Creating blocks to show instructions</li>
+<li>Creating blocks to show stimuli and measure response time</li>
+<li>Using the randomization methods of the jsPsych library</li>
+<li>Tagging trials with additional data</li>
+<li>Using functions as trial parameters</li>
+<li>Using callback functions</li>
+</ul>
+<h2 id="part-1-creating-a-blank-experiment">Part 1: Creating a blank experiment</h2>
+<p>Start by downloading jsPsych and setting up a folder to contain your experiment files. If you are unsure how to do this, follow steps 1-5 in the <a href="../hello-world">Hello World tutorial</a>. At the end of step 5 in the Hello World tutorial, you should have an experiment page that looks like this:</p>
+<pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My experiment&lt;/title&gt;
+    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
+    &lt;link href=&quot;jsPsych-4.0/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>This will be our starting point for building the rest of the experiment.</p>
+<h2 id="part-2-display-welcome-message">Part 2: Display welcome message</h2>
+<p>It doesn't hurt to greet the subject with a nice welcome message before the experiment starts. In the code below, some JavaScript is added to the blank page to display a message to the subject using the <a href="../../plugins/jspsych-text">jspsych-text</a> plugin.</p>
+<p>To walkthrough the example, I'll start by annotating the individual chunks of code. Then I'll show everything put together at the end.</p>
+<p>First, we create a block that uses the jspsych-text plugin and contains a simple string to show the subject.</p>
+<pre class="prettyprint well"><code class="javascript">var welcome_block = {
+  type: &quot;text&quot;,
+  text: &quot;Welcome to the experiment. Press any key to begin.&quot;
+};
+</code></pre>
+
+<p>Next, we create an array to hold the blocks of our experiment. Right now, we only have one block, but we will add several more throughout the tutorial.</p>
+<pre class="prettyprint well"><code class="javascript">var experiment = [];
+experiment.push(welcome_block);
+</code></pre>
+
+<p>Finally, we tell jsPsych to run the experiment by calling the <a href="../../core_library/jspsych-core#jspsychinit">jsPsych.init() function</a> and passing in the array that defines the experiment structure.</p>
+<pre class="prettyprint well"><code class="javascript">jsPsych.init({
+  experiment_structure: experiment
+});
+</code></pre>
+
+<h3 id="the-complete-code-so-far">The complete code so far</h3>
+<pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My experiment&lt;/title&gt;
+    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
+    &lt;link href=&quot;jsPsych-4.0/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+  &lt;script&gt;
+
+    /* define welcome message block */
+    var welcome_block = {
+      type: &quot;text&quot;,
+      text: &quot;Welcome to the experiment. Press any key to begin.&quot;
+    };
+
+    /* create experiment definition array */
+    var experiment = [];
+    experiment.push(welcome_block);
+
+    /* start the experiment */
+    jsPsych.init({
+      experiment_structure: experiment
+    });
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2 id="part-3-show-instructions">Part 3: Show instructions</h2>
+<p>We can use the same basic structure from Part 2 to create a new block that shows instructions to the subject. The only difference in the block we will create here is that we'll use some HTML formatting to control how the instructions display.</p>
+<p>The block definition looks like this:</p>
+<pre class="prettyprint well"><code class="javascript">var instructions_block = {
+  type: &quot;text&quot;,
+  text: &quot;&lt;p&gt;In this experiment, a circle will appear in the center &quot; +
+      &quot;of the screen.&lt;/p&gt;&lt;p&gt;If the circle is &lt;strong&gt;blue&lt;/strong&gt;, &quot; +
+      &quot;press the letter F on the keyboard as fast as you can.&lt;/p&gt;&quot; +
+      &quot;&lt;p&gt;If the circle is &lt;strong&gt;orange&lt;/strong&gt;, do not press &quot; +
+      &quot;any key.&lt;/p&gt;&quot; +
+      &quot;&lt;div class='left center-content'&gt;&lt;img src='static/images/blue.png'&gt;&lt;/img&gt;&quot; +
+      &quot;&lt;p class='small'&gt;&lt;strong&gt;Press the F key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+      &quot;&lt;div class='right center-content'&gt;&lt;img src='static/images/orange.png'&gt;&lt;/img&gt;&quot; +
+      &quot;&lt;p class='small'&gt;&lt;strong&gt;Do not press a key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+      &quot;&lt;p&gt;Press any key to begin.&lt;/p&gt;&quot;
+};
+</code></pre>
+
+<p>Don't forget to add it to the experiment definition array:</p>
+<pre class="prettyprint well"><code class="javascript">experiment.push(instructions_block);
+</code></pre>
+
+<h3 id="the-complete-code-so-far_1">The complete code so far</h3>
+<pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My experiment&lt;/title&gt;
+    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
+    &lt;link href=&quot;jsPsych-4.0/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+  &lt;script&gt;
+
+    /* define welcome message block */
+    var welcome_block = {
+      type: &quot;text&quot;,
+      text: &quot;Welcome to the experiment. Press any key to begin.&quot;
+    };
+
+    /* define instructions block */
+    var instructions_block = {
+      type: &quot;text&quot;,
+      text: &quot;&lt;p&gt;In this experiment, a circle will appear in the center &quot; +
+          &quot;of the screen.&lt;/p&gt;&lt;p&gt;If the circle is &lt;strong&gt;blue&lt;/strong&gt;, &quot; +
+          &quot;press the letter F on the keyboard as fast as you can.&lt;/p&gt;&quot; +
+          &quot;&lt;p&gt;If the circle is &lt;strong&gt;orange&lt;/strong&gt;, do not press &quot; +
+          &quot;any key.&lt;/p&gt;&quot; +
+          &quot;&lt;div class='left center-content'&gt;&lt;img src='static/images/blue.png'&gt;&lt;/img&gt;&quot; +
+          &quot;&lt;p class='small'&gt;&lt;strong&gt;Press the F key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+          &quot;&lt;div class='right center-content'&gt;&lt;img src='static/images/orange.png'&gt;&lt;/img&gt;&quot; +
+          &quot;&lt;p class='small'&gt;&lt;strong&gt;Do not press a key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+          &quot;&lt;p&gt;Press any key to begin.&lt;/p&gt;&quot;
+    };
+
+    /* create experiment definition array */
+    var experiment = [];
+    experiment.push(welcome_block);
+    experiment.push(instructions_block);
+
+    /* start the experiment */
+    jsPsych.init({
+      experiment_structure: experiment
+    });
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2 id="part-4-displaying-stimuli-and-getting-responses">Part 4: Displaying stimuli and getting responses</h2>
+<p>Conceptually, creating a block to show the stimuli is the same as creating a block to show instructions. The major difference is that we'll use the <a href="../../plugins/jspsych-single-stim">jspsych-single-stim</a> plugin to show the stimuli. This plugin has different options than the jspsych-text plugin, so the code that defines the block will look slightly different.</p>
+<p>First, to use a plugin we need to load it in the <code>&lt;head&gt;</code> section of the experiment page:</p>
+<pre class="prettyprint well"><code class="html">&lt;head&gt;
+  ...
+  &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-single-stim.js&quot;&gt;&lt;/script&gt;
+  ...
+&lt;/head&gt;
+</code></pre>
+
+<p>You'll need to download the image files used as stimuli in the experiment. Here are the images we'll use. Right-click on each image and select <em>Save Image As...</em>. Put the images in a folder called <code>img</code> in the experiment folder you created in Part 1.</p>
+<p><img alt="blue circle" src="../../../img/blue.png" />
+<img alt="orange circle" src="../../../img/orange.png" /></p>
+<p>Next, we'll define the block. For now, we'll just show each image once. The <code>stimuli</code> parameter in the block definition below takes an array, and each element of the array represents an image that will be shown in its own trial. Because we are only specifying two images, there will only be two trials. You could create multiple trials for each image by repeating the array elements (there's functionality in jsPsych to help with this, which we'll see later in the tutorial).  We'll also set the option for which keys the subject is allowed to use to respond (<code>choices</code>) so that only the 'F' key is a valid response.</p>
+<pre class="prettyprint well"><code class="javascript">var test_block = {
+  type: &quot;single-stim&quot;,
+  stimuli: ['img/blue.png', 'img/orange.png'],
+  choices: ['F']
+};
+</code></pre>
+
+<p>As usual, we need to add the block to experiment definition array.</p>
+<pre class="prettyprint well"><code class="javascript">experiment.push(test_block);
+</code></pre>
+
+<h3 id="the-complete-code-so-far_2">The complete code so far</h3>
+<pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My experiment&lt;/title&gt;
+    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-single-stim.js&quot;&gt;&lt;/script&gt;
+    &lt;link href=&quot;jsPsych-4.0/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+  &lt;script&gt;
+
+    /* define welcome message block */
+    var welcome_block = {
+      type: &quot;text&quot;,
+      text: &quot;Welcome to the experiment. Press any key to begin.&quot;
+    };
+
+    /* define instructions block */
+    var instructions_block = {
+      type: &quot;text&quot;,
+      text: &quot;&lt;p&gt;In this experiment, a circle will appear in the center &quot; +
+          &quot;of the screen.&lt;/p&gt;&lt;p&gt;If the circle is &lt;strong&gt;blue&lt;/strong&gt;, &quot; +
+          &quot;press the letter F on the keyboard as fast as you can.&lt;/p&gt;&quot; +
+          &quot;&lt;p&gt;If the circle is &lt;strong&gt;orange&lt;/strong&gt;, do not press &quot; +
+          &quot;any key.&lt;/p&gt;&quot; +
+          &quot;&lt;div class='left center-content'&gt;&lt;img src='static/images/blue.png'&gt;&lt;/img&gt;&quot; +
+          &quot;&lt;p class='small'&gt;&lt;strong&gt;Press the F key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+          &quot;&lt;div class='right center-content'&gt;&lt;img src='static/images/orange.png'&gt;&lt;/img&gt;&quot; +
+          &quot;&lt;p class='small'&gt;&lt;strong&gt;Do not press a key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+          &quot;&lt;p&gt;Press any key to begin.&lt;/p&gt;&quot;
+    };
+
+    /* define test block */
+    var test_block = {
+      type: &quot;single-stim&quot;,
+      stimuli: ['img/blue.png', 'img/orange.png'],
+      choices: ['F']
+    };
+
+    /* create experiment definition array */
+    var experiment = [];
+    experiment.push(welcome_block);
+    experiment.push(instructions_block);
+    experiment.push(test_block);
+
+    /* start the experiment */
+    jsPsych.init({
+      experiment_structure: experiment
+    });
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2 id="part-5-modifying-timing-parameters">Part 5: Modifying timing parameters</h2>
+<p>As currently constructed, the test trials start very soon after the instructions disappear. Also, the stimuli remain on the screen until a response is given. This clearly won't work, since the instructions are to <strong>not</strong> respond when the circle is orange. We can modify these parameters of the plugin. Currently, we haven't specified any values related to timing in our block definitions. This means we are using the default values generated by the plugin. If we specify a value, then we can override the default value.</p>
+<p>First, let's give the subject a little more time to get ready after the instructions end by setting the <code>timing_post_trial</code> parameter in the instructions block. We'll give the subject 2,000 milliseconds in between the instructions and the first trial.</p>
+<pre class="prettyprint well"><code class="javascript">var instructions_block = {
+  type: &quot;text&quot;,
+  text: &quot;&lt;p&gt;In this experiment, a circle will appear in the center &quot; +
+      &quot;of the screen.&lt;/p&gt;&lt;p&gt;If the circle is &lt;strong&gt;blue&lt;/strong&gt;, &quot; +
+      &quot;press the letter F on the keyboard as fast as you can.&lt;/p&gt;&quot; +
+      &quot;&lt;p&gt;If the circle is &lt;strong&gt;orange&lt;/strong&gt;, do not press &quot; +
+      &quot;any key.&lt;/p&gt;&quot; +
+      &quot;&lt;div class='left center-content'&gt;&lt;img src='static/images/blue.png'&gt;&lt;/img&gt;&quot; +
+      &quot;&lt;p class='small'&gt;&lt;strong&gt;Press the F key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+      &quot;&lt;div class='right center-content'&gt;&lt;img src='static/images/orange.png'&gt;&lt;/img&gt;&quot; +
+      &quot;&lt;p class='small'&gt;&lt;strong&gt;Do not press a key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+      &quot;&lt;p&gt;Press any key to begin.&lt;/p&gt;&quot;,
+  timing_post_trial: 2000
+};
+</code></pre>
+
+<p>Now, let's modify the test block so that the subject only has 1,500 milliseconds to respond before the trial ends.</p>
+<pre class="prettyprint well"><code class="javascript">var test_block = {
+  type: &quot;single-stim&quot;,
+  stimuli: ['img/blue.png', 'img/orange.png'],
+  choices: ['F'],
+  timing_response: 1500
+};
+</code></pre>
+
+<p>If you are wondering where to figure out what the various parameter options for a plugin are, each plugin has its own <a href="../../plugins/overview">documentation page</a> which gives a list of all the parameters for that plugin and what the default values are.</p>
+<h3 id="the-complete-code-so-far_3">The complete code so far</h3>
+<pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My experiment&lt;/title&gt;
+    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-single-stim.js&quot;&gt;&lt;/script&gt;
+    &lt;link href=&quot;jsPsych-4.0/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+  &lt;script&gt;
+
+    /* define welcome message block */
+    var welcome_block = {
+      type: &quot;text&quot;,
+      text: &quot;Welcome to the experiment. Press any key to begin.&quot;
+    };
+
+    /* define instructions block */
+    var instructions_block = {
+      type: &quot;text&quot;,
+      text: &quot;&lt;p&gt;In this experiment, a circle will appear in the center &quot; +
+          &quot;of the screen.&lt;/p&gt;&lt;p&gt;If the circle is &lt;strong&gt;blue&lt;/strong&gt;, &quot; +
+          &quot;press the letter F on the keyboard as fast as you can.&lt;/p&gt;&quot; +
+          &quot;&lt;p&gt;If the circle is &lt;strong&gt;orange&lt;/strong&gt;, do not press &quot; +
+          &quot;any key.&lt;/p&gt;&quot; +
+          &quot;&lt;div class='left center-content'&gt;&lt;img src='static/images/blue.png'&gt;&lt;/img&gt;&quot; +
+          &quot;&lt;p class='small'&gt;&lt;strong&gt;Press the F key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+          &quot;&lt;div class='right center-content'&gt;&lt;img src='static/images/orange.png'&gt;&lt;/img&gt;&quot; +
+          &quot;&lt;p class='small'&gt;&lt;strong&gt;Do not press a key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+          &quot;&lt;p&gt;Press any key to begin.&lt;/p&gt;&quot;,
+      timing_post_trial: 2000
+    };
+
+    /* define test block */
+    var test_block = {
+      type: &quot;single-stim&quot;,
+      stimuli: ['img/blue.png', 'img/orange.png'],
+      choices: ['F'],
+      timing_response: 1500
+    };
+
+    /* create experiment definition array */
+    var experiment = [];
+    experiment.push(welcome_block);
+    experiment.push(instructions_block);
+    experiment.push(test_block);
+
+    /* start the experiment */
+    jsPsych.init({
+      experiment_structure: experiment
+    });
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2 id="part-6-generating-a-random-order-of-trials">Part 6: Generating a random order of trials</h2>
+<p>Right now our experiment is a measly two trials long. Even worse is that the order of the stimuli is the same every time!</p>
+<p>Fortunately, jsPsych has a number of different ways to randomize the order of trials and generate repeated trials. We'll walk through one way to do this.</p>
+<p>First, we're going to create an array that contains one entry for each unique stimulus in the experiment (that's only two in this experiment, but it'll often be a lot more than that).</p>
+<pre class="prettyprint well"><code class="javascript">var test_stimuli = ['img/blue.png', 'img/orange.png'];
+</code></pre>
+
+<p>Next, we'll use the <a href="../../core_library/jspsych-randomization#jspsychrandomizationrepeat"><code>jsPsych.randomization.repeat()</code> method</a> to generate an array that contains multiple copies of each stimulus in a random order. The first parameter to the method is the array containing the items to repeat and randomize. The second parameter is the number of times to repeat each element.</p>
+<pre class="prettyprint well"><code class="javascript">var all_trials = jsPsych.randomization.repeat(test_stimuli, 10);
+</code></pre>
+
+<p>We can swap in this new array <code>all_trials</code> as the value for the <code>stimuli</code> parameter in the test block:</p>
+<pre class="prettyprint well"><code class="javascript">var test_block = {
+  type: &quot;single-stim&quot;,
+  stimuli: all_trials,
+  choices: ['F'],
+  timing_response: 1500
+};
+</code></pre>
+
+<p>Now our experiment is 20 trials long, and the trials are shown in a random order.</p>
+<h3 id="the-complete-code-so-far_4">The complete code so far</h3>
+<pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My experiment&lt;/title&gt;
+    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-single-stim.js&quot;&gt;&lt;/script&gt;
+    &lt;link href=&quot;jsPsych-4.0/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+  &lt;script&gt;
+
+    /* define welcome message block */
+    var welcome_block = {
+      type: &quot;text&quot;,
+      text: &quot;Welcome to the experiment. Press any key to begin.&quot;
+    };
+
+    /* define instructions block */
+    var instructions_block = {
+      type: &quot;text&quot;,
+      text: &quot;&lt;p&gt;In this experiment, a circle will appear in the center &quot; +
+          &quot;of the screen.&lt;/p&gt;&lt;p&gt;If the circle is &lt;strong&gt;blue&lt;/strong&gt;, &quot; +
+          &quot;press the letter F on the keyboard as fast as you can.&lt;/p&gt;&quot; +
+          &quot;&lt;p&gt;If the circle is &lt;strong&gt;orange&lt;/strong&gt;, do not press &quot; +
+          &quot;any key.&lt;/p&gt;&quot; +
+          &quot;&lt;div class='left center-content'&gt;&lt;img src='static/images/blue.png'&gt;&lt;/img&gt;&quot; +
+          &quot;&lt;p class='small'&gt;&lt;strong&gt;Press the F key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+          &quot;&lt;div class='right center-content'&gt;&lt;img src='static/images/orange.png'&gt;&lt;/img&gt;&quot; +
+          &quot;&lt;p class='small'&gt;&lt;strong&gt;Do not press a key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+          &quot;&lt;p&gt;Press any key to begin.&lt;/p&gt;&quot;,
+      timing_post_trial: 2000
+    };
+
+    /* define test block */
+
+    var test_stimuli = ['img/blue.png', 'img/orange.png'];
+
+    var all_trials = jsPsych.randomization.repeat(test_stimuli, 10);
+
+    var test_block = {
+      type: &quot;single-stim&quot;,
+      stimuli: all_trials,
+      choices: ['F'],
+      timing_response: 1500
+    };
+
+    /* create experiment definition array */
+    var experiment = [];
+    experiment.push(welcome_block);
+    experiment.push(instructions_block);
+    experiment.push(test_block);
+
+    /* start the experiment */
+    jsPsych.init({
+      experiment_structure: experiment
+    });
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2 id="part-7-displaying-the-data">Part 7: Displaying the data</h2>
+<p>We've got a reasonable experiment at this point, so let's take a look at the data being generated. jsPsych has a handy <a href="../../core_library/jspsych-data#jspsychdatadisplaydata">function called <code>jsPsych.data.displayData()</code></a> that is useful for debugging your experiment. It will remove all of the information on the screen and replace it with the raw data collected so far. This isn't terribly useful when you are actually running an experiment, but it's very handy for checking the data during development.</p>
+<p>We need the <code>displayData</code> function to execute when the experiment ends. One way to do this is to use the <a href="../../features/callbacks#on_finish-experiment"><code>on_finish</code> callback function</a>. This function will automatically execute once all the blocks in the experiment are finished. We can specify a function to call in the <code>init</code> method.</p>
+<pre class="prettyprint well"><code class="javascript">jsPsych.init({
+  experiment_structure: experiment,
+  on_finish: function() {
+    jsPsych.data.displayData();
+  }
+});
+</code></pre>
+
+<h3 id="the-complete-code-so-far_5">The complete code so far</h3>
+<pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My experiment&lt;/title&gt;
+    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-single-stim.js&quot;&gt;&lt;/script&gt;
+    &lt;link href=&quot;jsPsych-4.0/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+  &lt;script&gt;
+
+    /* define welcome message block */
+    var welcome_block = {
+      type: &quot;text&quot;,
+      text: &quot;Welcome to the experiment. Press any key to begin.&quot;
+    };
+
+    /* define instructions block */
+    var instructions_block = {
+      type: &quot;text&quot;,
+      text: &quot;&lt;p&gt;In this experiment, a circle will appear in the center &quot; +
+          &quot;of the screen.&lt;/p&gt;&lt;p&gt;If the circle is &lt;strong&gt;blue&lt;/strong&gt;, &quot; +
+          &quot;press the letter F on the keyboard as fast as you can.&lt;/p&gt;&quot; +
+          &quot;&lt;p&gt;If the circle is &lt;strong&gt;orange&lt;/strong&gt;, do not press &quot; +
+          &quot;any key.&lt;/p&gt;&quot; +
+          &quot;&lt;div class='left center-content'&gt;&lt;img src='static/images/blue.png'&gt;&lt;/img&gt;&quot; +
+          &quot;&lt;p class='small'&gt;&lt;strong&gt;Press the F key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+          &quot;&lt;div class='right center-content'&gt;&lt;img src='static/images/orange.png'&gt;&lt;/img&gt;&quot; +
+          &quot;&lt;p class='small'&gt;&lt;strong&gt;Do not press a key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+          &quot;&lt;p&gt;Press any key to begin.&lt;/p&gt;&quot;,
+      timing_post_trial: 2000
+    };
+
+    /* define test block */
+
+    var test_stimuli = ['img/blue.png', 'img/orange.png'];
+
+    var all_trials = jsPsych.randomization.repeat(test_stimuli, 10);
+
+    var test_block = {
+      type: &quot;single-stim&quot;,
+      stimuli: all_trials,
+      choices: ['F'],
+      timing_response: 1500
+    };
+
+    /* create experiment definition array */
+    var experiment = [];
+    experiment.push(welcome_block);
+    experiment.push(instructions_block);
+    experiment.push(test_block);
+
+    /* start the experiment */
+    jsPsych.init({
+      experiment_structure: experiment,
+      on_finish: function() {
+        jsPsych.data.displayData();
+      }
+    });
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2 id="part-8-using-the-optional-data-object">Part 8: Using the optional data object</h2>
+<p>All trials in jsPsych can be tagged with additional data. This data will get stored alongside the data that the plugin generates, which allows experimenters to record properties of a trial with the data from the trial.</p>
+<p>In this example experiment, we are going to tag each trial as being either a <code>go</code> or a <code>no-go</code> trial. In this particular example, this is somewhat redundant, since we can determine the trial type by looking at the stimulus that was displayed. However, the technique is useful in many circumstances.</p>
+<p>We're going to make some changes to how we construct the trials in order to use the optional data object. First, we're going to change how we declare the <code>test_stimuli</code> array, so that each entry in the array is an object with an <code>image</code> property (containing the image to display) and a <code>data</code> property, which contains the data related to that image. The value of the <code>data</code> property is an object with <code>key: value</code> pairs. Each unique key will be recorded as a column in the data, and the value will be the entry for that trial.</p>
+<pre class="prettyprint well"><code class="javascript">var test_stimuli = [
+  {
+    image: &quot;img/blue.png&quot;,
+    data: { response: 'go' }
+  },
+  {
+    image: &quot;img/orange.png&quot;,
+    data: { response: 'no-go' }
+  }
+];
+</code></pre>
+
+<p>We also need to modify the call to <code>jsPsych.randomization.repeat</code>. We're going to specify a third variable in the function call. This variable determines how the randomized array is returned. If the value is <code>true</code>, then the array will come back with each different property of the elements in the array separated into its own value. If the value is <code>false</code>, then the elements are left as is, and just randomized and repeated as per the first two arguments. You can learn more about the function in the <a href="../../core_library/jspsych-randomization#jspsychrandomizationrepeat">API documentation</a>.</p>
+<p>Here we are going to specify <code>true</code> for the third parameter, to make it easier to create the testing block.</p>
+<pre class="prettyprint well"><code class="javascript">var all_trials = jsPsych.randomization.repeat(test_stimuli, 10, true);
+</code></pre>
+
+<p>Now the <code>all_trials</code> variable is an object, containing two properties: <code>image</code> and <code>data</code>. Each of these properties is an array that is 20 elements long (since there were 2 elements in the <code>test_stimuli</code> array and we repeated each 10 times). The arrays will line-up with each other, so if the first element in the <code>all_trials.image</code> array is <code>'img/blue.png'</code>, the first element in the <code>data</code> array will be <code>{response: 'go'}</code>. This means we can simply use the two properties of the <code>all_trials</code> array to create the test block:</p>
+<pre class="prettyprint well"><code class="javascript">var test_block = {
+  type: &quot;single-stim&quot;,
+  stimuli: all_trials.image,
+  choices: ['F'],
+  data: all_trials.data,
+  timing_response: 1500
+};
+</code></pre>
+
+<h3 id="the-complete-code-so-far_6">The complete code so far</h3>
+<pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My experiment&lt;/title&gt;
+    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-single-stim.js&quot;&gt;&lt;/script&gt;
+    &lt;link href=&quot;jsPsych-4.0/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+  &lt;script&gt;
+
+    /* define welcome message block */
+    var welcome_block = {
+      type: &quot;text&quot;,
+      text: &quot;Welcome to the experiment. Press any key to begin.&quot;
+    };
+
+    /* define instructions block */
+    var instructions_block = {
+      type: &quot;text&quot;,
+      text: &quot;&lt;p&gt;In this experiment, a circle will appear in the center &quot; +
+          &quot;of the screen.&lt;/p&gt;&lt;p&gt;If the circle is &lt;strong&gt;blue&lt;/strong&gt;, &quot; +
+          &quot;press the letter F on the keyboard as fast as you can.&lt;/p&gt;&quot; +
+          &quot;&lt;p&gt;If the circle is &lt;strong&gt;orange&lt;/strong&gt;, do not press &quot; +
+          &quot;any key.&lt;/p&gt;&quot; +
+          &quot;&lt;div class='left center-content'&gt;&lt;img src='static/images/blue.png'&gt;&lt;/img&gt;&quot; +
+          &quot;&lt;p class='small'&gt;&lt;strong&gt;Press the F key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+          &quot;&lt;div class='right center-content'&gt;&lt;img src='static/images/orange.png'&gt;&lt;/img&gt;&quot; +
+          &quot;&lt;p class='small'&gt;&lt;strong&gt;Do not press a key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+          &quot;&lt;p&gt;Press any key to begin.&lt;/p&gt;&quot;,
+      timing_post_trial: 2000
+    };
+
+    /* define test block */
+
+    var test_stimuli = [
+      {
+        image: &quot;img/blue.png&quot;,
+        data: { response: 'go' }
+      },
+      {
+        image: &quot;img/orange.png&quot;,
+        data: { response: 'no-go' }
+      }
+    ];
+
+    var all_trials = jsPsych.randomization.repeat(test_stimuli, 10, true);
+
+    var test_block = {
+      type: &quot;single-stim&quot;,
+      stimuli: all_trials.image,
+      choices: ['F'],
+      data: all_trials.data,
+      timing_response: 1500
+    };
+
+    /* create experiment definition array */
+    var experiment = [];
+    experiment.push(welcome_block);
+    experiment.push(instructions_block);
+    experiment.push(test_block);
+
+    /* start the experiment */
+    jsPsych.init({
+      experiment_structure: experiment,
+      on_finish: function() {
+        jsPsych.data.displayData();
+      }
+    });
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2 id="part-9-using-functions-as-parameters">Part 9: Using functions as parameters</h2>
+<p>One serious methodological flaw in our experiment right now is that the time between trials is always the same. This will let people anticipate the response as they learn how much time is in between the trials.</p>
+<p>We can fix this by generating a random value for the <code>timing_post_trial</code> parameter in the test block.</p>
+<p>Most jsPsych plugins will allow you to set the value of a parameter as a function. The function will be called at the start of the trial, and the parameter will be replaced with the return value of the function. We'll create a simple function to generate a random value for the timing_post_trial parameter:</p>
+<pre class="prettyprint well"><code class="javascript">var post_trial_gap = function() {
+  return Math.floor( Math.random() * 1500 ) + 750;
+}
+</code></pre>
+
+<p>The above function will return a random value between 750 and 2250, with uniform sampling from the range. A more sophisticated approach might be to sample from an exponential distribution, but that's beyond the scope of this tutorial.</p>
+<p>Now that we've got a function that generates a random time, we can specify the <code>timing_post_trial</code> parameter in the testing block.</p>
+<pre class="prettyprint well"><code class="javascript">var test_block = {
+  type: &quot;single-stim&quot;,
+  stimuli: all_trials.image,
+  choices: ['F'],
+  data: all_trials.data,
+  timing_response: 1500,
+  timing_post_trial: post_trial_gap
+};
+</code></pre>
+
+<p>If you run the experiment, you'll notice that the interval between trials changes randomly throughout the experiment.</p>
+<h3 id="the-complete-code-so-far_7">The complete code so far</h3>
+<pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My experiment&lt;/title&gt;
+    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-single-stim.js&quot;&gt;&lt;/script&gt;
+    &lt;link href=&quot;jsPsych-4.0/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+  &lt;script&gt;
+
+    /* define welcome message block */
+    var welcome_block = {
+      type: &quot;text&quot;,
+      text: &quot;Welcome to the experiment. Press any key to begin.&quot;
+    };
+
+    /* define instructions block */
+    var instructions_block = {
+      type: &quot;text&quot;,
+      text: &quot;&lt;p&gt;In this experiment, a circle will appear in the center &quot; +
+          &quot;of the screen.&lt;/p&gt;&lt;p&gt;If the circle is &lt;strong&gt;blue&lt;/strong&gt;, &quot; +
+          &quot;press the letter F on the keyboard as fast as you can.&lt;/p&gt;&quot; +
+          &quot;&lt;p&gt;If the circle is &lt;strong&gt;orange&lt;/strong&gt;, do not press &quot; +
+          &quot;any key.&lt;/p&gt;&quot; +
+          &quot;&lt;div class='left center-content'&gt;&lt;img src='static/images/blue.png'&gt;&lt;/img&gt;&quot; +
+          &quot;&lt;p class='small'&gt;&lt;strong&gt;Press the F key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+          &quot;&lt;div class='right center-content'&gt;&lt;img src='static/images/orange.png'&gt;&lt;/img&gt;&quot; +
+          &quot;&lt;p class='small'&gt;&lt;strong&gt;Do not press a key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+          &quot;&lt;p&gt;Press any key to begin.&lt;/p&gt;&quot;,
+      timing_post_trial: 2000
+    };
+
+    /* define test block */
+
+    var test_stimuli = [
+      {
+        image: &quot;img/blue.png&quot;,
+        data: { response: 'go' }
+      },
+      {
+        image: &quot;img/orange.png&quot;,
+        data: { response: 'no-go' }
+      }
+    ];
+
+    var all_trials = jsPsych.randomization.repeat(test_stimuli, 10, true);
+
+    var post_trial_gap = function() {
+      return Math.floor( Math.random() * 1500 ) + 750;
+    }
+
+    var test_block = {
+      type: &quot;single-stim&quot;,
+      stimuli: all_trials.image,
+      choices: ['F'],
+      data: all_trials.data,
+      timing_response: 1500,
+      timing_post_trial: post_trial_gap
+    };
+
+    /* create experiment definition array */
+    var experiment = [];
+    experiment.push(welcome_block);
+    experiment.push(instructions_block);
+    experiment.push(test_block);
+
+    /* start the experiment */
+    jsPsych.init({
+      experiment_structure: experiment,
+      on_finish: function() {
+        jsPsych.data.displayData();
+      }
+    });
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2 id="part-10-displaying-data-to-the-subject">Part 10: Displaying data to the subject</h2>
+<p>We've got a reasonable experiment at this point. One thing that subjects might appreciate is knowing how fast they were at responding. We'll create a simple debriefing screen at the end of the experiment that shows the subject their average RT on correct responses.</p>
+<p>First, we need a function to compute the average RT. We'll use the <code>jsPsych.data.getTrialsOfType()</code> method to get the data from all the trials run by the single-stim plugin. Then we'll iterate through that data to compute an average on correct responses.</p>
+<pre class="prettyprint well"><code class="javascript">function getAverageResponseTime() {
+
+  var trials = jsPsych.data.getTrialsOfType('single-stim');
+
+  var sum_rt = 0;
+  var valid_trial_count = 0;
+  for (var i = 0; i &lt; trials.length; i++) {
+    if (trials[i].response == 'go' &amp;&amp; trials[i].rt &gt; -1) {
+      sum_rt += trials[i].rt;
+      valid_trial_count++;
+    }
+  }
+  return Math.floor(sum_rt / valid_trial_count);
+}
+</code></pre>
+
+<p>Next, we add a block using the text plugin to show the response time. However, there's one catch. We want to use the function we just added above to get the average response time of the subject. But we can't do this until the experiment is over! Therefore, we need to use a <em>function</em> as the value of the <code>text</code> parameter in the block. This will result in the function being called right when the trial begins. If we didn't do this, then the <code>getAverageResponseTime()</code> function would be executed at the beginning of the experiment, as we are creating the jsPsych blocks, which would be bad since there is no data yet!</p>
+<pre class="prettyprint well"><code class="javascript">var debrief_block = {
+  type: &quot;text&quot;,
+  text: function() {
+    return &quot;&lt;p&gt;Your average response time was &lt;strong&gt;&quot; +
+    getAverageResponseTime() + &quot;ms&lt;/strong&gt;. Press &quot; +
+    &quot;any key to complete the experiment. Thank you!&lt;/p&gt;&quot;;
+  }
+};
+</code></pre>
+
+<p>We need to add the debrief block to the experiment definition array.</p>
+<pre class="prettyprint well"><code class="javascript">experiment.push(debrief_block);
+</code></pre>
+
+<h2 id="the-final-code">The final code</h2>
+<pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My experiment&lt;/title&gt;
+    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-single-stim.js&quot;&gt;&lt;/script&gt;
+    &lt;link href=&quot;jsPsych-4.0/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+  &lt;script&gt;
+
+    /* define welcome message block */
+    var welcome_block = {
+      type: &quot;text&quot;,
+      text: &quot;Welcome to the experiment. Press any key to begin.&quot;
+    };
+
+    /* define instructions block */
+    var instructions_block = {
+      type: &quot;text&quot;,
+      text: &quot;&lt;p&gt;In this experiment, a circle will appear in the center &quot; +
+          &quot;of the screen.&lt;/p&gt;&lt;p&gt;If the circle is &lt;strong&gt;blue&lt;/strong&gt;, &quot; +
+          &quot;press the letter F on the keyboard as fast as you can.&lt;/p&gt;&quot; +
+          &quot;&lt;p&gt;If the circle is &lt;strong&gt;orange&lt;/strong&gt;, do not press &quot; +
+          &quot;any key.&lt;/p&gt;&quot; +
+          &quot;&lt;div class='left center-content'&gt;&lt;img src='static/images/blue.png'&gt;&lt;/img&gt;&quot; +
+          &quot;&lt;p class='small'&gt;&lt;strong&gt;Press the F key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+          &quot;&lt;div class='right center-content'&gt;&lt;img src='static/images/orange.png'&gt;&lt;/img&gt;&quot; +
+          &quot;&lt;p class='small'&gt;&lt;strong&gt;Do not press a key&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&quot; +
+          &quot;&lt;p&gt;Press any key to begin.&lt;/p&gt;&quot;,
+      timing_post_trial: 2000
+    };
+
+    /* define test block */
+
+    var test_stimuli = [
+      {
+        image: &quot;img/blue.png&quot;,
+        data: { response: 'go' }
+      },
+      {
+        image: &quot;img/orange.png&quot;,
+        data: { response: 'no-go' }
+      }
+    ];
+
+    var all_trials = jsPsych.randomization.repeat(test_stimuli, 10, true);
+
+    var post_trial_gap = function() {
+      return Math.floor( Math.random() * 1500 ) + 750;
+    }
+
+    var test_block = {
+      type: &quot;single-stim&quot;,
+      stimuli: all_trials.image,
+      choices: ['F'],
+      data: all_trials.data,
+      timing_response: 1500,
+      timing_post_trial: post_trial_gap
+    };
+
+    /* define debrief block */
+
+    function getAverageResponseTime() {
+
+      var trials = jsPsych.data.getTrialsOfType('single-stim');
+
+      var sum_rt = 0;
+      var valid_trial_count = 0;
+      for (var i = 0; i &lt; trials.length; i++) {
+        if (trials[i].response == 'go' &amp;&amp; trials[i].rt &gt; -1) {
+          sum_rt += trials[i].rt;
+          valid_trial_count++;
+        }
+      }
+      return Math.floor(sum_rt / valid_trial_count);
+    }
+
+    var debrief_block = {
+      type: &quot;text&quot;,
+      text: function() {
+        return &quot;&lt;p&gt;Your average response time was &lt;strong&gt;&quot; +
+        getAverageResponseTime() + &quot;ms&lt;/strong&gt;. Press &quot; +
+        &quot;any key to complete the experiment. Thank you!&lt;/p&gt;&quot;;
+      }
+    };
+
+    /* create experiment definition array */
+    var experiment = [];
+    experiment.push(welcome_block);
+    experiment.push(instructions_block);
+    experiment.push(test_block);
+    experiment.push(debrief_block);
+
+    /* start the experiment */
+    jsPsych.init({
+      experiment_structure: experiment,
+      on_finish: function() {
+        jsPsych.data.displayData();
+      }
+    });
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+
 </div>
         </div>
 
