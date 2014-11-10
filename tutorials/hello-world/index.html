@@ -140,6 +140,10 @@
                         </li>
                     
                         <li >
+                            <a href="../../plugins/jspsych-multi-stim-multi-response">jspsych-multi-stim-multi-response</a>
+                        </li>
+                    
+                        <li >
                             <a href="../../plugins/jspsych-palmer">jspsych-palmer</a>
                         </li>
                     
@@ -314,8 +318,8 @@
 <p>Start by downloading the jsPsych library. The most recent version can always be found on the <a href="https://github.com/jodeleeuw/jsPsych/releases">GitHub releases page</a>. Download either the ZIP or TAR archive of the latest release.</p>
 <p><img alt="releasespage" src="../..//img/githubreleases.jpg" /></p>
 <h2 id="step-2-create-a-folder-to-store-your-experiment-files">Step 2: Create a folder to store your experiment files</h2>
-<p>Create a folder on your computer to put the experiment files in. Once you've created the folder, open the downloaded archive from step 1, and move the extracted folder (called <code>jsPsych-4.0</code> if using v4.0 of jsPsych) into the experiment folder. Here's what it looks like on a mac:</p>
-<p><img alt="folder setup" src="../..//img/folder-setup.png" /> </p>
+<p>Create a folder on your computer to put the experiment files in. Once you've created the folder, open the downloaded archive from step 1, and move the extracted folder (called <code>jsPsych-4.0.1</code> if using v4.0.1 of jsPsych) into the experiment folder. Here's what it looks like on a mac:</p>
+<p><img alt="folder setup" src="../..//img/folder-setup.png" /></p>
 <h2 id="step-3-create-a-new-html-file">Step 3: Create a new HTML file</h2>
 <p>To edit jsPsych code, you'll need a programming-friendly text editor. Some free options are:</p>
 <ul>
@@ -382,7 +386,7 @@
 &lt;/html&gt;
 </code></pre>
 
-<p>Once the plugin is loaded, we can create an experiment using the plugin. To declare a trial that uses the text plugin, we create a JavaScript object with the property <code>type</code> equal to <code>'text'</code>. Then we can specify the <a href="../../">other parameters of the plugin</a> in the same object. </p>
+<p>Once the plugin is loaded, we can create an experiment using the plugin. To declare a trial that uses the text plugin, we create a JavaScript object with the property <code>type</code> equal to <code>'text'</code>. Then we can specify the <a href="../../">other parameters of the plugin</a> in the same object.</p>
 <p>To add JavaScript code directly to the webpage we need to add a set of <code>&lt;script&gt;</code> tags after the <code>&lt;body&gt;</code> tags.</p>
 <pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
 &lt;html&gt;
@@ -444,5 +448,6 @@
         <script src="../../js/prettify-1.0.min.js"></script>
         <script src="../../js/base.js"></script>
         <script src="../../js/extra.js"></script>
+        <script src="../../js/analytics.js"></script>
     </body>
 </html>

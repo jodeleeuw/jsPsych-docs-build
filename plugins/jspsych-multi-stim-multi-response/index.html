@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-        <title>jspsych-survey-likert - jsPsych</title>
+        <title>jspsych-multi-stim-multi-response - jsPsych</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -139,8 +139,8 @@
                             <a href="../jspsych-html">jspsych-html</a>
                         </li>
                     
-                        <li >
-                            <a href="../jspsych-multi-stim-multi-response">jspsych-multi-stim-multi-response</a>
+                        <li class="active">
+                            <a href=".">jspsych-multi-stim-multi-response</a>
                         </li>
                     
                         <li >
@@ -159,8 +159,8 @@
                             <a href="../jspsych-single-stim">jspsych-single-stim</a>
                         </li>
                     
-                        <li class="active">
-                            <a href=".">jspsych-survey-likert</a>
+                        <li >
+                            <a href="../jspsych-survey-likert">jspsych-survey-likert</a>
                         </li>
                     
                         <li >
@@ -265,12 +265,12 @@
             <ul class="nav navbar-nav navbar-right">
                 
                 <li >
-                    <a rel="next" href="../jspsych-single-stim">
+                    <a rel="next" href="../jspsych-html">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../jspsych-survey-text">
+                    <a rel="prev" href="../jspsych-palmer">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -293,9 +293,7 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#jspsych-survey-likert-plugin">jspsych-survey-likert plugin</a></li>
-        
-            <li><a href="#dependency">Dependency</a></li>
+        <li class="main active"><a href="#jspsych-multi-stim-multi-response-plugin">jspsych-multi-stim-multi-response plugin</a></li>
         
             <li><a href="#parameters">Parameters</a></li>
         
@@ -308,15 +306,8 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="jspsych-survey-likert-plugin">jspsych-survey-likert plugin</h1>
-<p>The survey-likert plugin displays a set of questions with Likert scale responses. The subject uses a draggable slider to respond to the questions.</p>
-<h2 id="dependency">Dependency</h2>
-<p>This plugin requires the jQuery UI javascript library and accompanying CSS theme. To use this library, you must include both. Google hosts versions of both, which you can use in your project by including the following two lines in the <code>&lt;head&gt;</code> section of the HTML document:</p>
-<pre class="prettyprint well"><code class="html">&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js&quot;&gt;&lt;/script&gt;
-&lt;link href=&quot;//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/black-tie/jquery-ui.min.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
-</code></pre>
-
-<p>This example uses the 'black-tie' theme, but any theme should work.</p>
+<h1 id="jspsych-multi-stim-multi-response-plugin">jspsych-multi-stim-multi-response plugin</h1>
+<p>This plugin is a more generalized version of the single-stim plugin. With this plugin, you can present multiple stimuli in a single trial, and specify the amount of time that each stimulus will be on the screen. You can also collect more than one response from the subject. The plugin organizes the responses into <em>response groups</em>. For example, you might require that the subject make a 'yes'/'no' judgement by pressing the y or n key, but also require a rating judgment on a scale of 1-9 by pressing a number key.</p>
 <h2 id="parameters">Parameters</h2>
 <p>This table lists the parameters associated with this plugin. Parameters with a default value of <em>undefined</em> must be specified. Other parameters can be left unspecified if the default value is acceptable.</p>
 <table>
@@ -330,28 +321,46 @@
 </thead>
 <tbody>
 <tr>
-<td>questions</td>
+<td>stimuli</td>
 <td>array</td>
 <td><em>undefined</em></td>
-<td>Each array element is an array of strings. The strings are the prompts/questions that will be associated with a slider. All questions within an array will get presented on the same page (trial). The length of the questions array determines the number of trials.</td>
+<td>Each element of this array is an array of stimuli. Each innermost array will be presented as a single trial, with each stimulus being presented as part of a single trial. The stimuli can be paths to images or HTML content.</td>
 </tr>
 <tr>
-<td>labels</td>
+<td>is_html</td>
+<td>boolean</td>
+<td>false</td>
+<td>If the elements of the <code>stimuli</code> array are strings containing HTML content, then this parameter must be set to true.</td>
+</tr>
+<tr>
+<td>choices</td>
 <td>array</td>
 <td><em>undefined</em></td>
-<td>Each array element is an array of arrays. The innermost arrays contain a set of labels to display for an individual question. The middle level of arrays groups together the sets of labels that appear in a single trial. This level should correspond to the <code>questions</code> array.</td>
+<td>Each element of this array is an array. The inner arrays contain the keys that the subject is allowed to press in order to respond to the stimulus. Keys can be specified as their <a href="http://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes">numeric key code</a> or as characters (e.g. <code>'a'</code>, <code>'q'</code>). Each inner array represents a response group that the subject should respond to. If you want the subject to generate a single response, then specify only one inner array that contains all the acceptable responses. If you want the subject to generate two responses, then you should have two inner arrays, one with the acceptable keys for the first response, and one with the acceptable keys for the second response. The response keys may not overlap between response groups.</td>
 </tr>
 <tr>
-<td>intervals</td>
+<td>prompt</td>
+<td>string</td>
+<td>""</td>
+<td>This string can contain HTML markup. Any content here will be displayed below the stimulus. The intention is that it can be used to provide a reminder about the action the subject is supposed to take (e.g. which key to press).</td>
+</tr>
+<tr>
+<td>timing_stim</td>
 <td>array</td>
-<td><em>undefined</em></td>
-<td>Each array element is an array of integers. The integers define how many different levels of a response there are (i.e. how many choices exist for each question). The length of the inner arrays should correspond the the length of the inner arrays for the <code>questions</code> array. The number of intervals does not have to match the number of labels.</td>
+<td>[1000, 1000, ... , 1000]</td>
+<td>Each element of the array is the length of time to display the corresponding stimulus for in milliseconds. The length of this array should match the length of the innermost stimuli arrays. Setting the last value of the array to -1 will cause the last stimulus to display until the subject has generated a response for each response group.</td>
 </tr>
 <tr>
-<td>show_ticks</td>
+<td>timing_response</td>
+<td>numeric</td>
+<td>-1</td>
+<td>How long to wait for the subject to make all responses before ending the trial in milliseconds. If the subject fails to make a response in a response group before this timer is reached, the the subject's response for that response group will be recorded as -1 for the trial and the trial will end. If the value of this parameter is -1, then the trial will wait for a response indefinitely.</td>
+</tr>
+<tr>
+<td>continue_after_response</td>
 <td>boolean</td>
 <td>true</td>
-<td>If true, then tick marks will be displayed on the sliders to indicate where the acceptable responses lie on the slider.</td>
+<td>If true, then the trial will end whenever the subject makes a response for each response group (assuming they make their response before the cutoff specified by the <code>timing_response</code> parameter). If false, then the trial will continue until the value for <code>timing_response</code> is reached. You can use this parameter to force the subject to view a stimulus for a fixed amount of time, even if they respond before the time is complete.</td>
 </tr>
 </tbody>
 </table>
@@ -367,33 +376,41 @@
 </thead>
 <tbody>
 <tr>
-<td>Q0, Q1, ... , Q<em>n</em></td>
-<td>numeric</td>
-<td>The response to each question will be recorded in its own variable, with the first question in the trial being recorded in <code>Q0</code>, the second in <code>Q1</code>, and so on. The responses are recorded as integers, representing the position of the slider on the scale.</td>
+<td>stimulus</td>
+<td>JSON string</td>
+<td>JSON-encoded array containing the stimuli presented in the trial.</td>
+</tr>
+<tr>
+<td>key_press</td>
+<td>JSON string</td>
+<td>JSON-encoded array indicating which keys the subject pressed. The value is the <a href="http://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes">numeric key code</a> corresponding to the subject's response. Each response group will have a distinct entry in this array.</td>
 </tr>
 <tr>
 <td>rt</td>
-<td>numeric</td>
-<td>The response time in milliseconds for the subject to make a response. The time is measured from when the questions first appear on the screen until the subject's response.</td>
+<td>JSON string</td>
+<td>JSON-encoded array indicating the response time in milliseconds for the subject to make each response. The time is measured from when the first stimulus appears on the screen until the subject's response. Each response group will have a separate RT in the array.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="examples">Examples</h2>
-<h4 id="basic-example-with-multiple-questions-on-a-page">Basic example with multiple questions on a page.</h4>
-<pre class="prettyprint well"><code class="javascript">// defining groups of questions that will go together.
-var page_1_questions = [&quot;I like vegetables.&quot;, &quot;I hate eggs.&quot;];
-var page_2_questions = [&quot;I like fruit.&quot;];
+<h4 id="displaying-a-sequence-of-images-get-a-single-response">Displaying a sequence of images, get a single response</h4>
+<pre class="prettyprint well"><code class="javascript">var block = {
+    type: 'multi-stim-multi-response',
+    stimuli: [['img/happy_face.png', 'img/sad_face.png']],
+    choices: ['y','n'],
+    timing_stim: [1000,-1],
+    prompt: 'Did the face get happier?'
+}
+</code></pre>
 
-// definiting two different response scales that can be used.
-var scale_1 = [&quot;Strongly Disagree&quot;, &quot;Disagree&quot;, &quot;Neutral&quot;, &quot;Agree&quot;, &quot;Strongly Agree&quot;];
-var scale_2 = [&quot;Strongly Disagree&quot;, &quot;Disagree&quot;, &quot;Somewhat Disagree&quot;, &quot;Neural&quot;, &quot;Somewhat Agree&quot;, &quot;Agree&quot;, &quot;Strongly Agree&quot;];
-
-var likert_block = {
-    type: 'survey-likert',
-    questions: [page_1_questions, page_2_questions],
-    labels: [[scale_1, scale_2], [scale_1]], // need one scale for every question on a page
-    intervals: [[5,7], [9]] // note the the intervals and labels don't necessarily need to match.
-};
+<h4 id="displaying-a-single-image-getting-two-responses">Displaying a single image, getting two responses</h4>
+<pre class="prettyprint well"><code class="javascript">var block = {
+    type: 'single-stim',
+    stimuli: [['img/happy_face.png']],
+    choices: [['y','n'],['1','2','3','4','5']],
+    timing_stim: [-1],
+    prompt: 'Rate the happiness of the person on a scale of 1-5, and press Y or N to indicate if you have seen the face before'
+}
 </code></pre>
 
 </div>

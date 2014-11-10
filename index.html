@@ -140,6 +140,10 @@
                         </li>
                     
                         <li >
+                            <a href="plugins/jspsych-multi-stim-multi-response/">jspsych-multi-stim-multi-response</a>
+                        </li>
+                    
+                        <li >
                             <a href="plugins/jspsych-palmer/">jspsych-palmer</a>
                         </li>
                     
@@ -303,12 +307,12 @@
             <div class="col-md-9" role="main">
 
 <h1 id="jspsych">jsPsych</h1>
-<p>jsPsych is a JavaScript library for creating and running behavioral experiments in a web browser. The library provides a flexible framework for building a wide range of laboratory-like experiments that can be run online. </p>
-<p>jsPsych prvoides the <em>structure</em> for an experiment. It handles things like determining which trial to run next, storing data, and randomizing factors/order of presentation. It also provides a set of <em>plugins</em>, which are ready-made templates for simple experimental tasks like displaying instructions or displaying a stimulus and collecting a keyboard response. A full experiment created with jsPsych will be a collection of different plugins that define the different tasks that a subject will complete. </p>
+<p>jsPsych is a JavaScript library for creating and running behavioral experiments in a web browser. The library provides a flexible framework for building a wide range of laboratory-like experiments that can be run online.</p>
+<p>jsPsych prvoides the <em>structure</em> for an experiment. It handles things like determining which trial to run next, storing data, and randomizing factors/order of presentation. It also provides a set of <em>plugins</em>, which are ready-made templates for simple experimental tasks like displaying instructions or displaying a stimulus and collecting a keyboard response. A full experiment created with jsPsych will be a collection of different plugins that define the different tasks that a subject will complete.</p>
 <p>To build an experiment with jsPsych, you'll specify the structure of the experiment using JavaScript code. You'll also need to provide the <em>content</em> that defines your experiment, such as the actual text that subjects see when they are shown instructions and the images that they will view. You can also specify a wide-range of parameters to control things like stimulus duration, which keyboard keys subjects are allowed to press, and so on.</p>
 <p>This page gives a broad overview of how jsPsych works. More detail is available on most of the topics on this page by using the navigation above, or by following the links within the documentation.</p>
 <h2 id="download-jspsych">Download jsPsych</h2>
-<p><a href="https://github.com/jodeleeuw/jsPsych/archive/v4.0.zip" class="btn btn-primary" role="button">Download jsPsych v4.0 (zip)</a></p>
+<p><a href="https://github.com/jodeleeuw/jsPsych/archive/v4.0.1.zip" class="btn btn-primary" role="button">Download jsPsych v4.0.1 (zip)</a></p>
 <p>jsPsych is hosted at <a href="http://github.com/jodeleeuw/jsPsych">GitHub</a>. You can find all other jsPsych releases there.</p>
 <h2 id="loading-jspsych">Loading jsPsych</h2>
 <p>To use jsPsych, you'll need to load a few JavaScript files in an HTML document. At a minimum, you'll be loading three files: the jQuery library, the main jsPsych.js library, and at least one jsPsych plugin. A bare-bones jsPsych-ready document (with the single-stim plugin loaded) will look something like the following:</p>
@@ -360,5 +364,6 @@ experiment.push(block);
         <script src="./js/prettify-1.0.min.js"></script>
         <script src="./js/base.js"></script>
         <script src="./js/extra.js"></script>
+        <script src="./js/analytics.js"></script>
     </body>
 </html>
