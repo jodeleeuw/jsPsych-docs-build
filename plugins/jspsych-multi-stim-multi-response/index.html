@@ -336,7 +336,7 @@
 <td>choices</td>
 <td>array</td>
 <td><em>undefined</em></td>
-<td>Each element of this array is an array. The inner arrays contain the keys that the subject is allowed to press in order to respond to the stimulus. Keys can be specified as their <a href="http://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes">numeric key code</a> or as characters (e.g. <code>'a'</code>, <code>'q'</code>). Each inner array represents a response group that the subject should respond to. If you want the subject to generate a single response, then specify only one inner array that contains all the acceptable responses. If you want the subject to generate two responses, then you should have two inner arrays, one with the acceptable keys for the first response, and one with the acceptable keys for the second response. The response keys may not overlap between response groups.</td>
+<td>Each element of this array is an array. The inner arrays contain the keys that the subject is allowed to press in order to respond to the stimulus. Keys can be specified as their <a href="http://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes">numeric key code</a>; specifying as a character won't work for this plugin. Each inner array represents a response group that the subject should respond to. If you want the subject to generate a single response, then specify only one inner array that contains all the acceptable responses. If you want the subject to generate two responses, then you should have two inner arrays, one with the acceptable keys for the first response, and one with the acceptable keys for the second response. The response keys may not overlap between response groups.</td>
 </tr>
 <tr>
 <td>prompt</td>
@@ -397,7 +397,7 @@
 <pre class="prettyprint well"><code class="javascript">var block = {
     type: 'multi-stim-multi-response',
     stimuli: [['img/happy_face.png', 'img/sad_face.png']],
-    choices: ['y','n'],
+    choices: [[89,78]], // Y or N
     timing_stim: [1000,-1],
     prompt: 'Did the face get happier?'
 }
@@ -407,7 +407,7 @@
 <pre class="prettyprint well"><code class="javascript">var block = {
     type: 'single-stim',
     stimuli: [['img/happy_face.png']],
-    choices: [['y','n'],['1','2','3','4','5']],
+    choices: [[89, 78],[49,50,51,52,53]], // Y or N , 1 - 5
     timing_stim: [-1],
     prompt: 'Rate the happiness of the person on a scale of 1-5, and press Y or N to indicate if you have seen the face before'
 }
