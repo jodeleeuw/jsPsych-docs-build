@@ -148,11 +148,19 @@
                         </li>
                     
                         <li >
+                            <a href="../jspsych-reconstruction">jspsych-reconstruction</a>
+                        </li>
+                    
+                        <li >
                             <a href="../jspsych-same-different">jspsych-same-different</a>
                         </li>
                     
                         <li >
                             <a href="../jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../jspsych-single-audio">jspsych-single-audio</a>
                         </li>
                     
                         <li >
@@ -270,7 +278,7 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../jspsych-same-different">
+                    <a rel="prev" href="../jspsych-reconstruction">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -318,7 +326,7 @@
 <p><img alt="Sample stimulus" src="../..//img/palmer_stim.png" /></p>
 <p>Subjects can edit the stimuli by clicking on two adjacent circles to add or remove a line segment between them. The plugin also contains a function for generating non-editable versions of the stimuli that can be used in other plugins that accept HTML-formatted stimuli, like the single-stim and categorize plugins.</p>
 <h2 id="dependency">Dependency</h2>
-<p>This plugin requires the Raphael-js library, available at <a href="http://www.raphaeljs.com">http://www.raphaeljs.com</a>. You must include the library in the <code>&lt;head&gt;</code> section of your experiment page.</p>
+<p>This plugin requires the Snap.svg library, available at <a href="http://www.snapsvg.io">http://www.snapsvg.io</a>. You must include the library in the <code>&lt;head&gt;</code> section of your experiment page.</p>
 <h2 id="parameters">Parameters</h2>
 <p>This table lists the parameters associated with this plugin. Parameters with a default value of <em>undefined</em> must be specified. Other parameters can be left unspecified if the default value is acceptable.</p>
 <table>
@@ -376,7 +384,7 @@
 </tbody>
 </table>
 <h2 id="data-generated">Data Generated</h2>
-<p>In addition to the <a href="../../">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
+<p>In addition to the <a href="">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
 <table>
 <thead>
 <tr>
@@ -415,20 +423,20 @@
 </table>
 <h2 id="stimulus-creation">Stimulus Creation</h2>
 <p>The palmer plugin contains a stimulus generation method (<code>jsPsych.palmer.generate_stimulus</code>) that can be used independently of actually running trials with the plugin. You can use this method to generate stimuli (created as HTML strings) to embed in other plugins that can use HTML as input, such as jspsych-categorize. An example is provided here:</p>
-<pre class="prettyprint well"><code class="javascript">var square_size = 3; // number of rows and columns
+<pre><code class="javascript">var square_size = 3; // number of rows and columns
 var grid_spacing = 75; // pixels
 var circle_size = 20; // radius in pixels
 var configuration = [0,1,0,0,1,1,0,0,1,1,0,0,1,0,0,0,1,0,0,1]; // see definition above
 
 var stimulus = jsPsych.palmer.generate_stimulus(square_size, grid_spacing, circle_size, configuration);
 
-// stimulus now contains an HTML string that will generate the corresponding stimulus. 
+// stimulus now contains an HTML string that will generate the corresponding stimulus.
 </code></pre>
 
 <h2 id="examples">Examples</h2>
 <p>These examples show how to define a block using the single-stim plugin to achieve various goals.</p>
 <h4 id="matching-a-previously-seen-stimulus">Matching a previously seen stimulus</h4>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 // create a stimulus using the generate_stimulus method
 var square_size = 3; // number of rows and columns
 var grid_spacing = 75; // pixels

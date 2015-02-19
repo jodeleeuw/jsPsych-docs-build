@@ -148,11 +148,19 @@
                         </li>
                     
                         <li >
+                            <a href="../../plugins/jspsych-reconstruction">jspsych-reconstruction</a>
+                        </li>
+                    
+                        <li >
                             <a href="../../plugins/jspsych-same-different">jspsych-same-different</a>
                         </li>
                     
                         <li >
                             <a href="../../plugins/jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-single-audio">jspsych-single-audio</a>
                         </li>
                     
                         <li >
@@ -310,7 +318,7 @@
 <p>Experiments often involve presenting a set of trials in a random order. It also might be necessary to present a set of trials multiple times. jsPsych makes both of these tasks very easy to do.</p>
 <h2 id="randomizing-the-order-of-trials-within-a-block">Randomizing the order of trials within a block</h2>
 <p>To randomize the order of trials within a block, add the <code>randomize_order</code> property to the block definition with a value of <code>true</code>. This option works for all plugins.</p>
-<pre class="prettyprint well"><code class="javascript">var block = {
+<pre><code class="javascript">var block = {
     type: 'single-stim',
     stimuli: ['img/happy_face.png', 'img/sad_face.png'],
     randomize_order: true
@@ -322,7 +330,7 @@
 <p>The randomization operation is performed immediately before the first trial in the block executes. This means that the order of trials is impossible to know until right before the first trial begins. It also means that the order will be re-randomized if the block is started multiple times (e.g. if the block appeas in a while chunk).</p>
 <h2 id="repeating-a-block-of-trials">Repeating a block of trials</h2>
 <p>To repeat a block multiple times, add the <code>repetitions</code> property to the block with the value being the number of repetitions. This option works for all plugins.</p>
-<pre class="prettyprint well"><code class="javascript">var block = {
+<pre><code class="javascript">var block = {
     type: 'single-stim',
     stimuli: ['img/happy_face.png', 'img/sad_face.png'],
     randomize_order: true,

@@ -148,11 +148,19 @@
                         </li>
                     
                         <li >
+                            <a href="../../plugins/jspsych-reconstruction">jspsych-reconstruction</a>
+                        </li>
+                    
+                        <li >
                             <a href="../../plugins/jspsych-same-different">jspsych-same-different</a>
                         </li>
                     
                         <li >
                             <a href="../../plugins/jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-single-audio">jspsych-single-audio</a>
                         </li>
                     
                         <li >
@@ -308,7 +316,7 @@
 <p>The jsPsych.turk module contains functions for interacting with Mechanical Turk. </p>
 <hr />
 <h2 id="jspsychturksubmittoturk">jsPsych.turk.submitToTurk</h2>
-<pre class="prettyprint well"><code>jsPsych.turk.submitToTurk(data)
+<pre><code>jsPsych.turk.submitToTurk(data)
 </code></pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -334,7 +342,7 @@
 <p>This method will submit a HIT to Mechanical Turk, causing the HIT to finish. </p>
 <p>This method will only work when called from within the mechanical turk website. If you are using an external HIT to send workers to your own server, this method will not work on an externally hosted page. It will work if your external content is loaded in the iframe on the Mechanical Turk website.</p>
 <h3 id="example">Example</h3>
-<pre class="prettyprint well"><code class="html">
+<pre><code class="html">
 &lt;p&gt;Enter the code you were given:&lt;/p&gt;
 &lt;input type=&quot;text&quot; id=&quot;code&quot;&gt;&lt;/input&gt;
 &lt;button onclick=&quot;sendData();&quot;&gt;Submit HIT&lt;/button&gt;
@@ -356,7 +364,7 @@ function sendData() {
 
 <hr />
 <h2 id="jspsychturkturkinfo">jsPsych.turk.turkInfo</h2>
-<pre class="prettyprint well"><code>jsPsych.turk.turkInfo()
+<pre><code>jsPsych.turk.turkInfo()
 </code></pre>
 
 <h3 id="parameters_1">Parameters</h3>
@@ -374,7 +382,7 @@ function sendData() {
 <h3 id="description_1">Description</h3>
 <p>This method returns basic information about the current Mechanical Turk session, including the worker ID, assignment ID, and HIT ID.</p>
 <h3 id="example_1">Example</h3>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 var turkInfo = jsPsych.turk.turkInfo();
 
 alert('Worker ID is: ' + turkInfo.workerId);

@@ -148,11 +148,19 @@
                         </li>
                     
                         <li >
+                            <a href="../../plugins/jspsych-reconstruction">jspsych-reconstruction</a>
+                        </li>
+                    
+                        <li >
                             <a href="../../plugins/jspsych-same-different">jspsych-same-different</a>
                         </li>
                     
                         <li >
                             <a href="../../plugins/jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-single-audio">jspsych-single-audio</a>
                         </li>
                     
                         <li >
@@ -323,7 +331,7 @@
 <h1 id="the-jspsych-core-library">The jsPsych core library</h1>
 <hr />
 <h2 id="jspsychcurrentchunkid">jsPsych.currentChunkID</h2>
-<pre class="prettyprint well"><code>jsPsych.currentChunkID()
+<pre><code>jsPsych.currentChunkID()
 </code></pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -353,14 +361,14 @@
 <li><code>"0-2.1-3"</code> is the chunk ID of the second chunk, executing for the fourth time, on the timeline of the first top-level chunk, executing for the third time.</li>
 </ul>
 <h3 id="example">Example</h3>
-<pre class="prettyprint well"><code class="javascript">var chunkid = jsPsych.currentChunkID();
+<pre><code class="javascript">var chunkid = jsPsych.currentChunkID();
 
 console.log('The current chunk ID is '+chunkid);
 </code></pre>
 
 <hr />
 <h2 id="jspsychcurrenttrial">jsPsych.currentTrial</h2>
-<pre class="prettyprint well"><code>jsPsych.currentTrial()
+<pre><code>jsPsych.currentTrial()
 </code></pre>
 
 <h3 id="parameters_1">Parameters</h3>
@@ -370,7 +378,7 @@ console.log('The current chunk ID is '+chunkid);
 <h3 id="description_1">Description</h3>
 <p>Get a description of the current trial</p>
 <h3 id="example_1">Example</h3>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 var trial = jsPsych.currentTrial();
 
 console.log('The current trial is using the '+trial.type+' plugin');
@@ -378,7 +386,7 @@ console.log('The current trial is using the '+trial.type+' plugin');
 
 <hr />
 <h2 id="jspsychfinishtrial">jsPsych.finishTrial</h2>
-<pre class="prettyprint well"><code>jsPsych.finishTrial()
+<pre><code>jsPsych.finishTrial()
 </code></pre>
 
 <h3 id="parameters_2">Parameters</h3>
@@ -395,7 +403,7 @@ console.log('The current trial is using the '+trial.type+' plugin');
 <li>The next trial, if one exists, is started.</li>
 </ul>
 <h3 id="example_2">Example</h3>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 // this code would be in a plugin
 jsPsych.finishTrial();
 
@@ -403,7 +411,7 @@ jsPsych.finishTrial();
 
 <hr />
 <h2 id="jspsychgetdisplayelement">jsPsych.getDisplayElement</h2>
-<pre class="prettyprint well"><code>jsPsych.getDisplayElement
+<pre><code>jsPsych.getDisplayElement
 </code></pre>
 
 <h3 id="parameters_3">Parameters</h3>
@@ -413,7 +421,7 @@ jsPsych.finishTrial();
 <h3 id="description_3">Description</h3>
 <p>Get the DOM element that displays the experiment.</p>
 <h3 id="example_3">Example</h3>
-<pre class="prettyprint well"><code class="javascript">var el = jsPsych.getDisplayElement();
+<pre><code class="javascript">var el = jsPsych.getDisplayElement();
 
 // hide the jsPsych display
 el.hide();
@@ -421,7 +429,7 @@ el.hide();
 
 <hr />
 <h2 id="jspsychinit">jsPsych.init</h2>
-<pre class="prettyprint well"><code>jsPsych.init(settings)
+<pre><code>jsPsych.init(settings)
 </code></pre>
 
 <h3 id="parameters_4">Parameters</h3>
@@ -486,19 +494,29 @@ el.hide();
 <td>boolean</td>
 <td>If true, then <a href="../../features/progress-bar">a progress bar</a> is shown at the top of the page.</td>
 </tr>
+<tr>
+<td>max_load_time</td>
+<td>numeric</td>
+<td>The maximum number of milliseconds to wait for audio content to preload. If the wait time is exceeded, then an error message is logged and the experiment stops. The default value is 30 seconds.</td>
+</tr>
+<tr>
+<td>skip_load_check</td>
+<td>boolean</td>
+<td>If true, then the experiment will not wait for audio content to load before starting. The default value is false.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="return-value_4">Return value</h3>
 <p>Returns nothing.</p>
 <h3 id="description_4">Description</h3>
-<p>This method configures and starts the experiment. </p>
+<p>This method configures and starts the experiment.</p>
 <h3 id="example_4">Example</h3>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 </code></pre>
 
 <hr />
 <h2 id="jspsychinitsettings">jsPsych.initSettings</h2>
-<pre class="prettyprint well"><code>jsPsych.initSettings()
+<pre><code>jsPsych.initSettings()
 </code></pre>
 
 <h3 id="parameters_5">Parameters</h3>
@@ -506,9 +524,9 @@ el.hide();
 <h3 id="return-value_5">Return value</h3>
 <p>Returns the settings object used to initialize the experiment.</p>
 <h3 id="description_5">Description</h3>
-<p>Gets the object containing the settings for the current experiment. </p>
+<p>Gets the object containing the settings for the current experiment.</p>
 <h3 id="example_5">Example</h3>
-<pre class="prettyprint well"><code class="javascript">var settings = jsPsych.initSettings();
+<pre><code class="javascript">var settings = jsPsych.initSettings();
 
 // check the experiment structure
 console.log(JSON.stringify(settings.experiment_structure));
@@ -516,7 +534,7 @@ console.log(JSON.stringify(settings.experiment_structure));
 
 <hr />
 <h2 id="jspsychpreloadimages">jsPsych.preloadImages</h2>
-<pre class="prettyprint well"><code>jsPsych.preloadImages(images, callback_complete, callback_load)
+<pre><code>jsPsych.preloadImages(images, callback_complete, callback_load)
 </code></pre>
 
 <h3 id="parameters_6">Parameters</h3>
@@ -554,7 +572,7 @@ console.log(JSON.stringify(settings.experiment_structure));
 <p>The <code>callback_load</code> function can be used to indicate progress, if the number of images to be loaded is known ahead of time. See example below.</p>
 <h3 id="examples">Examples</h3>
 <h4 id="basic-use">Basic use</h4>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 var images = ['img/file1.png', 'img/file2.png', 'img/file3.png'];
 
 jsPsych.preloadImages(images, function(){ startExperiment(); });
@@ -568,7 +586,7 @@ function startExperiment(){
 </code></pre>
 
 <h4 id="show-progress-of-loading">Show progress of loading</h4>
-<pre class="prettyprint well"><code class="javascript">var images = ['img/file1.png', 'img/file2.png', 'img/file3.png'];
+<pre><code class="javascript">var images = ['img/file1.png', 'img/file2.png', 'img/file3.png'];
 
 jsPsych.preloadImages(images, function(){ startExperiment(); }, function(nLoaded) { updateLoadedCount(nLoaded); });
 
@@ -589,7 +607,7 @@ function startExperiment(){
 
 <hr />
 <h2 id="jspsychprogress">jsPsych.progress</h2>
-<pre class="prettyprint well"><code>jsPsych.progress()
+<pre><code>jsPsych.progress()
 </code></pre>
 
 <h3 id="parameters_7">Parameters</h3>
@@ -635,7 +653,7 @@ function startExperiment(){
 <h3 id="description_7">Description</h3>
 <p>This method returns information about the length of the experiment and the subject's current location in the experiment timeline.</p>
 <h3 id="example_6">Example</h3>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 var progress = jsPsych.progress();
 
 var percent_complete = progress.current_chunk / progress.total_chunks * 100;
@@ -646,7 +664,7 @@ alert('You have completed approximately '+percent_complete+'% of the experiment'
 
 <hr />
 <h2 id="jspsychstarttime">jsPsych.startTime</h2>
-<pre class="prettyprint well"><code>jsPsych.startTime()
+<pre><code>jsPsych.startTime()
 </code></pre>
 
 <h3 id="parameters_8">Parameters</h3>
@@ -656,12 +674,12 @@ alert('You have completed approximately '+percent_complete+'% of the experiment'
 <h3 id="description_8">Description</h3>
 <p>Get the time that the experiment began.</p>
 <h3 id="example_7">Example</h3>
-<pre class="prettyprint well"><code class="javascript">var start_time = jsPsych.startTime();
+<pre><code class="javascript">var start_time = jsPsych.startTime();
 </code></pre>
 
 <hr />
 <h2 id="jspsychtotaltime">jsPsych.totalTime</h2>
-<pre class="prettyprint well"><code>jsPsych.totalTime()
+<pre><code>jsPsych.totalTime()
 </code></pre>
 
 <h3 id="parameters_9">Parameters</h3>
@@ -671,7 +689,7 @@ alert('You have completed approximately '+percent_complete+'% of the experiment'
 <h3 id="description_9">Description</h3>
 <p>Gets the total time the subject has been in the experiment.</p>
 <h3 id="example_8">Example</h3>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 var time = jsPsych.totalTime();
 
 </code></pre>

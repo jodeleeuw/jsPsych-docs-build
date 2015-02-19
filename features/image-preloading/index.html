@@ -148,11 +148,19 @@
                         </li>
                     
                         <li >
+                            <a href="../../plugins/jspsych-reconstruction">jspsych-reconstruction</a>
+                        </li>
+                    
+                        <li >
                             <a href="../../plugins/jspsych-same-different">jspsych-same-different</a>
                         </li>
                     
                         <li >
                             <a href="../../plugins/jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-single-audio">jspsych-single-audio</a>
                         </li>
                     
                         <li >
@@ -303,7 +311,7 @@
 <h1 id="image-preloading">Image Preloading</h1>
 <p>If an experiment uses images as stimuli, it is important to preload the image files before running the experiment. Preloading images means that the subject's browser will download all of the image files and store them in memory on the subject's computer. This is important because loading an image file is much faster if it is already in memory on the subject's computer. Without preloading, there will be noticeable delays in the display of images, which will affect any timing measurements (such as how long the image is displayed, or a subject's response time since first viewing an image).</p>
 <p>jsPsych has an image preloading function in the core library. For full documentation, see the <a href="../../core_library/jspsych-core#jspsychpreloadimages">API reference page</a>. The function will load all of the images listed in an array, and then call a function when the loading is complete.</p>
-<pre class="prettyprint well"><code class="javascript">// an array of paths to images that need to be loaded
+<pre><code class="javascript">// an array of paths to images that need to be loaded
 var images = ['img/file1.png', 'img/file2.png', 'img/file3.png'];
 
 jsPsych.preloadImages(images, function(){ startExperiment(); });

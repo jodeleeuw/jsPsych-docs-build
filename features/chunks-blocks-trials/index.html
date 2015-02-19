@@ -148,11 +148,19 @@
                         </li>
                     
                         <li >
+                            <a href="../../plugins/jspsych-reconstruction">jspsych-reconstruction</a>
+                        </li>
+                    
+                        <li >
                             <a href="../../plugins/jspsych-same-different">jspsych-same-different</a>
                         </li>
                     
                         <li >
                             <a href="../../plugins/jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-single-audio">jspsych-single-audio</a>
                         </li>
                     
                         <li >
@@ -316,14 +324,14 @@
 <p>But, what if we wanted to group trials together that weren't the same kind (i.e. didn't use the same plugin) but shared some other relationship? This is what a <strong>chunk</strong> does. Chunks are simply groups of blocks, but conceptually they are treated as if they are a whole separate timeline in jsPsych. This allows for more complex experiment designs, such as loops and conditional <em>if</em> statemens. With chunks, timelines can get very complicated if needed:</p>
 <h2 id="defining-an-experiment">Defining an experiment</h2>
 <p>The <code>jsPsych.init</code> method requires that an experiment definition is passed in as the value of the <code>experiment_structure</code> parameter.</p>
-<pre class="prettyprint well"><code class="javascript">jsPsych.init({
+<pre><code class="javascript">jsPsych.init({
     experiment_structure: exp
 })
 </code></pre>
 
 <p>The <code>exp</code> variable above needs to be an array, with each element of the array being either a chunk or a block.</p>
 <p>To create a block, define a JavaScript object with a <code>type</code> property set to the particular plugin that the block uses. For example, to create a block using the <code>jspsych-single-stim</code> plugin, the corresponding object would look something like:</p>
-<pre class="prettyprint well"><code class="javascript">var single_stim_block = {
+<pre><code class="javascript">var single_stim_block = {
     type: 'single-stim',
     stimulus: ['img/happy_face.png', 'img/sad_face.png']
 }
@@ -335,7 +343,7 @@ jsPsych.init({
 
 <p>The above block contains two trials. The first trial will show the image file <code>img/happy_face.png</code> and the second will show <code>img/sad_face.png</code>. Different plugins have different methods for specifying multiple trials within a block. Check the documentation of the plugin that you are using for more details about how that plugin works.</p>
 <p>To show instructions before the faces appear, define another block and add it to the <code>experiment_structure</code> array:</p>
-<pre class="prettyprint well"><code class="javascript">var instructions_block = {
+<pre><code class="javascript">var instructions_block = {
     type: 'text',
     text: 'Press H if the face is happy. Press S if the face is sad.'
 }
@@ -350,8 +358,8 @@ jsPsych.init({
 })
 </code></pre>
 
-<p>Let's imagine that we want subjects to keep viewing the faces until they get the correct response for each one. We can use a chunk to loop over the trials. To create a chunk, create an object with a <code>chunk_type</code> property set to a <a href="../../">valid chunk type</a> and a <code>timeline</code> property containing an array of chunks and blocks within the chunk. Some chunk types will require other properties to be set as well:</p>
-<pre class="prettyprint well"><code class="javascript">var instructions_block = {
+<p>Let's imagine that we want subjects to keep viewing the faces until they get the correct response for each one. We can use a chunk to loop over the trials. To create a chunk, create an object with a <code>chunk_type</code> property set to a <a href="">valid chunk type</a> and a <code>timeline</code> property containing an array of chunks and blocks within the chunk. Some chunk types will require other properties to be set as well:</p>
+<pre><code class="javascript">var instructions_block = {
     type: 'text',
     text: 'Press H if the face is happy. Press S if the face is sad.'
 }
@@ -389,7 +397,7 @@ jsPsych.init({
 <p>All three types are defined as JavaScript objects within the jsPsych code. </p>
 <h2 id="chunk-types">Chunk types</h2>
 <p>There are different types of chunks; each defines a different way of executing the chunk's timeline. To specify the chunk type, set the <code>chunk_type</code> property of the chunk definition object.</p>
-<pre class="prettyprint well"><code class="javascript">var chunk = {
+<pre><code class="javascript">var chunk = {
     chunk_type: 'linear',
     timeline: [block1, block2]
 }
@@ -401,7 +409,7 @@ jsPsych.init({
 <h3 id="while">While</h3>
 <p>A while chunk can be used for looping. It executes the timeline and then calls the <code>continue_function</code> to see if it should execute the timeline again. If the <code>continue_function</code> returns <code>true</code>, then the chunk executes again. If the function returns <code>false</code>, the chunk is complete. </p>
 <p>The <code>continue_function</code> will be passed the data generated by the most recent execution of the chunk as the first parameter. The data will be an array; each item in the array will be the data for a single trial. </p>
-<pre class="prettyprint well"><code class="javascript">var while_chunk = {
+<pre><code class="javascript">var while_chunk = {
     chunk_type: 'while',
     timeline: [block1, block2],
     continue_function: function(data){

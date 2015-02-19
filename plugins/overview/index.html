@@ -148,11 +148,19 @@
                         </li>
                     
                         <li >
+                            <a href="../jspsych-reconstruction">jspsych-reconstruction</a>
+                        </li>
+                    
+                        <li >
                             <a href="../jspsych-same-different">jspsych-same-different</a>
                         </li>
                     
                         <li >
                             <a href="../jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../jspsych-single-audio">jspsych-single-audio</a>
                         </li>
                     
                         <li >
@@ -309,18 +317,18 @@
 <p>Plugins provide a structure for a particular task. For example, the <code>jspsych-single-stim</code> plugin defines a simple structure for showing a visual stimulus and collecting a keyboard response. To use the plugin, you need to specify the content, such as what the stimulus is, what keys the subject is allowed to press, and how long the stimulus should be on the screen. Many of these content options have reasonable default values; even though the <code>jspsych-single-stim</code> plugin has many different options, you only <em>need</em> to specify the stimulus in order to use it. Each plugin has its own documentation page, which describes what the plugin does and what options are available.</p>
 <h2 id="using-a-plugin">Using a plugin</h2>
 <p>To use a plugin, you'll need to load the plugin's JavaScript file on your experiment page:</p>
-<pre class="prettyprint well"><code class="html">&lt;script src=&quot;jspsych/plugins/jspsych-single-stim.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+<pre><code class="html">&lt;script src=&quot;jspsych/plugins/jspsych-single-stim.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 </code></pre>
 
 <p>Once a plugin is loaded, you can define a block that uses that plugin. The following JavaScript code defines a trial using the <code>jspsych-single-stim</code> plugin to display an image file ('images/happy_face.jpg'). This trial uses the default values for valid keys, length of display, and so on. You could override these values by adding them to the object.</p>
-<pre class="prettyprint well"><code class="javascript">var single_stim_block = {
+<pre><code class="javascript">var single_stim_block = {
     type: 'single-stim',
     stimuli: 'images/happy_face.jpg'
 }
 </code></pre>
 
 <p>Here's an exampe of overriding the default value for <code>timing_post_trial</code>:</p>
-<pre class="prettyprint well"><code class="javascript">var single_stim_block = {
+<pre><code class="javascript">var single_stim_block = {
     type: 'single-stim',
     stimuli: 'images/happy_face.jpg',
     timing_post_trial: 2000

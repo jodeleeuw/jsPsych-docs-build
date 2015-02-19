@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-        <title>jspsych-vsl-grid-scene - jsPsych</title>
+        <title>jspsych-single-audio - jsPsych</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -159,8 +159,8 @@
                             <a href="../jspsych-similarity">jspsych-similarity</a>
                         </li>
                     
-                        <li >
-                            <a href="../jspsych-single-audio">jspsych-single-audio</a>
+                        <li class="active">
+                            <a href=".">jspsych-single-audio</a>
                         </li>
                     
                         <li >
@@ -187,8 +187,8 @@
                             <a href="../jspsych-vsl-animate-occlusion">jspsych-vsl-animate-occlusion</a>
                         </li>
                     
-                        <li class="active">
-                            <a href=".">jspsych-vsl-grid-scene</a>
+                        <li >
+                            <a href="../jspsych-vsl-grid-scene">jspsych-vsl-grid-scene</a>
                         </li>
                     
                         <li >
@@ -273,12 +273,12 @@
             <ul class="nav navbar-nav navbar-right">
                 
                 <li >
-                    <a rel="next" href="../jspsych-vsl-animate-occlusion">
+                    <a rel="next" href="../jspsych-similarity">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../jspsych-xab">
+                    <a rel="prev" href="../jspsych-single-stim">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -301,22 +301,23 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#jspsych-vsl-grid-scene-plugin">jspsych-vsl-grid-scene plugin</a></li>
+        <li class="main active"><a href="#jspsych-single-audio-plugin">jspsych-single-audio plugin</a></li>
         
             <li><a href="#parameters">Parameters</a></li>
         
             <li><a href="#data-generated">Data Generated</a></li>
         
-            <li><a href="#example">Example</a></li>
+            <li><a href="#examples">Examples</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="jspsych-vsl-grid-scene-plugin">jspsych-vsl-grid-scene plugin</h1>
-<p>The VSL (visual statistical learning) grid scene plugin displays images arranged in a grid. This plugin can be used to replicate the experiments described in:</p>
-<p>Fiser, J., &amp; Aslin, R. N. (2001). Unsupervised statistical learning of higher-order spatial structures from visual scenes. <em>Psychological Science, 12</em>(6), 499-504.</p>
+<h1 id="jspsych-single-audio-plugin">jspsych-single-audio plugin</h1>
+<p>This plugin plays audio files and records responses generated with the keyboard.</p>
+<p>Audio files are played using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">WebAudio API</a>. This allows for reasonably precise timing of the playback. The timing of responses generated is measured against the WebAudio specific clock, improving the measurement of response times.</p>
+<p>Audio files are automatically preloaded by jsPsych.</p>
 <h2 id="parameters">Parameters</h2>
 <p>This table lists the parameters associated with this plugin. Parameters with a default value of <em>undefined</em> must be specified. Other parameters can be left unspecified if the default value is acceptable.</p>
 <table>
@@ -333,19 +334,31 @@
 <td>stimuli</td>
 <td>array</td>
 <td><em>undefined</em></td>
-<td>Array of stimuli. Each stimulus is an array that defines a grid. Grids should be declared as two dimensional arrays in <code>[row][col]</code> order, with paths to image files in the locations where images are displayed, and 0 in blank spaces. See example below.</td>
+<td>Each element of the array is a stimulus. A stimulus is a path to an audio file. Each stimulus will be presented in its own trial, and thus the length of this array determines the total number of trials.</td>
 </tr>
 <tr>
-<td>image_size</td>
+<td>choices</td>
 <td>array</td>
-<td><code>[100, 100]</code></td>
-<td>Array specifying the width and height of the images to show. Grid cells will also be this size, with 10% padding.</td>
+<td>[ ]</td>
+<td>This array contains the keys that the subject is allowed to press in order to respond to the stimulus. Keys can be specified as their <a href="http://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes">numeric key code</a> or as characters (e.g. <code>'a'</code>, <code>'q'</code>). The default value of an empty array means that all keys will be accepted as valid responses.</td>
 </tr>
 <tr>
-<td>timing_duration</td>
+<td>prompt</td>
+<td>string</td>
+<td>""</td>
+<td>This string can contain HTML markup. Any content here will be displayed on the screen. The intention is that it can be used to provide a reminder about the action the subject is supposed to take (e.g. which key to press).</td>
+</tr>
+<tr>
+<td>timing_response</td>
 <td>numeric</td>
-<td>2000</td>
-<td>How long to show the stimulus for in milliseconds.</td>
+<td>-1</td>
+<td>How long to wait for the subject to make a response before ending the trial in milliseconds. If the subject fails to make a response before this timer is reached, the the subject's response will be recorded as -1 for the trial and the trial will end. If the value of this parameter is -1, then the trial will wait for a response indefinitely.</td>
+</tr>
+<tr>
+<td>continue_after_response</td>
+<td>boolean</td>
+<td>true</td>
+<td>If true, then the trial will end whenever the subject makes a response (assuming they make their response before the cutoff specified by the <code>timing_response</code> parameter). If false, then the trial will continue until the value for <code>timing_response</code> is reached. You can use this parameter to force the subject to view a stimulus for a fixed amount of time, even if they respond before the time is complete.</td>
 </tr>
 </tbody>
 </table>
@@ -362,50 +375,36 @@
 <tbody>
 <tr>
 <td>stimulus</td>
-<td>JSON string</td>
-<td>JSON encoded array of the stimulus shown on the trial.</td>
+<td>string</td>
+<td>The path to the file that was played during the trial.</td>
+</tr>
+<tr>
+<td>key_press</td>
+<td>numeric</td>
+<td>Indicates which key the subject pressed. The value is the <a href="http://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes">numeric key code</a> corresponding to the subject's response.</td>
+</tr>
+<tr>
+<td>rt</td>
+<td>numeric</td>
+<td>The response time in milliseconds for the subject to make a response. The time is measured from when the audio file began playing.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="stimulus-creation-method">Stimulus Creation Method</h3>
-<p>The plugin also includes a public method for generating the grid scene stimuli that the plugin uses. You can use this method to create HTML strings that produce the stimuli, and then incorporate the stimuli in other plugins. To use this method, include the plugin script on the page and then call the method like this:</p>
-<pre><code class="javascript">
-var pattern = [
-                [&quot;img/1.gif&quot;, &quot;img/2.gif&quot;, 0],
-                [ 0, &quot;img/3.gif&quot;, 0],
-                [&quot;img/5.gif&quot;, &quot;img/4.gif&quot;, 0]
-            ];
-
-var image_size = 100; // pixels
-
-var grid_stimulus = jsPsych['vsl-grid-scene'].generate_stimulus(pattern, image_size);
-
-// grid_stimulus will now contain a string (NOT an HTML DOM object) that you can
-// pass into other plugins that accept HTML stimuli as input, such as jspsych-categorize.
-
+<h2 id="examples">Examples</h2>
+<p>These examples show how to define a block using the single-stim plugin to achieve various goals.</p>
+<h4 id="playing-a-sound">Playing a sound</h4>
+<pre><code class="javascript">var block = {
+    type: 'single-audio',
+    stimuli: ['sound/sound.mp3']
+}
 </code></pre>
 
-<h2 id="example">Example</h2>
-<h4 id="basic-example">Basic example</h4>
-<pre><code class="javascript">var scenes = [
-    [
-        [&quot;img/1.gif&quot;, &quot;img/2.gif&quot;, 0],
-        [ 0, &quot;img/3.gif&quot;, 0],
-        [&quot;img/5.gif&quot;, &quot;img/4.gif&quot;, 0]
-    ],
-    [
-        [ 0, 0, &quot;img/6.gif&quot;],
-        [ &quot;img/10.gif&quot;, &quot;img/7.gif&quot;, 0],
-        [ 0,&quot;img/8.gif&quot;, &quot;img/9.gif&quot; ]
-    ]
-];
-
-// create vsl block for jspsych
-var vsl_block = {
-    type: 'vsl-grid-scene',
-    stimuli: scenes
-};
-
+<h4 id="restricting-which-keys-the-subject-can-use-to-respond">Restricting which keys the subject can use to respond</h4>
+<pre><code class="javascript">var block = {
+    type: 'single-stim',
+    stimuli: ['sound/sound.mp3'],
+    choices: ['h','s']
+}
 </code></pre>
 
 </div>

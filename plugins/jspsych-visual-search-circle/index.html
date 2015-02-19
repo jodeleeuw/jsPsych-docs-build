@@ -148,11 +148,19 @@
                         </li>
                     
                         <li >
+                            <a href="../jspsych-reconstruction">jspsych-reconstruction</a>
+                        </li>
+                    
+                        <li >
                             <a href="../jspsych-same-different">jspsych-same-different</a>
                         </li>
                     
                         <li >
                             <a href="../jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../jspsych-single-audio">jspsych-single-audio</a>
                         </li>
                     
                         <li >
@@ -295,6 +303,8 @@
     
         <li class="main active"><a href="#jspsych-visual-search-circle-plugin">jspsych-visual-search-circle plugin</a></li>
         
+            <li><a href="#dependency">Dependency</a></li>
+        
             <li><a href="#parameters">Parameters</a></li>
         
             <li><a href="#data-generated">Data Generated</a></li>
@@ -309,6 +319,8 @@
 <h1 id="jspsych-visual-search-circle-plugin">jspsych-visual-search-circle plugin</h1>
 <p>This plugin presents a customizable visual-search task modelled after <a href="http://dx.doi.org/10.3758/BF03206946">Wang, Cavanagh, &amp; Green (1994)</a>. The subject indicates whether or not a target is present among a set of distractors. The stimuli are displayed in a circle, evenly-spaced, equidistant from a fixation point. Here is an example using normal and backward Ns:</p>
 <p><img alt="Sample Visual Search Stimulus" src="../..//img/visual_search_example.jpg" /></p>
+<h2 id="dependency">Dependency</h2>
+<p>This plugin requires the Snap.svg library, available at <a href="http://www.snapsvg.io">http://www.snapsvg.io</a>. You must include the library in the <code>&lt;head&gt;</code> section of your experiment page.</p>
 <h2 id="parameters">Parameters</h2>
 <p>This table lists the parameters associated with this plugin. Parameters with a default value of <em>undefined</em> must be specified. Other parameters can be left unspecified if the default value is acceptable.</p>
 <table>
@@ -396,7 +408,7 @@
 </tbody>
 </table>
 <h2 id="data-generated">Data Generated</h2>
-<p>In addition to the <a href="../../">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
+<p>In addition to the <a href="">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
 <table>
 <thead>
 <tr>

@@ -148,11 +148,19 @@
                         </li>
                     
                         <li >
+                            <a href="../../plugins/jspsych-reconstruction">jspsych-reconstruction</a>
+                        </li>
+                    
+                        <li >
                             <a href="../../plugins/jspsych-same-different">jspsych-same-different</a>
                         </li>
                     
                         <li >
                             <a href="../../plugins/jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-single-audio">jspsych-single-audio</a>
                         </li>
                     
                         <li >
@@ -303,7 +311,7 @@
 <h1 id="using-functions-as-parameters-for-plugins">Using Functions as Parameters for Plugins</h1>
 <p>Most plugins allow parameters to be functions. In a typical declaration of a jsPsych block, trial parameters have to be known at the start of the experiment. This makes it impossible to alter the content of the trial based on the outcome of previous trials. When functions are used as parameters for a block of trials, the function is evaluated at the start of each trial, and the return value of the function is used as the parameter. This enables dynamic updating of the parameter based on data that a subject has generated.</p>
 <p>Here is a sketch of how this functionality could be used to display a score to subjects that depends on their overall accuracy on the task.</p>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 // this variable contains a score based on accuracy.
 // you can update the score variable in a number of ways.
 // one option would be to use the on_trial_finish callback

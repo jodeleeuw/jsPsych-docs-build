@@ -148,11 +148,19 @@
                         </li>
                     
                         <li >
+                            <a href="../jspsych-reconstruction">jspsych-reconstruction</a>
+                        </li>
+                    
+                        <li >
                             <a href="../jspsych-same-different">jspsych-same-different</a>
                         </li>
                     
                         <li >
                             <a href="../jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../jspsych-single-audio">jspsych-single-audio</a>
                         </li>
                     
                         <li >
@@ -371,7 +379,7 @@
 </tbody>
 </table>
 <h2 id="data-generated">Data Generated</h2>
-<p>In addition to the <a href="../../">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
+<p>In addition to the <a href="">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
 <table>
 <thead>
 <tr>
@@ -415,7 +423,7 @@
 </table>
 <h2 id="examples">Examples</h2>
 <h4 id="doing-an-exact-match-task">Doing an exact match task</h4>
-<pre class="prettyprint well"><code class="javascript">var block = {
+<pre><code class="javascript">var block = {
     type: 'xab',
     stimuli: [['img/happy_face.png', 'img/sad_face.png']],
     prompt: &quot;Press Q if the face you just saw is on the left. Press P if the face you just saw is on the right.&quot;
@@ -423,7 +431,7 @@
 </code></pre>
 
 <h4 id="matching-based-on-a-feature">Matching based on a feature</h4>
-<pre class="prettyprint well"><code class="javascript">var block = {
+<pre><code class="javascript">var block = {
     type: 'xab',
     stimuli: [['img/happy_joe_face.png', 'img/sad_joe_face.png', 'img/sad_fred_face.png']],
     prompt: &quot;Press Q if the person you just saw is on the left. Press P if the person you just saw is on the right.&quot;

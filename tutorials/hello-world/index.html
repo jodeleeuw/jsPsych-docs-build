@@ -148,11 +148,19 @@
                         </li>
                     
                         <li >
+                            <a href="../../plugins/jspsych-reconstruction">jspsych-reconstruction</a>
+                        </li>
+                    
+                        <li >
                             <a href="../../plugins/jspsych-same-different">jspsych-same-different</a>
                         </li>
                     
                         <li >
                             <a href="../../plugins/jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-single-audio">jspsych-single-audio</a>
                         </li>
                     
                         <li >
@@ -331,7 +339,7 @@
 <p><img alt="folder setup" src="../..//img/folder-with-html.png" /></p>
 <h2 id="step-4-add-the-bare-minimum-html-code">Step 4: Add the bare-minimum HTML code</h2>
 <p>There's some basic code that (nearly) all HTML documents have in common. Here's a typical bare-bones HTML document</p>
-<pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
+<pre><code class="html">&lt;!doctype html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;My experiment&lt;/title&gt;
@@ -344,7 +352,7 @@
 <p>Add the above code to the experiment.html file and save it. If you then open the file in a web browser, you should see a blank page and the title of the page will be 'My experiment'.</p>
 <h2 id="step-5-import-the-jspsych-library">Step 5: Import the jsPsych library</h2>
 <p>To use jsPsych, add a <code>&lt;script&gt;</code> tag to import the library. You'll need to import the jQuery library as well, which jsPsych depends on. Make sure to import jQuery before jsPsych. jQuery can be imported directly from a hosted version on Google's servers.</p>
-<pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
+<pre><code class="html">&lt;!doctype html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;My experiment&lt;/title&gt;
@@ -357,7 +365,7 @@
 </code></pre>
 
 <p>You may also want to import the jsPsych stylesheet, which applies a basic set of visual styles to the experiment to make it visually pleasing. This requires adding a <code>link</code> tag to the <code>&lt;head&gt;</code> section of the document.</p>
-<pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
+<pre><code class="html">&lt;!doctype html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;My experiment&lt;/title&gt;
@@ -371,8 +379,8 @@
 </code></pre>
 
 <h2 id="step-6-use-the-jspsych-text-plugin-to-print-a-message">Step 6: Use the jspsych-text plugin to print a message</h2>
-<p>For the demo, we want to show some text on the screen. This is exactly what the <a href="../../">jspsych-text plugin</a> is designed to do. To use the plugin, we need to load it with a <code>&lt;script&gt;</code> tag.</p>
-<pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
+<p>For the demo, we want to show some text on the screen. This is exactly what the <a href="">jspsych-text plugin</a> is designed to do. To use the plugin, we need to load it with a <code>&lt;script&gt;</code> tag.</p>
+<pre><code class="html">&lt;!doctype html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;My experiment&lt;/title&gt;
@@ -386,9 +394,9 @@
 &lt;/html&gt;
 </code></pre>
 
-<p>Once the plugin is loaded, we can create an experiment using the plugin. To declare a trial that uses the text plugin, we create a JavaScript object with the property <code>type</code> equal to <code>'text'</code>. Then we can specify the <a href="../../">other parameters of the plugin</a> in the same object.</p>
+<p>Once the plugin is loaded, we can create an experiment using the plugin. To declare a trial that uses the text plugin, we create a JavaScript object with the property <code>type</code> equal to <code>'text'</code>. Then we can specify the <a href="">other parameters of the plugin</a> in the same object.</p>
 <p>To add JavaScript code directly to the webpage we need to add a set of <code>&lt;script&gt;</code> tags after the <code>&lt;body&gt;</code> tags.</p>
-<pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
+<pre><code class="html">&lt;!doctype html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;My experiment&lt;/title&gt;
@@ -411,7 +419,7 @@
 </code></pre>
 
 <p>Now that we have the trial defined, we just need to tell jsPsych to run an experiment consisting of this trial. This requires using the <code>jsPsych.init</code> function and specifying the <code>experiment_structure</code> parameter.</p>
-<pre class="prettyprint well"><code class="html">&lt;!doctype html&gt;
+<pre><code class="html">&lt;!doctype html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;My experiment&lt;/title&gt;

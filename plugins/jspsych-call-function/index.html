@@ -148,11 +148,19 @@
                         </li>
                     
                         <li >
+                            <a href="../jspsych-reconstruction">jspsych-reconstruction</a>
+                        </li>
+                    
+                        <li >
                             <a href="../jspsych-same-different">jspsych-same-different</a>
                         </li>
                     
                         <li >
                             <a href="../jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../jspsych-single-audio">jspsych-single-audio</a>
                         </li>
                     
                         <li >
@@ -330,7 +338,7 @@
 </tbody>
 </table>
 <h2 id="data-generated">Data Generated</h2>
-<p>In addition to the <a href="../../">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
+<p>In addition to the <a href="">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
 <table>
 <thead>
 <tr>
@@ -350,7 +358,7 @@
 <h2 id="examples">Examples</h2>
 <p>These examples show how to define a block using the single-stim plugin to achieve various goals.</p>
 <h4 id="calling-a-simple-function">Calling a simple function</h4>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 var myfunc = function() {
     return 'you called?';
 }
@@ -362,7 +370,7 @@ var block = {
 </code></pre>
 
 <h4 id="using-an-anonymous-function-to-pass-variables">Using an anonymous function to pass variables</h4>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 var myfunc = function(data){
     // data contains all the experiment data so far,
     // so this function could implement code to write

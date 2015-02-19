@@ -148,11 +148,19 @@
                         </li>
                     
                         <li >
+                            <a href="../jspsych-reconstruction">jspsych-reconstruction</a>
+                        </li>
+                    
+                        <li >
                             <a href="../jspsych-same-different">jspsych-same-different</a>
                         </li>
                     
                         <li >
                             <a href="../jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../jspsych-single-audio">jspsych-single-audio</a>
                         </li>
                     
                         <li >
@@ -312,7 +320,7 @@
 <p>The VSL (visual statistical learning) animate occlusion plugin displays an animated sequence of shapes that disappear behind an occluding rectangle while they change from one shape to another. This plugin can be used to replicate the experiments described in:</p>
 <p>Fiser, J., &amp; Aslin, R. N. (2002). Statistical learning of higher-order temporal structure from visual shape sequences. <em>Journal of Experimental Psychology: Learning, Memory, and Cognition, 28</em>(3), 458.</p>
 <h2 id="dependency">Dependency</h2>
-<p>This plugin requires the Raphael-js library, available at <a href="http://www.raphaeljs.com">http://www.raphaeljs.com</a>. You must include the library in the <code>&lt;head&gt;</code> section of your experiment page.</p>
+<p>This plugin requires the Snap.svg library, available at <a href="http://www.snapsvg.io">http://www.snapsvg.io</a>. You must include the library in the <code>&lt;head&gt;</code> section of your experiment page.</p>
 <h2 id="parameters">Parameters</h2>
 <p>This table lists the parameters associated with this plugin. Parameters with a default value of <em>undefined</em> must be specified. Other parameters can be left unspecified if the default value is acceptable.</p>
 <table>
@@ -376,7 +384,7 @@
 </tbody>
 </table>
 <h2 id="data-generated">Data Generated</h2>
-<p>In addition to the <a href="../../">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
+<p>In addition to the <a href="">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
 <table>
 <thead>
 <tr>
@@ -400,7 +408,7 @@
 </table>
 <h2 id="examples">Examples</h2>
 <h4 id="displaying-a-simple-sequence">Displaying a simple sequence.</h4>
-<pre class="prettyprint well"><code class="javascript">var images = [&quot;img/1.gif&quot;,&quot;img/2.gif&quot;,&quot;img/3.gif&quot;,&quot;img/4.gif&quot;,&quot;img/5.gif&quot;,&quot;img/6.gif&quot;,&quot;img/7.gif&quot;,&quot;img/8.gif&quot;,&quot;img/9.gif&quot;,&quot;img/10.gif&quot;];
+<pre><code class="javascript">var images = [&quot;img/1.gif&quot;,&quot;img/2.gif&quot;,&quot;img/3.gif&quot;,&quot;img/4.gif&quot;,&quot;img/5.gif&quot;,&quot;img/6.gif&quot;,&quot;img/7.gif&quot;,&quot;img/8.gif&quot;,&quot;img/9.gif&quot;,&quot;img/10.gif&quot;];
 
 
 // create vsl block for jspsych

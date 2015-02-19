@@ -148,11 +148,19 @@
                         </li>
                     
                         <li >
+                            <a href="../../plugins/jspsych-reconstruction">jspsych-reconstruction</a>
+                        </li>
+                    
+                        <li >
                             <a href="../../plugins/jspsych-same-different">jspsych-same-different</a>
                         </li>
                     
                         <li >
                             <a href="../../plugins/jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-single-audio">jspsych-single-audio</a>
                         </li>
                     
                         <li >
@@ -299,6 +307,10 @@
         
             <li><a href="#jspsychrandomizationrepeat">jsPsych.randomization.repeat</a></li>
         
+            <li><a href="#jspsychrandomizationsample">jsPsych.randomization.sample</a></li>
+        
+            <li><a href="#jspsychrandomizationshuffle">jsPsych.randomization.shuffle</a></li>
+        
     
     </ul>
 </div></div>
@@ -308,7 +320,7 @@
 <p>The jsPsych.randomization module contains methods that are useful for generating random lists of trial variables.</p>
 <hr />
 <h2 id="jspsychrandomizationfactorial">jsPsych.randomization.factorial</h2>
-<pre class="prettyprint well"><code>jsPsych.randomization.factorial(factors, repetitions, unpack)
+<pre><code>jsPsych.randomization.factorial(factors, repetitions, unpack)
 </code></pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -344,14 +356,14 @@
 <p>This method takes a list of factors and their levels, and creates a full factorial design by creating each unique combination of the factors. The returned set of combinations is in a random order.</p>
 <h3 id="examples">Examples</h3>
 <h4 id="create-full-factorial-design">Create full factorial design</h4>
-<pre class="prettyprint well"><code class="javascript">var factors = {
+<pre><code class="javascript">var factors = {
     stimulus: ['a.jpg', 'b.jpg'],
     ms_delay: [100, 200]
 }
 
 var full_design = jsPsych.randomization.factorial(factors, 1);
 
-/* 
+/*
 output:
 full_design = [
     {stimulus: 'a.jpg', ms_delay: 200},
@@ -363,14 +375,14 @@ full_design = [
 </code></pre>
 
 <h4 id="create-full-factorial-design-with-repeats">Create full factorial design with repeats</h4>
-<pre class="prettyprint well"><code class="javascript">var factors = {
+<pre><code class="javascript">var factors = {
     stimulus: ['a.jpg', 'b.jpg'],
     ms_delay: [100, 200]
 }
 
 var full_design = jsPsych.randomization.factorial(factors, 2);
 
-/* 
+/*
 output:
 full_design = [
     {stimulus: 'b.jpg', ms_delay: 200},
@@ -386,14 +398,14 @@ full_design = [
 </code></pre>
 
 <h4 id="create-full-factorial-design-unpacked">Create full factorial design, unpacked</h4>
-<pre class="prettyprint well"><code class="javascript">var factors = {
+<pre><code class="javascript">var factors = {
     stimulus: ['a.jpg', 'b.jpg'],
     ms_delay: [100, 200]
 }
 
 var full_design = jsPsych.randomization.factorial(factors, 1, true);
 
-/* 
+/*
 output:
 full_design = {
     stimulus: ['a.jpg','b.jpg','b.jpg','a.jpg'],
@@ -404,7 +416,7 @@ full_design = {
 
 <hr />
 <h2 id="jspsychrandomizationrepeat">jsPsych.randomization.repeat</h2>
-<pre class="prettyprint well"><code>jsPsych.randomization.repeat(array, repetitions, unpack)
+<pre><code>jsPsych.randomization.repeat(array, repetitions, unpack)
 </code></pre>
 
 <h3 id="parameters_1">Parameters</h3>
@@ -441,7 +453,7 @@ full_design = {
 <p>If the array elements are objects with the same set of properties, then this method can optionally return a single object where each property is a randomized order of the properties defined in the original set of objects. This is useful for randomizing sets of parameters that are used to define a jsPsych block.</p>
 <h3 id="examples_1">Examples</h3>
 <h4 id="shuffle-an-array-no-repeats">Shuffle an array, no repeats</h4>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 var myArray = [1,2,3,4,5];
 var shuffledArray = jsPsych.randomization.repeat(myArray, 1);
 
@@ -449,7 +461,7 @@ var shuffledArray = jsPsych.randomization.repeat(myArray, 1);
 </code></pre>
 
 <h4 id="shuffle-an-array-with-repeats">Shuffle an array with repeats</h4>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 var myArray = [1,2,3,4,5];
 var shuffledArray = jsPsych.randomization.repeat(myArray, 2);
 
@@ -457,7 +469,7 @@ var shuffledArray = jsPsych.randomization.repeat(myArray, 2);
 </code></pre>
 
 <h4 id="shuffle-an-array-of-objects">Shuffle an array of objects</h4>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 var trial1 = {
     stimulus: 'img/faceA.jpg',
     correct_key: 80,
@@ -483,7 +495,7 @@ var shuffledArray = jsPsych.randomization.repeat(myArray, 2);
 </code></pre>
 
 <h4 id="shuffle-an-array-of-objects-with-unpack">Shuffle an array of objects, with unpack</h4>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 var trial1 = {
     stimulus: 'img/faceA.jpg',
     correct_key: 80,
@@ -512,6 +524,94 @@ output: shuffledArray = {
     person_name: ['Fred','Joe', 'Mary', 'Joe', 'Mary', 'Fred']
 }
 */
+</code></pre>
+
+<hr />
+<h2 id="jspsychrandomizationsample">jsPsych.randomization.sample</h2>
+<pre><code>jsPsych.randomization.sample(array, sampleSize, withReplacement)
+</code></pre>
+
+<h3 id="parameters_2">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>array</td>
+<td>array</td>
+<td>The array of values to sample from</td>
+</tr>
+<tr>
+<td>sampleSize</td>
+<td>numeric</td>
+<td>The number of samples to draw</td>
+</tr>
+<tr>
+<td>withReplacement</td>
+<td>boolean</td>
+<td>If <code>true</code>, then sampling will be with replacement. Otherwise, sampling is without replacement.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-value_2">Return value</h3>
+<p>An array containing the sample.</p>
+<h3 id="description_2">Description</h3>
+<p>This method returns a sample drawn at random from a set of values. Sampling can be with replacement (items can be chosen more than once) or without replacement (items may only be chosen once).</p>
+<h3 id="examples_2">Examples</h3>
+<h4 id="sample-without-replacement">Sample without replacement</h4>
+<pre><code class="javascript">
+var myArray = [1,2,3,4,5];
+var sample = jsPsych.randomization.sample(myArray, 2, false);
+
+// output: sample = [3,2];
+</code></pre>
+
+<h4 id="sample-with-replacement">Sample with replacement</h4>
+<pre><code class="javascript">
+var myArray = [1,2,3,4,5];
+var sample = jsPsych.randomization.sample(myArray, 8, true);
+
+// output: sample = [3,2,1,5,3,3,4,2];
+</code></pre>
+
+<hr />
+<h2 id="jspsychrandomizationshuffle">jsPsych.randomization.shuffle</h2>
+<pre><code>jsPsych.randomization.shuffle(array)
+</code></pre>
+
+<h3 id="parameters_3">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>array</td>
+<td>array</td>
+<td>The array of values to shuffle</td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-value_3">Return value</h3>
+<p>Returns an array with the same elements as the input array in a random order.</p>
+<h3 id="description_3">Description</h3>
+<p>A simple method for shuffling the order of an array.</p>
+<h3 id="examples_3">Examples</h3>
+<h4 id="shuffle-an-array">Shuffle an array</h4>
+<pre><code class="javascript">
+var myArray = [1,2,3,4,5];
+var shuffledArray = jsPsych.randomization.shuffle(myArray);
+
+// output: shuffledArray = [3,2,4,1,5]
 </code></pre>
 
 </div>

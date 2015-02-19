@@ -148,11 +148,19 @@
                         </li>
                     
                         <li >
+                            <a href="../../plugins/jspsych-reconstruction">jspsych-reconstruction</a>
+                        </li>
+                    
+                        <li >
                             <a href="../../plugins/jspsych-same-different">jspsych-same-different</a>
                         </li>
                     
                         <li >
                             <a href="../../plugins/jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-single-audio">jspsych-single-audio</a>
                         </li>
                     
                         <li >
@@ -314,7 +322,7 @@
 <p>The pluginAPI module contains functions that are useful when developing new plugins. </p>
 <hr />
 <h2 id="jspsychpluginapicancelallkeyboardresponses">jsPsych.pluginAPI.cancelAllKeyboardResponses</h2>
-<pre class="prettyprint well"><code>jsPsych.pluginAPI.cancelAllKeyboardResponses()
+<pre><code>jsPsych.pluginAPI.cancelAllKeyboardResponses()
 </code></pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -324,12 +332,12 @@
 <h3 id="description">Description</h3>
 <p>Cancels all currently active keyboard listeners created by <code>jsPsych.pluginAPI.getKeyboardResponse</code>.</p>
 <h3 id="examples">Examples</h3>
-<pre class="prettyprint well"><code class="javascript">jsPsych.pluginAPI.cancelAllKeyboardResponses();
+<pre><code class="javascript">jsPsych.pluginAPI.cancelAllKeyboardResponses();
 </code></pre>
 
 <hr />
 <h2 id="jspsychpluginapicancelkeyboardresponse">jsPsych.pluginAPI.cancelKeyboardResponse</h2>
-<pre class="prettyprint well"><code>jsPsych.pluginAPI.cancelKeyboardResponse(listener_id)
+<pre><code>jsPsych.pluginAPI.cancelKeyboardResponse(listener_id)
 </code></pre>
 
 <h3 id="parameters_1">Parameters</h3>
@@ -354,7 +362,7 @@
 <h3 id="description_1">Description</h3>
 <p>Cancels a specific keyboard listener created by <code>jsPsych.pluginAPI.getKeyboardResponse</code>.</p>
 <h3 id="examples_1">Examples</h3>
-<pre class="prettyprint well"><code class="javascript">// create a persistent keyboard listener
+<pre><code class="javascript">// create a persistent keyboard listener
 var listener_id = jsPsych.pluginAPI.getKeyboardResponse(after_response, ['p','q'], 'date', true);
 
 // cancel keyboard listener
@@ -363,7 +371,7 @@ jsPsych.pluginAPI.cancelKeyboardResponse(listener_id);
 
 <hr />
 <h2 id="jspsychpluginapienforcearray">jsPsych.pluginAPI.enforceArray</h2>
-<pre class="prettyprint well"><code>jsPsych.pluginAPI.enforceArray(params, possible_arrays)
+<pre><code>jsPsych.pluginAPI.enforceArray(params, possible_arrays)
 </code></pre>
 
 <h3 id="parameters_2">Parameters</h3>
@@ -393,7 +401,7 @@ jsPsych.pluginAPI.cancelKeyboardResponse(listener_id);
 <h3 id="description_2">Description</h3>
 <p>This function checks if specified parameters are arrays. If they are not arrays, then it converts them to arrays. Practically, this is used for cases where a plugin calls for an array, but a single value is also a reasonable option. An example would be specifying a stimulus for the <code>single-stim</code> plugin. Technically, the plugin requires the stimuli to be specified in an array. Each element of the array is then given its own trial. However, a single element array to present one trial is possible. This function means that users can declare the single element array as either an array or just the value that would be the element in the array.</p>
 <h3 id="examples_2">Examples</h3>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 // a snippet from the text plugin
 plugin.create = function(params) {
 
@@ -407,7 +415,7 @@ plugin.create = function(params) {
 
 <hr />
 <h2 id="jspsychpluginapigetkeyboardresponse">jsPsych.pluginAPI.getKeyboardResponse</h2>
-<pre class="prettyprint well"><code>jsPsych.pluginAPI.getKeyboardResponse(callback_function, valid_responses, rt_method, persist)
+<pre><code>jsPsych.pluginAPI.getKeyboardResponse(callback_function, valid_responses, rt_method, persist)
 </code></pre>
 
 <h3 id="parameters_3">Parameters</h3>
@@ -449,7 +457,7 @@ plugin.create = function(params) {
 <p>A valid response triggers the <code>callback_function</code> specified in the parameters. A single argument is passed to the callback function. The argument contains an object with the properties <code>key</code> and <code>rt</code>. <code>key</code> contains the numeric key code of the response, and <code>rt</code> contains the response time.</p>
 <h3 id="examples_3">Examples</h3>
 <h4 id="get-a-single-response-from-any-key">Get a single response from any key</h4>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 var after_response = function(info){
     alert('You pressed key '+info.key+' after '+info.rt+'ms');
 }
@@ -458,7 +466,7 @@ jsPsych.pluginAPI.getKeyboardResponse(after_response, [], 'date', false);
 </code></pre>
 
 <h4 id="get-a-responses-from-a-key-until-the-letter-q-is-pressed">Get a responses from a key until the letter Q is pressed</h4>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 var after_response = function(info){
     alert('You pressed key '+info.key+' after '+info.rt+'ms');
 
@@ -472,7 +480,7 @@ var listener = jsPsych.pluginAPI.getKeyboardResponse(after_response, [], 'date',
 
 <hr />
 <h2 id="jspsychpluginapinormalizetrialvariables">jsPsych.pluginAPI.normalizeTrialVariables</h2>
-<pre class="prettyprint well"><code>jsPsych.pluginAPI.normalizeTrialVariables(trial, protect)
+<pre><code>jsPsych.pluginAPI.normalizeTrialVariables(trial, protect)
 </code></pre>
 
 <h3 id="parameters_4">Parameters</h3>
@@ -502,7 +510,7 @@ var listener = jsPsych.pluginAPI.getKeyboardResponse(after_response, [], 'date',
 <h3 id="description_4">Description</h3>
 <p>This method replaces any parameters that are functions with the output of the function.</p>
 <h3 id="example">Example</h3>
-<pre class="prettyprint well"><code class="javascript">
+<pre><code class="javascript">
 // a snippet from a trial method
 
 plugin.trial = function(display_element, trial) {

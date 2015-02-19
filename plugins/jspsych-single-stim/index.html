@@ -148,11 +148,19 @@
                         </li>
                     
                         <li >
+                            <a href="../jspsych-reconstruction">jspsych-reconstruction</a>
+                        </li>
+                    
+                        <li >
                             <a href="../jspsych-same-different">jspsych-same-different</a>
                         </li>
                     
                         <li >
                             <a href="../jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../jspsych-single-audio">jspsych-single-audio</a>
                         </li>
                     
                         <li class="active">
@@ -265,7 +273,7 @@
             <ul class="nav navbar-nav navbar-right">
                 
                 <li >
-                    <a rel="next" href="../jspsych-similarity">
+                    <a rel="next" href="../jspsych-single-audio">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
@@ -366,7 +374,7 @@
 </tbody>
 </table>
 <h2 id="data-generated">Data Generated</h2>
-<p>In addition to the <a href="../../">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
+<p>In addition to the <a href="">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
 <table>
 <thead>
 <tr>
@@ -396,14 +404,14 @@
 <h2 id="examples">Examples</h2>
 <p>These examples show how to define a block using the single-stim plugin to achieve various goals.</p>
 <h4 id="displaying-images-until-subject-gives-a-response">Displaying images until subject gives a response</h4>
-<pre class="prettyprint well"><code class="javascript">var block = {
+<pre><code class="javascript">var block = {
     type: 'single-stim',
     stimuli: ['img/happy_face.png', 'img/sad_face.png']
 }
 </code></pre>
 
 <h4 id="restricting-which-keys-the-subject-can-use-to-respond">Restricting which keys the subject can use to respond</h4>
-<pre class="prettyprint well"><code class="javascript">var block = {
+<pre><code class="javascript">var block = {
     type: 'single-stim',
     stimuli: ['img/happy_face.png', 'img/sad_face.png'],
     choices: ['h','s']
@@ -411,7 +419,7 @@
 </code></pre>
 
 <h4 id="displaying-html-content-for-a-fixed-length-of-time">Displaying HTML content for a fixed length of time</h4>
-<pre class="prettyprint well"><code class="javascript">var block = {
+<pre><code class="javascript">var block = {
     type: 'single-stim',
     stimuli: ['&lt;p&gt;Radio&lt;/p&gt;', '&lt;p&gt;Towel&lt;/p&gt;', '&lt;p&gt;Match&lt;/p&gt;'],
     is_html: true,

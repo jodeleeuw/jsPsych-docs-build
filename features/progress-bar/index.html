@@ -148,11 +148,19 @@
                         </li>
                     
                         <li >
+                            <a href="../../plugins/jspsych-reconstruction">jspsych-reconstruction</a>
+                        </li>
+                    
+                        <li >
                             <a href="../../plugins/jspsych-same-different">jspsych-same-different</a>
                         </li>
                     
                         <li >
                             <a href="../../plugins/jspsych-similarity">jspsych-similarity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-single-audio">jspsych-single-audio</a>
                         </li>
                     
                         <li >
@@ -304,7 +312,7 @@
 <p>jsPsych can show a progress bar at the top of the experiment page indicating the subject's overall completion progress. The progress bar is rendered outside the jsPsych display element, and it requires the <code>jspsych.css</code> file to be loaded on the page. As of version 4.0, the progress bar looks like this:</p>
 <p><img alt="Progressbar Screenshot" src="../..//img/progress_bar.png" /></p>
 <p>To show the progress bar, set the <code>show_progress_bar</code> option in <code>jsPsych.init</code> to <code>true</code>:</p>
-<pre class="prettyprint well"><code class="javascript">jsPsych.init({
+<pre><code class="javascript">jsPsych.init({
     experiment_structure: exp,
     show_progress_bar: true
 });
