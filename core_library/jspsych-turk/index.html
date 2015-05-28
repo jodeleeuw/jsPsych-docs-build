@@ -9,11 +9,11 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-        <title>jsPsych.turk - jsPsych</title>
+	<title>jsPsych.turk - jsPsych</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
         <link href="../../css/base.css" rel="stylesheet">
         <link href="../../css/extra.css" rel="stylesheet">
 
@@ -22,6 +22,8 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+
+        
     </head>
 
     <body>
@@ -49,20 +51,22 @@
             <ul class="nav navbar-nav">
             
             
+                <li >
+                    <a href="../..">Introduction</a>
+                </li>
+            
+            
+            
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../tutorials/hello-world">The Basics: Hello World</a>
+                            <a href="../../tutorials/hello-world/">The Basics: Hello World</a>
                         </li>
                     
                         <li >
-                            <a href="../../tutorials/go-nogo-task">Demo Experiment: Go / No-Go Task</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../tutorials/flanker-task">Demo Experiment: Flanker Task</a>
+                            <a href="../../tutorials/go-nogo-task/">Demo Experiment: Simple Reaction Time Task</a>
                         </li>
                     
                     </ul>
@@ -75,27 +79,27 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../overview">Overview</a>
+                            <a href="../overview/">Overview</a>
                         </li>
                     
                         <li >
-                            <a href="../jspsych-core">jsPsych core</a>
+                            <a href="../jspsych-core/">jsPsych core</a>
                         </li>
                     
                         <li >
-                            <a href="../jspsych-data">jsPsych.data</a>
+                            <a href="../jspsych-data/">jsPsych.data</a>
                         </li>
                     
                         <li >
-                            <a href="../jspsych-randomization">jsPsych.randomization</a>
+                            <a href="../jspsych-randomization/">jsPsych.randomization</a>
                         </li>
                     
                         <li class="active">
-                            <a href=".">jsPsych.turk</a>
+                            <a href="./">jsPsych.turk</a>
                         </li>
                     
                         <li >
-                            <a href="../jspsych-pluginAPI">jsPsych.pluginAPI</a>
+                            <a href="../jspsych-pluginAPI/">jsPsych.pluginAPI</a>
                         </li>
                     
                     </ul>
@@ -108,91 +112,95 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../plugins/overview">Overview</a>
+                            <a href="../../plugins/overview/">Overview</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/creating-a-plugin">Creating a New Plugin</a>
+                            <a href="../../plugins/creating-a-plugin/">Creating a New Plugin</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-animation">jspsych-animation</a>
+                            <a href="../../plugins/jspsych-animation/">jspsych-animation</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-call-function">jspsych-call-function</a>
+                            <a href="../../plugins/jspsych-call-function/">jspsych-call-function</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-categorize">jspsych-categorize</a>
+                            <a href="../../plugins/jspsych-categorize/">jspsych-categorize</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-categorize-animation">jspsych-categorize-animation</a>
+                            <a href="../../plugins/jspsych-categorize-animation/">jspsych-categorize-animation</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-free-sort">jspsych-free-sort</a>
+                            <a href="../../plugins/jspsych-free-sort/">jspsych-free-sort</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-html">jspsych-html</a>
+                            <a href="../../plugins/jspsych-html/">jspsych-html</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-multi-stim-multi-response">jspsych-multi-stim-multi-response</a>
+                            <a href="../../plugins/jspsych-instructions/">jspsych-instructions</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-palmer">jspsych-palmer</a>
+                            <a href="../../plugins/jspsych-multi-stim-multi-response/">jspsych-multi-stim-multi-response</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-reconstruction">jspsych-reconstruction</a>
+                            <a href="../../plugins/jspsych-palmer/">jspsych-palmer</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-same-different">jspsych-same-different</a>
+                            <a href="../../plugins/jspsych-reconstruction/">jspsych-reconstruction</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-similarity">jspsych-similarity</a>
+                            <a href="../../plugins/jspsych-same-different/">jspsych-same-different</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-single-audio">jspsych-single-audio</a>
+                            <a href="../../plugins/jspsych-similarity/">jspsych-similarity</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-single-stim">jspsych-single-stim</a>
+                            <a href="../../plugins/jspsych-single-audio/">jspsych-single-audio</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-survey-likert">jspsych-survey-likert</a>
+                            <a href="../../plugins/jspsych-single-stim/">jspsych-single-stim</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-survey-text">jspsych-survey-text</a>
+                            <a href="../../plugins/jspsych-survey-likert/">jspsych-survey-likert</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-text">jspsych-text</a>
+                            <a href="../../plugins/jspsych-survey-text/">jspsych-survey-text</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-visual-search-circle">jspsych-visual-search-circle</a>
+                            <a href="../../plugins/jspsych-text/">jspsych-text</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-vsl-animate-occlusion">jspsych-vsl-animate-occlusion</a>
+                            <a href="../../plugins/jspsych-visual-search-circle/">jspsych-visual-search-circle</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-vsl-grid-scene">jspsych-vsl-grid-scene</a>
+                            <a href="../../plugins/jspsych-vsl-animate-occlusion/">jspsych-vsl-animate-occlusion</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-xab">jspsych-xab</a>
+                            <a href="../../plugins/jspsych-vsl-grid-scene/">jspsych-vsl-grid-scene</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-xab/">jspsych-xab</a>
                         </li>
                     
                     </ul>
@@ -205,35 +213,35 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../features/chunks-blocks-trials">Creating an Experiment: Chunks, Blocks, & Trials</a>
+                            <a href="../../features/chunks-blocks-trials/">Creating an Experiment: Chunks, Blocks, & Trials</a>
                         </li>
                     
                         <li >
-                            <a href="../../features/progress-bar">Automatic Progress Bar</a>
+                            <a href="../../features/progress-bar/">Automatic Progress Bar</a>
                         </li>
                     
                         <li >
-                            <a href="../../features/mturk">Integrating with Mechanical Turk</a>
+                            <a href="../../features/mturk/">Integrating with Mechanical Turk</a>
                         </li>
                     
                         <li >
-                            <a href="../../features/data">Data Storage</a>
+                            <a href="../../features/data/">Data Storage</a>
                         </li>
                     
                         <li >
-                            <a href="../../features/randomization-repetition">Randomization & Repetition</a>
+                            <a href="../../features/randomization-repetition/">Randomization & Repetition</a>
                         </li>
                     
                         <li >
-                            <a href="../../features/functions-as-parameters">Using Functions as Plugin Parameters</a>
+                            <a href="../../features/functions-as-parameters/">Using Functions as Plugin Parameters</a>
                         </li>
                     
                         <li >
-                            <a href="../../features/callbacks">Event-related Callback Functions</a>
+                            <a href="../../features/callbacks/">Event-related Callback Functions</a>
                         </li>
                     
                         <li >
-                            <a href="../../features/image-preloading">Image Preloading</a>
+                            <a href="../../features/image-preloading/">Image Preloading</a>
                         </li>
                     
                     </ul>
@@ -242,7 +250,7 @@
             
             
                 <li >
-                    <a href="../../support">Support</a>
+                    <a href="../../support/">Support</a>
                 </li>
             
             
@@ -252,15 +260,15 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../about/about">About jsPsych</a>
+                            <a href="../../about/about/">About jsPsych</a>
                         </li>
                     
                         <li >
-                            <a href="../../about/license">License</a>
+                            <a href="../../about/license/">License</a>
                         </li>
                     
                         <li >
-                            <a href="../../about/contributing">Contributing to jsPsych</a>
+                            <a href="../../about/contributing/">Contributing to jsPsych</a>
                         </li>
                     
                     </ul>
@@ -271,14 +279,13 @@
 
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
-                
                 <li >
-                    <a rel="next" href="../jspsych-randomization">
+                    <a rel="next" href="../jspsych-randomization/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../jspsych-pluginAPI">
+                    <a rel="prev" href="../jspsych-pluginAPI/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -400,16 +407,18 @@ alert('Preview mode? ' + turkInfo.previewMode);
 // true if the page is viewed outside mechanical turk,
 // false otherwise.
 alert('Outside turk? ' + turkInfo.outsideTurk);
-</code></pre>
-
-</div>
+</code></pre></div>
         </div>
 
-        
+        <footer class="col-md-12">
+            <hr>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
 
-        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/jquery-1.10.2.min.js"></script>
         <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
         <script src="../../js/base.js"></script>
         <script src="../../js/extra.js"></script>
         <script src="../../js/analytics.js"></script>

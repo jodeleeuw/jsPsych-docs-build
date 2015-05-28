@@ -9,11 +9,11 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-        <title>Demo Experiment: Go / No-Go Task - jsPsych</title>
+	<title>Demo Experiment: Simple Reaction Time Task - jsPsych</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
         <link href="../../css/base.css" rel="stylesheet">
         <link href="../../css/extra.css" rel="stylesheet">
 
@@ -22,6 +22,8 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+
+        
     </head>
 
     <body>
@@ -49,20 +51,22 @@
             <ul class="nav navbar-nav">
             
             
+                <li >
+                    <a href="../..">Introduction</a>
+                </li>
+            
+            
+            
                 <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../hello-world">The Basics: Hello World</a>
+                            <a href="../hello-world/">The Basics: Hello World</a>
                         </li>
                     
                         <li class="active">
-                            <a href=".">Demo Experiment: Go / No-Go Task</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../flanker-task">Demo Experiment: Flanker Task</a>
+                            <a href="./">Demo Experiment: Simple Reaction Time Task</a>
                         </li>
                     
                     </ul>
@@ -75,27 +79,27 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../core_library/overview">Overview</a>
+                            <a href="../../core_library/overview/">Overview</a>
                         </li>
                     
                         <li >
-                            <a href="../../core_library/jspsych-core">jsPsych core</a>
+                            <a href="../../core_library/jspsych-core/">jsPsych core</a>
                         </li>
                     
                         <li >
-                            <a href="../../core_library/jspsych-data">jsPsych.data</a>
+                            <a href="../../core_library/jspsych-data/">jsPsych.data</a>
                         </li>
                     
                         <li >
-                            <a href="../../core_library/jspsych-randomization">jsPsych.randomization</a>
+                            <a href="../../core_library/jspsych-randomization/">jsPsych.randomization</a>
                         </li>
                     
                         <li >
-                            <a href="../../core_library/jspsych-turk">jsPsych.turk</a>
+                            <a href="../../core_library/jspsych-turk/">jsPsych.turk</a>
                         </li>
                     
                         <li >
-                            <a href="../../core_library/jspsych-pluginAPI">jsPsych.pluginAPI</a>
+                            <a href="../../core_library/jspsych-pluginAPI/">jsPsych.pluginAPI</a>
                         </li>
                     
                     </ul>
@@ -108,91 +112,95 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../plugins/overview">Overview</a>
+                            <a href="../../plugins/overview/">Overview</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/creating-a-plugin">Creating a New Plugin</a>
+                            <a href="../../plugins/creating-a-plugin/">Creating a New Plugin</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-animation">jspsych-animation</a>
+                            <a href="../../plugins/jspsych-animation/">jspsych-animation</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-call-function">jspsych-call-function</a>
+                            <a href="../../plugins/jspsych-call-function/">jspsych-call-function</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-categorize">jspsych-categorize</a>
+                            <a href="../../plugins/jspsych-categorize/">jspsych-categorize</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-categorize-animation">jspsych-categorize-animation</a>
+                            <a href="../../plugins/jspsych-categorize-animation/">jspsych-categorize-animation</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-free-sort">jspsych-free-sort</a>
+                            <a href="../../plugins/jspsych-free-sort/">jspsych-free-sort</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-html">jspsych-html</a>
+                            <a href="../../plugins/jspsych-html/">jspsych-html</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-multi-stim-multi-response">jspsych-multi-stim-multi-response</a>
+                            <a href="../../plugins/jspsych-instructions/">jspsych-instructions</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-palmer">jspsych-palmer</a>
+                            <a href="../../plugins/jspsych-multi-stim-multi-response/">jspsych-multi-stim-multi-response</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-reconstruction">jspsych-reconstruction</a>
+                            <a href="../../plugins/jspsych-palmer/">jspsych-palmer</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-same-different">jspsych-same-different</a>
+                            <a href="../../plugins/jspsych-reconstruction/">jspsych-reconstruction</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-similarity">jspsych-similarity</a>
+                            <a href="../../plugins/jspsych-same-different/">jspsych-same-different</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-single-audio">jspsych-single-audio</a>
+                            <a href="../../plugins/jspsych-similarity/">jspsych-similarity</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-single-stim">jspsych-single-stim</a>
+                            <a href="../../plugins/jspsych-single-audio/">jspsych-single-audio</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-survey-likert">jspsych-survey-likert</a>
+                            <a href="../../plugins/jspsych-single-stim/">jspsych-single-stim</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-survey-text">jspsych-survey-text</a>
+                            <a href="../../plugins/jspsych-survey-likert/">jspsych-survey-likert</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-text">jspsych-text</a>
+                            <a href="../../plugins/jspsych-survey-text/">jspsych-survey-text</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-visual-search-circle">jspsych-visual-search-circle</a>
+                            <a href="../../plugins/jspsych-text/">jspsych-text</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-vsl-animate-occlusion">jspsych-vsl-animate-occlusion</a>
+                            <a href="../../plugins/jspsych-visual-search-circle/">jspsych-visual-search-circle</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-vsl-grid-scene">jspsych-vsl-grid-scene</a>
+                            <a href="../../plugins/jspsych-vsl-animate-occlusion/">jspsych-vsl-animate-occlusion</a>
                         </li>
                     
                         <li >
-                            <a href="../../plugins/jspsych-xab">jspsych-xab</a>
+                            <a href="../../plugins/jspsych-vsl-grid-scene/">jspsych-vsl-grid-scene</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../plugins/jspsych-xab/">jspsych-xab</a>
                         </li>
                     
                     </ul>
@@ -205,35 +213,35 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../features/chunks-blocks-trials">Creating an Experiment: Chunks, Blocks, & Trials</a>
+                            <a href="../../features/chunks-blocks-trials/">Creating an Experiment: Chunks, Blocks, & Trials</a>
                         </li>
                     
                         <li >
-                            <a href="../../features/progress-bar">Automatic Progress Bar</a>
+                            <a href="../../features/progress-bar/">Automatic Progress Bar</a>
                         </li>
                     
                         <li >
-                            <a href="../../features/mturk">Integrating with Mechanical Turk</a>
+                            <a href="../../features/mturk/">Integrating with Mechanical Turk</a>
                         </li>
                     
                         <li >
-                            <a href="../../features/data">Data Storage</a>
+                            <a href="../../features/data/">Data Storage</a>
                         </li>
                     
                         <li >
-                            <a href="../../features/randomization-repetition">Randomization & Repetition</a>
+                            <a href="../../features/randomization-repetition/">Randomization & Repetition</a>
                         </li>
                     
                         <li >
-                            <a href="../../features/functions-as-parameters">Using Functions as Plugin Parameters</a>
+                            <a href="../../features/functions-as-parameters/">Using Functions as Plugin Parameters</a>
                         </li>
                     
                         <li >
-                            <a href="../../features/callbacks">Event-related Callback Functions</a>
+                            <a href="../../features/callbacks/">Event-related Callback Functions</a>
                         </li>
                     
                         <li >
-                            <a href="../../features/image-preloading">Image Preloading</a>
+                            <a href="../../features/image-preloading/">Image Preloading</a>
                         </li>
                     
                     </ul>
@@ -242,7 +250,7 @@
             
             
                 <li >
-                    <a href="../../support">Support</a>
+                    <a href="../../support/">Support</a>
                 </li>
             
             
@@ -252,15 +260,15 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../about/about">About jsPsych</a>
+                            <a href="../../about/about/">About jsPsych</a>
                         </li>
                     
                         <li >
-                            <a href="../../about/license">License</a>
+                            <a href="../../about/license/">License</a>
                         </li>
                     
                         <li >
-                            <a href="../../about/contributing">Contributing to jsPsych</a>
+                            <a href="../../about/contributing/">Contributing to jsPsych</a>
                         </li>
                     
                     </ul>
@@ -271,14 +279,13 @@
 
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
-                
                 <li >
-                    <a rel="next" href="../hello-world">
+                    <a rel="next" href="../hello-world/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../flanker-task">
+                    <a rel="prev" href="../../core_library/overview/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -341,12 +348,12 @@
 <li>Using callback functions</li>
 </ul>
 <h2 id="part-1-creating-a-blank-experiment">Part 1: Creating a blank experiment</h2>
-<p>Start by downloading jsPsych and setting up a folder to contain your experiment files. If you are unsure how to do this, follow steps 1-5 in the <a href="../hello-world">Hello World tutorial</a>. At the end of step 5 in the Hello World tutorial, you should have an experiment page that looks like this:</p>
+<p>Start by downloading jsPsych and setting up a folder to contain your experiment files. If you are unsure how to do this, follow steps 1-5 in the <a href="../hello-world/">Hello World tutorial</a>. At the end of step 5 in the Hello World tutorial, you should have an experiment page that looks like this:</p>
 <pre><code class="html">&lt;!doctype html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;My experiment&lt;/title&gt;
-    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
     &lt;link href=&quot;jsPsych-4.0/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
@@ -358,7 +365,7 @@
 
 <p>This will be our starting point for building the rest of the experiment.</p>
 <h2 id="part-2-display-welcome-message">Part 2: Display welcome message</h2>
-<p>It doesn't hurt to greet the subject with a nice welcome message before the experiment starts. In the code below, some JavaScript is added to the blank page to display a message to the subject using the <a href="../../plugins/jspsych-text">jspsych-text</a> plugin.</p>
+<p>It doesn't hurt to greet the subject with a nice welcome message before the experiment starts. In the code below, some JavaScript is added to the blank page to display a message to the subject using the <a href="../../plugins/jspsych-text/">jspsych-text</a> plugin.</p>
 <p>To walkthrough the example, I'll start by annotating the individual chunks of code. Then I'll show everything put together at the end.</p>
 <p>First, we create a block that uses the jspsych-text plugin and contains a simple string to show the subject.</p>
 <pre><code class="javascript">var welcome_block = {
@@ -372,7 +379,7 @@
 experiment.push(welcome_block);
 </code></pre>
 
-<p>Finally, we tell jsPsych to run the experiment by calling the <a href="../../core_library/jspsych-core#jspsychinit">jsPsych.init() function</a> and passing in the array that defines the experiment structure.</p>
+<p>Finally, we tell jsPsych to run the experiment by calling the <a href="../../core_library/jspsych-core/#jspsychinit">jsPsych.init() function</a> and passing in the array that defines the experiment structure.</p>
 <pre><code class="javascript">jsPsych.init({
   experiment_structure: experiment
 });
@@ -383,7 +390,7 @@ experiment.push(welcome_block);
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;My experiment&lt;/title&gt;
-    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
     &lt;link href=&quot;jsPsych-4.0/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
@@ -437,7 +444,7 @@ experiment.push(welcome_block);
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;My experiment&lt;/title&gt;
-    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
     &lt;link href=&quot;jsPsych-4.0/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
@@ -481,7 +488,7 @@ experiment.push(welcome_block);
 </code></pre>
 
 <h2 id="part-4-displaying-stimuli-and-getting-responses">Part 4: Displaying stimuli and getting responses</h2>
-<p>Conceptually, creating a block to show the stimuli is the same as creating a block to show instructions. The major difference is that we'll use the <a href="../../plugins/jspsych-single-stim">jspsych-single-stim</a> plugin to show the stimuli. This plugin has different options than the jspsych-text plugin, so the code that defines the block will look slightly different.</p>
+<p>Conceptually, creating a block to show the stimuli is the same as creating a block to show instructions. The major difference is that we'll use the <a href="../../plugins/jspsych-single-stim/">jspsych-single-stim</a> plugin to show the stimuli. This plugin has different options than the jspsych-text plugin, so the code that defines the block will look slightly different.</p>
 <p>First, to use a plugin we need to load it in the <code>&lt;head&gt;</code> section of the experiment page:</p>
 <pre><code class="html">&lt;head&gt;
   ...
@@ -491,8 +498,8 @@ experiment.push(welcome_block);
 </code></pre>
 
 <p>You'll need to download the image files used as stimuli in the experiment. Here are the images we'll use. Right-click on each image and select <em>Save Image As...</em>. Put the images in a folder called <code>img</code> in the experiment folder you created in Part 1.</p>
-<p><img alt="blue circle" src="../../../img/blue.png" />
-<img alt="orange circle" src="../../../img/orange.png" /></p>
+<p><img alt="blue circle" src="../../img/blue.png" />
+<img alt="orange circle" src="../../img/orange.png" /></p>
 <p>Next, we'll define the block. For now, we'll just show each image once. The <code>stimuli</code> parameter in the block definition below takes an array, and each element of the array represents an image that will be shown in its own trial. Because we are only specifying two images, there will only be two trials. You could create multiple trials for each image by repeating the array elements (there's functionality in jsPsych to help with this, which we'll see later in the tutorial).  We'll also set the option for which keys the subject is allowed to use to respond (<code>choices</code>) so that only the 'F' key is a valid response.</p>
 <pre><code class="javascript">var test_block = {
   type: &quot;single-stim&quot;,
@@ -510,7 +517,7 @@ experiment.push(welcome_block);
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;My experiment&lt;/title&gt;
-    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-single-stim.js&quot;&gt;&lt;/script&gt;
@@ -590,13 +597,13 @@ experiment.push(welcome_block);
 };
 </code></pre>
 
-<p>If you are wondering where to figure out what the various parameter options for a plugin are, each plugin has its own <a href="../../plugins/overview">documentation page</a> which gives a list of all the parameters for that plugin and what the default values are.</p>
+<p>If you are wondering where to figure out what the various parameter options for a plugin are, each plugin has its own <a href="../../plugins/overview/">documentation page</a> which gives a list of all the parameters for that plugin and what the default values are.</p>
 <h3 id="the-complete-code-so-far_3">The complete code so far</h3>
 <pre><code class="html">&lt;!doctype html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;My experiment&lt;/title&gt;
-    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-single-stim.js&quot;&gt;&lt;/script&gt;
@@ -657,7 +664,7 @@ experiment.push(welcome_block);
 <pre><code class="javascript">var test_stimuli = ['img/blue.png', 'img/orange.png'];
 </code></pre>
 
-<p>Next, we'll use the <a href="../../core_library/jspsych-randomization#jspsychrandomizationrepeat"><code>jsPsych.randomization.repeat()</code> method</a> to generate an array that contains multiple copies of each stimulus in a random order. The first parameter to the method is the array containing the items to repeat and randomize. The second parameter is the number of times to repeat each element.</p>
+<p>Next, we'll use the <a href="../../core_library/jspsych-randomization/#jspsychrandomizationrepeat"><code>jsPsych.randomization.repeat()</code> method</a> to generate an array that contains multiple copies of each stimulus in a random order. The first parameter to the method is the array containing the items to repeat and randomize. The second parameter is the number of times to repeat each element.</p>
 <pre><code class="javascript">var all_trials = jsPsych.randomization.repeat(test_stimuli, 10);
 </code></pre>
 
@@ -676,7 +683,7 @@ experiment.push(welcome_block);
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;My experiment&lt;/title&gt;
-    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-single-stim.js&quot;&gt;&lt;/script&gt;
@@ -736,8 +743,8 @@ experiment.push(welcome_block);
 </code></pre>
 
 <h2 id="part-7-displaying-the-data">Part 7: Displaying the data</h2>
-<p>We've got a reasonable experiment at this point, so let's take a look at the data being generated. jsPsych has a handy <a href="../../core_library/jspsych-data#jspsychdatadisplaydata">function called <code>jsPsych.data.displayData()</code></a> that is useful for debugging your experiment. It will remove all of the information on the screen and replace it with the raw data collected so far. This isn't terribly useful when you are actually running an experiment, but it's very handy for checking the data during development.</p>
-<p>We need the <code>displayData</code> function to execute when the experiment ends. One way to do this is to use the <a href="../../features/callbacks#on_finish-experiment"><code>on_finish</code> callback function</a>. This function will automatically execute once all the blocks in the experiment are finished. We can specify a function to call in the <code>init</code> method.</p>
+<p>We've got a reasonable experiment at this point, so let's take a look at the data being generated. jsPsych has a handy <a href="../../core_library/jspsych-data/#jspsychdatadisplaydata">function called <code>jsPsych.data.displayData()</code></a> that is useful for debugging your experiment. It will remove all of the information on the screen and replace it with the raw data collected so far. This isn't terribly useful when you are actually running an experiment, but it's very handy for checking the data during development.</p>
+<p>We need the <code>displayData</code> function to execute when the experiment ends. One way to do this is to use the <a href="../../features/callbacks/#on_finish-experiment"><code>on_finish</code> callback function</a>. This function will automatically execute once all the blocks in the experiment are finished. We can specify a function to call in the <code>init</code> method.</p>
 <pre><code class="javascript">jsPsych.init({
   experiment_structure: experiment,
   on_finish: function() {
@@ -751,7 +758,7 @@ experiment.push(welcome_block);
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;My experiment&lt;/title&gt;
-    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-single-stim.js&quot;&gt;&lt;/script&gt;
@@ -829,7 +836,7 @@ experiment.push(welcome_block);
 ];
 </code></pre>
 
-<p>We also need to modify the call to <code>jsPsych.randomization.repeat</code>. We're going to specify a third variable in the function call. This variable determines how the randomized array is returned. If the value is <code>true</code>, then the array will come back with each different property of the elements in the array separated into its own value. If the value is <code>false</code>, then the elements are left as is, and just randomized and repeated as per the first two arguments. You can learn more about the function in the <a href="../../core_library/jspsych-randomization#jspsychrandomizationrepeat">API documentation</a>.</p>
+<p>We also need to modify the call to <code>jsPsych.randomization.repeat</code>. We're going to specify a third variable in the function call. This variable determines how the randomized array is returned. If the value is <code>true</code>, then the array will come back with each different property of the elements in the array separated into its own value. If the value is <code>false</code>, then the elements are left as is, and just randomized and repeated as per the first two arguments. You can learn more about the function in the <a href="../../core_library/jspsych-randomization/#jspsychrandomizationrepeat">API documentation</a>.</p>
 <p>Here we are going to specify <code>true</code> for the third parameter, to make it easier to create the testing block.</p>
 <pre><code class="javascript">var all_trials = jsPsych.randomization.repeat(test_stimuli, 10, true);
 </code></pre>
@@ -849,7 +856,7 @@ experiment.push(welcome_block);
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;My experiment&lt;/title&gt;
-    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-single-stim.js&quot;&gt;&lt;/script&gt;
@@ -948,7 +955,7 @@ experiment.push(welcome_block);
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;My experiment&lt;/title&gt;
-    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-single-stim.js&quot;&gt;&lt;/script&gt;
@@ -1064,7 +1071,7 @@ experiment.push(welcome_block);
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;My experiment&lt;/title&gt;
-    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-single-stim.js&quot;&gt;&lt;/script&gt;
@@ -1166,16 +1173,18 @@ experiment.push(welcome_block);
     });
   &lt;/script&gt;
 &lt;/html&gt;
-</code></pre>
-
-</div>
+</code></pre></div>
         </div>
 
-        
+        <footer class="col-md-12">
+            <hr>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
 
-        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/jquery-1.10.2.min.js"></script>
         <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
         <script src="../../js/base.js"></script>
         <script src="../../js/extra.js"></script>
         <script src="../../js/analytics.js"></script>

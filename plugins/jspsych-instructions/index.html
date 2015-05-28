@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Overview - jsPsych</title>
+	<title>jspsych-instructions - jsPsych</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -111,8 +111,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Plugins <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
-                        <li class="active">
-                            <a href="./">Overview</a>
+                        <li >
+                            <a href="../overview/">Overview</a>
                         </li>
                     
                         <li >
@@ -143,8 +143,8 @@
                             <a href="../jspsych-html/">jspsych-html</a>
                         </li>
                     
-                        <li >
-                            <a href="../jspsych-instructions/">jspsych-instructions</a>
+                        <li class="active">
+                            <a href="./">jspsych-instructions</a>
                         </li>
                     
                         <li >
@@ -280,12 +280,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <li >
-                    <a rel="next" href="../../core_library/jspsych-pluginAPI/">
+                    <a rel="next" href="../jspsych-html/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../creating-a-plugin/">
+                    <a rel="prev" href="../jspsych-multi-stim-multi-response/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -308,47 +308,23 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#plugins">Plugins</a></li>
+        <li class="main active"><a href="#jspsych-instructions-plugin">jspsych-instructions plugin</a></li>
         
-            <li><a href="#using-a-plugin">Using a plugin</a></li>
+            <li><a href="#parameters">Parameters</a></li>
         
-            <li><a href="#parameters-available-plugins">Parameters available plugins</a></li>
+            <li><a href="#data-generated">Data Generated</a></li>
         
-            <li><a href="#data-collected-by-plugins">Data collected by plugins</a></li>
-        
-            <li><a href="#list-of-available-plugins">List of available plugins</a></li>
+            <li><a href="#example">Example</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="plugins">Plugins</h1>
-<p>In jsPsych, plugins define the kinds of tasks that subjects perform in experiments. Some plugins define very general tasks, like displaying instructions or displaying a visual stimulus and getting a keyboard response. Other plugins are more specific, displaying particular kinds of interactive stimuli, or running a specific kind of perceptual discrimination task. Creating an experiment with jsPsych involves figuring out which plugins are needed for the kinds of tasks you want to have your subjects perform.</p>
-<p>Plugins provide a structure for a particular task. For example, the <code>jspsych-single-stim</code> plugin defines a simple structure for showing a visual stimulus and collecting a keyboard response. To use the plugin, you need to specify the content, such as what the stimulus is, what keys the subject is allowed to press, and how long the stimulus should be on the screen. Many of these content options have reasonable default values; even though the <code>jspsych-single-stim</code> plugin has many different options, you only <em>need</em> to specify the stimulus in order to use it. Each plugin has its own documentation page, which describes what the plugin does and what options are available.</p>
-<h2 id="using-a-plugin">Using a plugin</h2>
-<p>To use a plugin, you'll need to load the plugin's JavaScript file on your experiment page:</p>
-<pre><code class="html">&lt;script src=&quot;jspsych/plugins/jspsych-single-stim.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
-</code></pre>
-
-<p>Once a plugin is loaded, you can define a block that uses that plugin. The following JavaScript code defines a trial using the <code>jspsych-single-stim</code> plugin to display an image file ('images/happy_face.jpg'). This trial uses the default values for valid keys, length of display, and so on. You could override these values by adding them to the object.</p>
-<pre><code class="javascript">var single_stim_block = {
-    type: 'single-stim',
-    stimuli: 'images/happy_face.jpg'
-}
-</code></pre>
-
-<p>Here's an exampe of overriding the default value for <code>timing_post_trial</code>:</p>
-<pre><code class="javascript">var single_stim_block = {
-    type: 'single-stim',
-    stimuli: 'images/happy_face.jpg',
-    timing_post_trial: 2000
-}
-</code></pre>
-
-<h2 id="parameters-available-plugins">Parameters available plugins</h2>
-<p>Each plugin specifies its own set of parameters. Check the documentation for a plugin to see what parameters are available and what they do.</p>
-<p>In addition, there is a set of parameters that can be specified for any plugin.</p>
+<h1 id="jspsych-instructions-plugin">jspsych-instructions plugin</h1>
+<p>This plugin is for showing instructions to the subject. Navigation can be done using the mouse or keyboard.</p>
+<h2 id="parameters">Parameters</h2>
+<p>This table lists the parameters associated with this plugin. Parameters with a default value of <em>undefined</em> must be specified. Other parameters can be left unspecified if the default value is acceptable.</p>
 <table>
 <thead>
 <tr>
@@ -360,28 +336,45 @@
 </thead>
 <tbody>
 <tr>
-<td>timing_post_trial</td>
-<td>numeric</td>
-<td>1000</td>
-<td>Sets the time, in milliseconds, between the current trial and the next trial.</td>
+<td>pages</td>
+<td>array</td>
+<td><em>undefined</em></td>
+<td>Each element of the array is the content for a single page. Each page should be an HTML-formatted string.</td>
 </tr>
 <tr>
-<td>on_finish</td>
-<td>function</td>
-<td><em>undefined</em></td>
-<td>A callback function to execute when the trial finishes. See <a href="../../features/callbacks/">this page</a> for more details.</td>
+<td>key_forward</td>
+<td>key code</td>
+<td>'rightarrow'</td>
+<td>This is the key that the subject can press in order to advance to the next page. Keys can be specified as their <a href="http://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes">numeric key code</a> or as characters (e.g. <code>'a'</code>, <code>'q'</code>).</td>
 </tr>
 <tr>
-<td>data</td>
-<td>object</td>
-<td><em>undefined</em></td>
-<td>An object containing additional data to store for the trial. See <a href="../../features/data/">this page</a> for more details.</td>
+<td>key_backward</td>
+<td>key code</td>
+<td>'leftarrow'</td>
+<td>This is the key that the subject can press to return to the previous page.</td>
+</tr>
+<tr>
+<td>allow_backward</td>
+<td>boolean</td>
+<td>true</td>
+<td>If true, the subject can return to previous pages of the instructions. If false, they may only advace to the next page.</td>
+</tr>
+<tr>
+<td>allow_keys</td>
+<td>boolean</td>
+<td>true</td>
+<td>If true, the subject can use keyboard keys to navigate the pages. If false, they may not.</td>
+</tr>
+<tr>
+<td>show_clickable_nav</td>
+<td>boolean</td>
+<td>false</td>
+<td>If true, then a <code>Previous</code> and <code>Next</code> button will be displayed beneath the instructions. Subjects can click the buttons to navigate.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="data-collected-by-plugins">Data collected by plugins</h2>
-<p>Each plugin defines what data is collected on the trial. The documentation for each plugin specifies what data is collected by that plugin.</p>
-<p>In addition to the data collected by a plugin, there is a default set of data that is collected on every trial. The collected data are:</p>
+<h2 id="data-generated">Data Generated</h2>
+<p>In addition to the <a href="../overview#datacollectedbyplugins">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
 <table>
 <thead>
 <tr>
@@ -392,124 +385,40 @@
 </thead>
 <tbody>
 <tr>
-<td>trial_type</td>
-<td>string</td>
-<td>The name of the plugin used to run the trial.</td>
+<td>view_history</td>
+<td>JSON string</td>
+<td>A JSON string containing the order of pages the subject viewed (including when the subject returned to previous pages) and the time spent viewing each page.</td>
 </tr>
 <tr>
-<td>trial_index</td>
+<td>rt</td>
 <td>numeric</td>
-<td>The index of the current trial in the <strong>block</strong>.</td>
-</tr>
-<tr>
-<td>trial_index_global</td>
-<td>numeric</td>
-<td>The index of the current trial across the whole experiment.</td>
-</tr>
-<tr>
-<td>time_elapsed</td>
-<td>numeric</td>
-<td>The number of milliseconds since the start of the experiment when the trial ended.</td>
-</tr>
-<tr>
-<td>internal_chunk_id</td>
-<td>string</td>
-<td>A string identifier for the current chunk.</td>
+<td>The response time in milliseconds for the subject to view all of the pages.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="list-of-available-plugins">List of available plugins</h2>
-<p>This table is a description of all plugins that are currently bundled with jsPsych. Click on the name of a plugin to view its documentation page.</p>
-<table>
-<thead>
-<tr>
-<th>Plugin</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../plugins/jspsych-animation">jspsych&#8209;animation</a></td>
-<td>Shows a sequence of images at a specified frame rate. Records key presses (including timing information) made by the subject while they are viewing the animation.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-call-function">jspsych&#8209;call&#8209;function</a></td>
-<td>Executes an arbitrary function call. Doesn't display anything to the subject, and the subject is usually unaware that this plugin has even executed. It's useful for performing tasks at specified times in the experiment, such as saving data.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-categorize">jspsych&#8209;categorize</a></td>
-<td>The subject responds to a stimulus using the keyboard and can be given feedback about the correctness of their response.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-categorize-animation">jspsych&#8209;categorize&#8209;animation</a></td>
-<td>A mash-up of the animation and categorize plugin. The subject responds to an animation and can be given feedback about their response.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-free-sort">jspsych&#8209;free&#8209;sort</a></td>
-<td>Displays a set of images on the screen in random locations. Subjects can click and drag the images to move them around the screen. Records all the moves made by the subject, so the sequence of moves can be recovered from the data.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-instructions">jspsych&#8209;instructions</a></td>
-<td>For displaying instructions to the subject.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-html">jspsych&#8209;html</a></td>
-<td>Displays an external HTML page (such as a consent form) and lets the subject respond by clicking a button or pressing a key. Plugin can validate their response, which is useful for making sure that a subject has granted consent before starting the experiment.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-multi-stim-multi-response">jspsych&#8209;multi&#8209;stim&#8209;multi&#8209;response</a></td>
-<td>A more generalized version of the single-stim plugin. Can display multiple stimuli in a single trial, and collect multiple responses in a single trial.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-palmer">jspsych&#8209;palmer</a></td>
-<td>Shows grid-like stimuli inspired by Stephen Palmer's work. The stimuli are editable: subjects can add and subtract parts interactively. Also contains a method for generating the HTML code to render the stimuli, allowing them to be used in other plugins.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-reconstruction">jspsych&#8209;reconstruction</a></td>
-<td>The subject interacts with a stimulus by modifying a parameter of the stimulus and observing the change in the stimulus in real-time.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-same-different">jspsych&#8209;same&#8209;different</a></td>
-<td>A same-different judgment task. A stimulus is shown, followed by a brief gap, and then another stimulus is shown. The subject indicates whether the stimuli are the same or different.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-similarity">jspsych&#8209;similarity</a></td>
-<td>Two stimuli are shown sequentially, and the subject indicates how similar they are by dragging a slider object.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-single-stim">jspsych&#8209;single&#8209;stim</a></td>
-<td>A basic plugin for displaying a stimulus and getting a keyboard response.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-survey-likert">jspsych&#8209;survey&#8209;likert</a></td>
-<td>Displays likert-style questions. The subject responds by dragging a slider.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-survey-text">jspsych&#8209;survey&#8209;text</a></td>
-<td>Shows a prompt with a text box. The subject writes a response and then submits by clicking a button.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-text">jspsych&#8209;text</a></td>
-<td>Shows HTML-formatted text on the screen.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-visual-search-circle">jspsych&#8209;visual&#8209;search&#8209;circle</a></td>
-<td>A customizable visual-search task modelled after <a href="http://dx.doi.org/10.3758/BF03206946">Wang, Cavanagh, &amp; Green (1994)</a>. The subject indicates whether or not a target is present among a set of distractors. The stimuli are displayed in a circle, evenly-spaced, equidistant from a fixation point.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-vsl-animate-occlusion">jspsych&#8209;vsl&#8209;animate&#8209;occlusion</a></td>
-<td>A visual statistical learning paradigm based on <a href="http://dx.doi.org/10.1037//0278-7393.28.3.458">Fiser &amp; Aslin (2002)</a>. A sequence of stimuli are shown in an oscillatory motion. An occluding rectangle is in the center of the display, and the stimuli change when they are behind the rectangle.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-vsl-grid-scene">jspsych&#8209;vsl&#8209;grid&#8209;scene</a></td>
-<td>A visual statistical learning paradigm based on <a href="http://dx.doi.org/10.1111/1467-9280.00392">Fiser &amp; Aslin (2001)</a>. A scene made up of individual stimuli arranged in a grid is shown. This plugin can also generate the HTML code to render the stimuli for use in other plugins.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-xab">jspsych&#8209;xab</a></td>
-<td>A two-alternative forced choice task. A target (X) is shown, followed by a brief gap, and then two choices (A &amp; B) are displayed. The subject must pick whichever one matches X (matches is defined however the experimenter wishes; it could be a literal match, or it could be a match on some particular property).</td>
-</tr>
-</tbody>
-</table></div>
+<h2 id="example">Example</h2>
+<h4 id="showing-simple-text-instructions">Showing simple text instructions</h4>
+<pre><code class="javascript">var block = {
+    type: 'instructions',
+    pages: [
+        'Welcome to the experiment. Click next to begin.',
+        'This is the second page of instructions.',
+        'This is the final page.'
+    ],
+    show_clickable_nav: true
+}
+</code></pre>
+
+<h4 id="including-images">Including images</h4>
+<pre><code class="javascript">var block = {
+    type: 'instructions',
+    pages: [
+        'Welcome to the experiment. Click next to begin.',
+        'Here is a picture of what you will do: &lt;img src=&quot;instruction_image.jpg&quot;&gt;&lt;/img&gt;'
+    ],
+    show_clickable_nav: true
+}
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

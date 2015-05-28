@@ -9,11 +9,11 @@
         
         <link rel="shortcut icon" href="./img/favicon.ico">
 
-        <title>jsPsych</title>
+	<title>jsPsych</title>
 
         <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link href="./css/prettify-1.0.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/highlight.css">
         <link href="./css/base.css" rel="stylesheet">
         <link href="./css/extra.css" rel="stylesheet">
 
@@ -22,6 +22,8 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+
+        
     </head>
 
     <body>
@@ -49,6 +51,12 @@
             <ul class="nav navbar-nav">
             
             
+                <li class="active">
+                    <a href=".">Introduction</a>
+                </li>
+            
+            
+            
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -58,11 +66,7 @@
                         </li>
                     
                         <li >
-                            <a href="tutorials/go-nogo-task/">Demo Experiment: Go / No-Go Task</a>
-                        </li>
-                    
-                        <li >
-                            <a href="tutorials/flanker-task/">Demo Experiment: Flanker Task</a>
+                            <a href="tutorials/go-nogo-task/">Demo Experiment: Simple Reaction Time Task</a>
                         </li>
                     
                     </ul>
@@ -137,6 +141,10 @@
                     
                         <li >
                             <a href="plugins/jspsych-html/">jspsych-html</a>
+                        </li>
+                    
+                        <li >
+                            <a href="plugins/jspsych-instructions/">jspsych-instructions</a>
                         </li>
                     
                         <li >
@@ -271,7 +279,6 @@
 
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
-                
                 <li class="disabled">
                     <a rel="next" >
                         <i class="fa fa-arrow-left"></i> Previous
@@ -320,7 +327,7 @@
 <p>To build an experiment with jsPsych, you'll specify the structure of the experiment using JavaScript code. You'll also need to provide the <em>content</em> that defines your experiment, such as the actual text that subjects see when they are shown instructions and the images that they will view. You can also specify a wide-range of parameters to control things like stimulus duration, which keyboard keys subjects are allowed to press, and so on.</p>
 <p>This page gives a broad overview of how jsPsych works. More detail is available on most of the topics on this page by using the navigation above, or by following the links within the documentation.</p>
 <h2 id="download-jspsych">Download jsPsych</h2>
-<p><a href="https://github.com/jodeleeuw/jsPsych/archive/v4.1.zip" class="btn btn-primary" role="button">Download jsPsych v4.1 (zip)</a></p>
+<p><a href="https://github.com/jodeleeuw/jsPsych/archive/v4.2.zip" class="btn btn-primary" role="button">Download jsPsych v4.2 (zip)</a></p>
 <p>jsPsych is hosted at <a href="http://github.com/jodeleeuw/jsPsych">GitHub</a>. You can find all other jsPsych releases there.</p>
 <h2 id="loading-jspsych">Loading jsPsych</h2>
 <p>To use jsPsych, you'll need to load a few JavaScript files in an HTML document. At a minimum, you'll be loading three files: the jQuery library, the main jsPsych.js library, and at least one jsPsych plugin. A bare-bones jsPsych-ready document (with the single-stim plugin loaded) will look something like the following:</p>
@@ -360,16 +367,18 @@ experiment.push(block);
 <pre><code class="javascript">jsPsych.init({
     experiment_structure: experiment
 })
-</code></pre>
-
-</div>
+</code></pre></div>
         </div>
 
-        
+        <footer class="col-md-12">
+            <hr>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
 
-        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="./js/jquery-1.10.2.min.js"></script>
         <script src="./js/bootstrap-3.0.3.min.js"></script>
-        <script src="./js/prettify-1.0.min.js"></script>
+        <script src="./js/highlight.pack.js"></script>
         <script src="./js/base.js"></script>
         <script src="./js/extra.js"></script>
         <script src="./js/analytics.js"></script>
