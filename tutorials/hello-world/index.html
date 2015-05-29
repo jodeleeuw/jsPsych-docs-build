@@ -330,10 +330,10 @@
 <h1 id="jspsych-hello-world-experiment">jsPsych "Hello World" experiment</h1>
 <p>In the long tradition of <code>hello world</code> examples, this tutorial creates an experiment that outputs the phrase "Hello World" to the browser. Though useless as an actual experiment, the process is helpful for learning the basics of using the jsPsych library. This tutorial will assume that you know very little about how to set up a web page.</p>
 <h2 id="step-1-download-the-jspsych-library">Step 1: Download the jsPsych library</h2>
-<p>Start by downloading the jsPsych library. The most recent version can always be found on the <a href="https://github.com/jodeleeuw/jsPsych/releases">GitHub releases page</a>. Download either the ZIP or TAR archive of the latest release.</p>
+<p>Start by downloading the jsPsych library. The most recent version can always be found on the <a href="https://github.com/jodeleeuw/jsPsych/releases">GitHub releases page</a>.</p>
 <p><img alt="releasespage" src="../../img/githubreleases.jpg" /></p>
 <h2 id="step-2-create-a-folder-to-store-your-experiment-files">Step 2: Create a folder to store your experiment files</h2>
-<p>Create a folder on your computer to put the experiment files in. Once you've created the folder, open the downloaded archive from step 1, and move the extracted folder (called <code>jsPsych-4.0.1</code> if using v4.0.1 of jsPsych) into the experiment folder. Here's what it looks like on a mac:</p>
+<p>Create a folder on your computer to put the experiment files in. Once you've created the folder, open the downloaded archive from step 1, and move the extracted folder (called <code>jspsych-4.2</code> if using v4.2 of jsPsych) into the experiment folder. Here's what it looks like on a mac:</p>
 <p><img alt="folder setup" src="../../img/folder-setup.png" /></p>
 <h2 id="step-3-create-a-new-html-file">Step 3: Create a new HTML file</h2>
 <p>To edit jsPsych code, you'll need a programming-friendly text editor. Some free options are:</p>
@@ -364,7 +364,7 @@
     &lt;head&gt;
         &lt;title&gt;My experiment&lt;/title&gt;
         &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;jspsych-4.2/jspsych.js&quot;&gt;&lt;/script&gt;
     &lt;/head&gt;
     &lt;body&gt;
     &lt;/body&gt;
@@ -377,8 +377,8 @@
     &lt;head&gt;
         &lt;title&gt;My experiment&lt;/title&gt;
         &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
-        &lt;link href=&quot;jsPsych-4.0/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
+        &lt;script src=&quot;jspsych-4.2/jspsych.js&quot;&gt;&lt;/script&gt;
+        &lt;link href=&quot;jspsych-4.2/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
     &lt;/head&gt;
     &lt;body&gt;
     &lt;/body&gt;
@@ -392,9 +392,9 @@
     &lt;head&gt;
         &lt;title&gt;My experiment&lt;/title&gt;
         &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
-        &lt;link href=&quot;jsPsych-4.0/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
+        &lt;script src=&quot;jspsych-4.2/jspsych.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;jspsych-4.2/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
+        &lt;link href=&quot;jspsych-4.2/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
     &lt;/head&gt;
     &lt;body&gt;
     &lt;/body&gt;
@@ -408,9 +408,9 @@
     &lt;head&gt;
         &lt;title&gt;My experiment&lt;/title&gt;
         &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
-        &lt;link href=&quot;jsPsych-4.0/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
+        &lt;script src=&quot;jspsych-4.2/jspsych.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;jspsych-4.2/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
+        &lt;link href=&quot;jspsych-4.2/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
     &lt;/head&gt;
     &lt;body&gt;
     &lt;/body&gt;
@@ -431,9 +431,9 @@
     &lt;head&gt;
         &lt;title&gt;My experiment&lt;/title&gt;
         &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;jsPsych-4.0/jspsych.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;jsPsych-4.0/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
-        &lt;link href=&quot;jsPsych-4.0/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
+        &lt;script src=&quot;jspsych-4.2/jspsych.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;jspsych-4.2/plugins/jspsych-text.js&quot;&gt;&lt;/script&gt;
+        &lt;link href=&quot;jspsych-4.2/css/jspsych.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;
     &lt;/head&gt;
     &lt;body&gt;
     &lt;/body&gt;
