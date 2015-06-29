@@ -422,10 +422,11 @@ plugin.create = function(params) {
 
 <hr />
 <h2 id="jspsychpluginapigetkeyboardresponse">jsPsych.pluginAPI.getKeyboardResponse</h2>
-<pre><code>jsPsych.pluginAPI.getKeyboardResponse(callback_function, valid_responses, rt_method, persist)
+<pre><code>jsPsych.pluginAPI.getKeyboardResponse(parameters)
 </code></pre>
 
 <h3 id="parameters_3">Parameters</h3>
+<p>The method accepts an object of parameter values (see example below). The valid keys for this object are listed in the table below.</p>
 <table>
 <thead>
 <tr>
@@ -448,7 +449,22 @@ plugin.create = function(params) {
 <tr>
 <td>rt_method</td>
 <td>string</td>
-<td>Indicates which method of recording time to use. The <code>'date'</code> method uses calls to <code>(new Date()).getTime()</code> to record timing information. The <code>'performance'</code> method uses calls to <code>performance.now()</code>, which is a more modern JavaScript feature. The <code>'performance'</code> approach is <a href="http://caniuse.com/#search=performance">not supported by all the major browsers yet</a>, but adoption rates are increasing.</td>
+<td>Indicates which method of recording time to use. The <code>'date'</code> method uses calls to <code>(new Date()).getTime()</code> to record timing information. The <code>'performance'</code> method uses calls to <code>performance.now()</code>, which is a more modern JavaScript feature. The <code>'performance'</code> approach is <a href="http://caniuse.com/#search=performance">not supported by all the major browsers yet</a>, but adoption rates are increasing. The <code>audio</code> method is used in conjuction with an <code>audio_context</code> (set as an additional parameter). This uses the clock time of the <code>audio_context</code> when audio stimuli are being played.</td>
+</tr>
+<tr>
+<td>audio_context</td>
+<td>AudioContext object</td>
+<td>The AudioContext of the audio file that is being played.</td>
+</tr>
+<tr>
+<td>audio_context_start_time</td>
+<td>numeric</td>
+<td>The scheduled time of the sound file in the AudioContext. This will be used as the start time.</td>
+</tr>
+<tr>
+<td>allow_held_key</td>
+<td>boolean</td>
+<td>If <code>true</code>, then responses will be registered from keys that are being held down. If <code>false</code>, then a held key can only register a response the first time that <code>getKeyboardResponse</code> is called for that key. For example, if a participant holds down the <code>A</code> key before the experiment starts, then the first time <code>getKeyboardResponse</code> is called, the <code>A</code> will register as a key press. However, any future calls to <code>getKeyboardResponse</code> will not register the <code>A</code> until the participant releases the key and presses it again.</td>
 </tr>
 <tr>
 <td>persist</td>
@@ -469,7 +485,12 @@ var after_response = function(info){
     alert('You pressed key '+info.key+' after '+info.rt+'ms');
 }
 
-jsPsych.pluginAPI.getKeyboardResponse(after_response, [], 'date', false);
+jsPsych.pluginAPI.getKeyboardResponse({
+  callback_function:after_response,
+  valid_responses: [],
+  rt_method: 'date',
+  persist: false
+});
 </code></pre>
 
 <h4 id="get-a-responses-from-a-key-until-the-letter-q-is-pressed">Get a responses from a key until the letter Q is pressed</h4>
@@ -482,7 +503,12 @@ var after_response = function(info){
     }
 }
 
-var listener = jsPsych.pluginAPI.getKeyboardResponse(after_response, [], 'date', true);
+var listener = jsPsych.pluginAPI.getKeyboardResponse({
+  callback_function:after_response,
+  valid_responses: [], 
+  rt_method: 'date',
+  persist: true
+});
 </code></pre>
 
 <hr />

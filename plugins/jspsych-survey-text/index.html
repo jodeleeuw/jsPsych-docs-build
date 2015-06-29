@@ -347,6 +347,18 @@
 <td>empty string</td>
 <td>HTML formatted string to display at the top of the page above all the questions.</td>
 </tr>
+<tr>
+<td>rows</td>
+<td>array</td>
+<td>1</td>
+<td>The number of rows for the response text box. Array dimensions must match <code>questions</code> array, with a numeric value for each entry indicating the number of rows for that question's box.</td>
+</tr>
+<tr>
+<td>columns</td>
+<td>array</td>
+<td>40</td>
+<td>The number of columns for the response text box. Array dimensions must match <code>questions</code> array, with a numeric value for each entry indicating the number of columns for that question's box.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="data-generated">Data Generated</h2>
@@ -381,6 +393,19 @@ var page_2_questions = [&quot;What is your favorite food?&quot;];
 var survey_block = {
     type: 'survey-text',
     questions: [page_1_questions, page_2_questions],
+};
+</code></pre>
+
+<h3 id="custom-number-of-rows-and-columns">Custom number of rows and columns</h3>
+<pre><code class="javascript">// defining groups of questions that will go together.
+var page_1_questions = [&quot;How old are you?&quot;, &quot;Where were you born?&quot;];
+var page_2_questions = [&quot;What is your favorite food?&quot;];
+
+var survey_block = {
+    type: 'survey-text',
+    questions: [page_1_questions, page_2_questions],
+    rows: [[5,3],[2]],
+    columns: [[40,50],[60]]
 };
 </code></pre></div>
         </div>
