@@ -1,345 +1,531 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../favicon.ico">
-        
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>jsPsych.pluginAPI - jsPsych</title>
+  
 
-	<title>jsPsych.pluginAPI - jsPsych</title>
+  <link rel="shortcut icon" href="../../favicon.ico">
+  
 
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link href="../../css/extra.css" rel="stylesheet">
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/extra.css" rel="stylesheet">
 
-        
-    </head>
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "jsPsych.pluginAPI";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../js/extra.js"></script>
+  <script src="../../js/analytics.js"></script>
 
-    <body>
+  
+</head>
 
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+<body class="wy-body-for-nav" role="document">
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+  <div class="wy-grid-for-nav">
 
-            <!-- Main title -->
-            <a class="navbar-brand" href="../..">jsPsych</a>
-        </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-            <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-            
-            
-                <li >
-                    <a href="../..">Introduction</a>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../tutorials/hello-world/">The Basics: Hello World</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../tutorials/go-nogo-task/">Demo Experiment: Simple Reaction Time Task</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Core Library API <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../overview/">Overview</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-core/">jsPsych core</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-data/">jsPsych.data</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-randomization/">jsPsych.randomization</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-turk/">jsPsych.turk</a>
-                        </li>
-                    
-                        <li class="active">
-                            <a href="./">jsPsych.pluginAPI</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Plugins <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../plugins/overview/">Overview</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/creating-a-plugin/">Creating a New Plugin</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-animation/">jspsych-animation</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-call-function/">jspsych-call-function</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-categorize/">jspsych-categorize</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-categorize-animation/">jspsych-categorize-animation</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-free-sort/">jspsych-free-sort</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-html/">jspsych-html</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-instructions/">jspsych-instructions</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-multi-stim-multi-response/">jspsych-multi-stim-multi-response</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-palmer/">jspsych-palmer</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-reconstruction/">jspsych-reconstruction</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-same-different/">jspsych-same-different</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-similarity/">jspsych-similarity</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-single-audio/">jspsych-single-audio</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-single-stim/">jspsych-single-stim</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-survey-likert/">jspsych-survey-likert</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-survey-text/">jspsych-survey-text</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-text/">jspsych-text</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-visual-search-circle/">jspsych-visual-search-circle</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-vsl-animate-occlusion/">jspsych-vsl-animate-occlusion</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-vsl-grid-scene/">jspsych-vsl-grid-scene</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../plugins/jspsych-xab/">jspsych-xab</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../features/chunks-blocks-trials/">Creating an Experiment: Chunks, Blocks, & Trials</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../features/progress-bar/">Automatic Progress Bar</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../features/mturk/">Integrating with Mechanical Turk</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../features/data/">Data Storage</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../features/randomization-repetition/">Randomization & Repetition</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../features/functions-as-parameters/">Using Functions as Plugin Parameters</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../features/callbacks/">Event-related Callback Functions</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../features/image-preloading/">Image Preloading</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li >
-                    <a href="../../support/">Support</a>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../about/about/">About jsPsych</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../about/license/">License</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../about/contributing/">Contributing to jsPsych</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            </ul>
-
-            <!-- Search, Navigation and Repo links -->
-            <ul class="nav navbar-nav navbar-right">
-                <li >
-                    <a rel="next" href="../jspsych-turk/">
-                        <i class="fa fa-arrow-left"></i> Previous
-                    </a>
-                </li>
-                <li >
-                    <a rel="prev" href="../../plugins/overview/">
-                        Next <i class="fa fa-arrow-right"></i>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://github.com/jodeleeuw/jsPsych">
-                        
-                            <i class="fa fa-github"></i>
-                        
-                        GitHub
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> jsPsych</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
 </div>
+      </div>
 
-        <div class="container">
-            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-    
-        <li class="main active"><a href="#jspsychpluginapi">jsPsych.pluginAPI</a></li>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Introduction</a>
         
-            <li><a href="#jspsychpluginapicancelallkeyboardresponses">jsPsych.pluginAPI.cancelAllKeyboardResponses</a></li>
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tutorials</span></li>
+
         
-            <li><a href="#jspsychpluginapicancelkeyboardresponse">jsPsych.pluginAPI.cancelKeyboardResponse</a></li>
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tutorials/hello-world/">The Basics: Hello World</a>
         
-            <li><a href="#jspsychpluginapienforcearray">jsPsych.pluginAPI.enforceArray</a></li>
+    </li>
+
         
-            <li><a href="#jspsychpluginapigetkeyboardresponse">jsPsych.pluginAPI.getKeyboardResponse</a></li>
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tutorials/rt-task/">Demo Experiment: Simple Reaction Time Task</a>
         
-            <li><a href="#jspsychpluginapievaluatefunctionparameters">jsPsych.pluginAPI.evaluateFunctionParameters</a></li>
+    </li>
+
         
-    
     </ul>
-</div></div>
-            <div class="col-md-9" role="main">
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Features</span></li>
 
-<h1 id="jspsychpluginapi">jsPsych.pluginAPI</h1>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../features/timeline/">Creating an Experiment: The Timeline</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../features/data/">Data Storage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../features/functions-as-parameters/">Dynamic Content:  Using Functions as Plugin Parameters</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../features/callbacks/">Event-related Callback Functions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../features/media-preloading/">Media Preloading</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../features/fullscreen/">Fullscreen Experiments</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../features/progress-bar/">Automatic Progress Bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../features/mturk/">Integrating with Mechanical Turk</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Core Library API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../overview/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-core/">jsPsych core</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-data/">jsPsych.data</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-randomization/">jsPsych.randomization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-turk/">jsPsych.turk</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">jsPsych.pluginAPI</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#jspsychpluginapi">jsPsych.pluginAPI</a></li>
+                
+                    <li><a class="toctree-l4" href="#jspsychpluginapiautopreload">jsPsych.pluginAPI.autoPreload</a></li>
+                
+                    <li><a class="toctree-l4" href="#jspsychpluginapicancelallkeyboardresponses">jsPsych.pluginAPI.cancelAllKeyboardResponses</a></li>
+                
+                    <li><a class="toctree-l4" href="#jspsychpluginapicancelkeyboardresponse">jsPsych.pluginAPI.cancelKeyboardResponse</a></li>
+                
+                    <li><a class="toctree-l4" href="#jspsychpluginapiconvertkeycharactertokeycode">jsPsych.pluginAPI.convertKeyCharacterToKeyCode</a></li>
+                
+                    <li><a class="toctree-l4" href="#jspsychpluginapigetaudiobuffer">jsPsych.pluginAPI.getAudioBuffer</a></li>
+                
+                    <li><a class="toctree-l4" href="#jspsychpluginapigetkeyboardresponse">jsPsych.pluginAPI.getKeyboardResponse</a></li>
+                
+                    <li><a class="toctree-l4" href="#jspsychpluginapievaluatefunctionparameters">jsPsych.pluginAPI.evaluateFunctionParameters</a></li>
+                
+                    <li><a class="toctree-l4" href="#jspsychpluginapipreloadimages">jsPsych.pluginAPI.preloadImages</a></li>
+                
+                    <li><a class="toctree-l4" href="#jspsychpluginapipreloadimages_1">jsPsych.pluginAPI.preloadImages</a></li>
+                
+                    <li><a class="toctree-l4" href="#jspsychpluginapiregisterpreload">jsPsych.pluginAPI.registerPreload</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Plugins</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/overview/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/creating-a-plugin/">Creating a New Plugin</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-animation/">jspsych-animation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-call-function/">jspsych-call-function</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-categorize/">jspsych-categorize</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-categorize-animation/">jspsych-categorize-animation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-free-sort/">jspsych-free-sort</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-html/">jspsych-html</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-instructions/">jspsych-instructions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-multi-stim-multi-response/">jspsych-multi-stim-multi-response</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-palmer/">jspsych-palmer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-reconstruction/">jspsych-reconstruction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-same-different/">jspsych-same-different</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-similarity/">jspsych-similarity</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-single-audio/">jspsych-single-audio</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-single-stim/">jspsych-single-stim</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-survey-likert/">jspsych-survey-likert</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-survey-multi-choice/">jspsych-survey-multi-choice</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-survey-text/">jspsych-survey-text</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-text/">jspsych-text</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-visual-search-circle/">jspsych-visual-search-circle</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-vsl-animate-occlusion/">jspsych-vsl-animate-occlusion</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-vsl-grid-scene/">jspsych-vsl-grid-scene</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/jspsych-xab/">jspsych-xab</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/">Support</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>About</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../about/about/">About jsPsych</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../about/license/">License</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../about/contributing/">Contributing to jsPsych</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">jsPsych</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Core Library API &raquo;</li>
+        
+      
+    
+    <li>jsPsych.pluginAPI</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/jodeleeuw/jsPsych" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="jspsychpluginapi">jsPsych.pluginAPI</h1>
 <p>The pluginAPI module contains functions that are useful when developing new plugins.</p>
+<hr />
+<h2 id="jspsychpluginapiautopreload">jsPsych.pluginAPI.autoPreload</h2>
+<pre><code>jsPsych.pluginAPI.autoPreload(timeline, callback)
+</code></pre>
+
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>timeline</td>
+<td>TimelineNode object</td>
+<td>A TimelineNode object that contains an arbitrary set of trials.</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>function</td>
+<td>A function to execute when loading is complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-value">Return value</h3>
+<p>Returns nothing.</p>
+<h3 id="description">Description</h3>
+<p>Attempts to preload all image files and audio files that will be used to run the trials on the timeline. Content will only preload from plugins that have used the <code>registerPreload</code> method to define the media types of their parameters.</p>
+<p>The callback function executes once all of the files are preloaded.</p>
+<p>This method is used internally by the core jsPsych code. It is not recommended that you call it manually.</p>
+<h3 id="examples">Examples</h3>
+<pre><code class="javascript">// you probably shouldn't use this method
+</code></pre>
+
 <hr />
 <h2 id="jspsychpluginapicancelallkeyboardresponses">jsPsych.pluginAPI.cancelAllKeyboardResponses</h2>
 <pre><code>jsPsych.pluginAPI.cancelAllKeyboardResponses()
 </code></pre>
 
-<h3 id="parameters">Parameters</h3>
+<h3 id="parameters_1">Parameters</h3>
 <p>None.</p>
-<h3 id="return-value">Return value</h3>
+<h3 id="return-value_1">Return value</h3>
 <p>Returns nothing.</p>
-<h3 id="description">Description</h3>
+<h3 id="description_1">Description</h3>
 <p>Cancels all currently active keyboard listeners created by <code>jsPsych.pluginAPI.getKeyboardResponse</code>.</p>
-<h3 id="examples">Examples</h3>
+<h3 id="examples_1">Examples</h3>
 <pre><code class="javascript">jsPsych.pluginAPI.cancelAllKeyboardResponses();
 </code></pre>
 
@@ -348,7 +534,7 @@
 <pre><code>jsPsych.pluginAPI.cancelKeyboardResponse(listener_id)
 </code></pre>
 
-<h3 id="parameters_1">Parameters</h3>
+<h3 id="parameters_2">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -365,11 +551,11 @@
 </tr>
 </tbody>
 </table>
-<h3 id="return-value_1">Return value</h3>
+<h3 id="return-value_2">Return value</h3>
 <p>Returns nothing.</p>
-<h3 id="description_1">Description</h3>
+<h3 id="description_2">Description</h3>
 <p>Cancels a specific keyboard listener created by <code>jsPsych.pluginAPI.getKeyboardResponse</code>.</p>
-<h3 id="examples_1">Examples</h3>
+<h3 id="examples_2">Examples</h3>
 <pre><code class="javascript">// create a persistent keyboard listener
 var listener_id = jsPsych.pluginAPI.getKeyboardResponse(after_response, ['p','q'], 'date', true);
 
@@ -378,11 +564,11 @@ jsPsych.pluginAPI.cancelKeyboardResponse(listener_id);
 </code></pre>
 
 <hr />
-<h2 id="jspsychpluginapienforcearray">jsPsych.pluginAPI.enforceArray</h2>
-<pre><code>jsPsych.pluginAPI.enforceArray(params, possible_arrays)
+<h2 id="jspsychpluginapiconvertkeycharactertokeycode">jsPsych.pluginAPI.convertKeyCharacterToKeyCode</h2>
+<pre><code>jsPsych.pluginAPI.convertKeyCharacterToKeyCode(character)
 </code></pre>
 
-<h3 id="parameters_2">Parameters</h3>
+<h3 id="parameters_3">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -393,32 +579,57 @@ jsPsych.pluginAPI.cancelKeyboardResponse(listener_id);
 </thead>
 <tbody>
 <tr>
-<td>params</td>
-<td>object</td>
-<td>An object of <code>key: value</code> pairs.</td>
-</tr>
-<tr>
-<td>possible_arrays</td>
-<td>array</td>
-<td>Array of strings where each string is a key from <code>params</code> indicating which <code>keys</code> should have arrays as the <code>value</code>.</td>
+<td>character</td>
+<td>string</td>
+<td>The string representation of keyboard key.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="return-value_2">Return value</h3>
-<p>Returns a copy of <code>params</code> where all of the <code>keys</code> in <code>possible_arrays</code> are guaranteed to be arrays.</p>
-<h3 id="description_2">Description</h3>
-<p>This function checks if specified parameters are arrays. If they are not arrays, then it converts them to arrays. Practically, this is used for cases where a plugin calls for an array, but a single value is also a reasonable option. An example would be specifying a stimulus for the <code>single-stim</code> plugin. Technically, the plugin requires the stimuli to be specified in an array. Each element of the array is then given its own trial. However, a single element array to present one trial is possible. This function means that users can declare the single element array as either an array or just the value that would be the element in the array.</p>
-<h3 id="examples_2">Examples</h3>
-<pre><code class="javascript">
-// a snippet from the text plugin
-plugin.create = function(params) {
+<h3 id="return-value_3">Return value</h3>
+<p>Returns the numeric keycode associated with the <code>character</code> parameter.</p>
+<h3 id="description_3">Description</h3>
+<p>Converts between the string representation of a key and the numeric key code associated with that key.</p>
+<h3 id="examples_3">Examples</h3>
+<pre><code class="javascript">var keycode = jsPsych.pluginAPI.convertKeyCharacterToKeyCode('a')
+// keycode is 65
 
-  params = jsPsych.pluginAPI.enforceArray(params, ['text','data']);
+keycode = jsPsych.pluginAPI.convertKeyCharacterToKeyCode('space')
+// keycode is 32
+</code></pre>
 
-  // other stuff here ...
+<hr />
+<h2 id="jspsychpluginapigetaudiobuffer">jsPsych.pluginAPI.getAudioBuffer</h2>
+<pre><code>jsPsych.pluginAPI.getAudioBuffer(filepath)
+</code></pre>
 
-};
-
+<h3 id="parameters_4">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filepath</td>
+<td>string</td>
+<td>The path to the audio file that was preloaded.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-value_4">Return value</h3>
+<p>Returns an audio buffer compatible with the WebAudio API for the given filepath.</p>
+<h3 id="description_4">Description</h3>
+<p>Gets an AudioBuffer that can be played with the WebAudio API. The file must be preloaded with <code>preloadAudioFiles</code> or the automatic preload (<code>autoPreload</code>).</p>
+<h3 id="examples_4">Examples</h3>
+<pre><code class="javascript">// the code below is used to play audio in the single-audio plugin
+var source = context.createBufferSource();
+source.buffer = jsPsych.pluginAPI.getAudioBuffer(trial.stimulus);
+source.connect(context.destination);
+startTime = context.currentTime + 0.1;
+source.start(startTime);
 </code></pre>
 
 <hr />
@@ -426,7 +637,7 @@ plugin.create = function(params) {
 <pre><code>jsPsych.pluginAPI.getKeyboardResponse(parameters)
 </code></pre>
 
-<h3 id="parameters_3">Parameters</h3>
+<h3 id="parameters_5">Parameters</h3>
 <p>The method accepts an object of parameter values (see example below). The valid keys for this object are listed in the table below.</p>
 <table>
 <thead>
@@ -474,12 +685,12 @@ plugin.create = function(params) {
 </tr>
 </tbody>
 </table>
-<h3 id="return-value_3">Return value</h3>
+<h3 id="return-value_5">Return value</h3>
 <p>Return an object that uniquely identifies the keyboard listener. This object can be passed to <code>jsPsych.pluginAPI.cancelKeyboardResponse</code> to cancel the keyboard listener.</p>
-<h3 id="description_3">Description</h3>
+<h3 id="description_5">Description</h3>
 <p>Gets a keyboard response from the subject, recording the response time from when the function is first called until a valid response is generated.</p>
 <p>A valid response triggers the <code>callback_function</code> specified in the parameters. A single argument is passed to the callback function. The argument contains an object with the properties <code>key</code> and <code>rt</code>. <code>key</code> contains the numeric key code of the response, and <code>rt</code> contains the response time.</p>
-<h3 id="examples_3">Examples</h3>
+<h3 id="examples_5">Examples</h3>
 <h4 id="get-a-single-response-from-any-key">Get a single response from any key</h4>
 <pre><code class="javascript">
 var after_response = function(info){
@@ -506,7 +717,7 @@ var after_response = function(info){
 
 var listener = jsPsych.pluginAPI.getKeyboardResponse({
   callback_function:after_response,
-  valid_responses: [], 
+  valid_responses: [],
   rt_method: 'date',
   persist: true
 });
@@ -517,7 +728,7 @@ var listener = jsPsych.pluginAPI.getKeyboardResponse({
 <pre><code>jsPsych.pluginAPI.evaluateFunctionParameters(trial, protect)
 </code></pre>
 
-<h3 id="parameters_4">Parameters</h3>
+<h3 id="parameters_6">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -539,9 +750,9 @@ var listener = jsPsych.pluginAPI.getKeyboardResponse({
 </tr>
 </tbody>
 </table>
-<h3 id="return-value_4">Return value</h3>
-<p>Returns a new trial object with all values that were functions replaced by the return value of the function.</p>
-<h3 id="description_4">Description</h3>
+<h3 id="return-value_6">Return value</h3>
+<p>Returns a the trial object with all values that were functions replaced by the return value of the function.</p>
+<h3 id="description_6">Description</h3>
 <p>This method replaces any parameters that are functions with the output of the function.</p>
 <h3 id="example">Example</h3>
 <pre><code class="javascript">
@@ -554,20 +765,237 @@ plugin.trial = function(display_element, trial) {
      // the rest of the trial code...
 }
 
-</code></pre></div>
+</code></pre>
+
+<hr />
+<h2 id="jspsychpluginapipreloadimages">jsPsych.pluginAPI.preloadImages</h2>
+<pre><code>jsPsych.pluginAPI.preloadImages(images, callback_complete, callback_load)
+</code></pre>
+
+<h3 id="parameters_7">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>files</td>
+<td>array</td>
+<td>An array of audio file paths to load. The array can be nested (e.g. if images are in multiple arrays to help sort by condition or task).</td>
+</tr>
+<tr>
+<td>callback_complete</td>
+<td>function</td>
+<td>A function to execute when all the files have been loaded.</td>
+</tr>
+<tr>
+<td>callback_load</td>
+<td>function</td>
+<td>A function to execute after each file has been loaded. A single parameter is passed to this function which contains the number of files that have been loaded so far.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-value_7">Return value</h3>
+<p>Returns nothing.</p>
+<h3 id="description_7">Description</h3>
+<p>Use this function to preload audio files that are not part of a plugin with automatic preloading. Audio files in official plugins will automatically preload. See <a href="../../features/media-preloading/">Media Preloading</a> for more information.</p>
+<p>It is possible to run this function without specifying a callback function. However, in this case the code will continue executing while the files are loaded. Thus, it is possible that an audio file would be required for playing before it is done preloading. The <code>callback_complete</code> function will only execute after all the audio files are loaded, and can be used to control the flow of the experiment (e.g. by starting the experiment in the <code>callback_complete</code> function).</p>
+<p>The <code>callback_load</code> function can be used to indicate progress. See example below.</p>
+<h3 id="examples_6">Examples</h3>
+<h4 id="basic-use">Basic use</h4>
+<pre><code class="javascript">
+var sounds = ['file1.mp3', 'file2.mp3', 'file3.mp3'];
+
+jsPsych.preloadAudioFiles(sounds, function(){ startExperiment(); });
+
+function startExperiment(){
+    jsPsych.init({
+        timeline: exp
+    });
+}
+
+</code></pre>
+
+<h4 id="show-progress-of-loading">Show progress of loading</h4>
+<pre><code class="javascript">var sounds = ['file1.mp3', 'file2.mp3', 'file3.mp3'];
+
+jsPsych.preloadAudioFiles(sounds, function(){ startExperiment(); }, function(nLoaded) { updateLoadedCount(nLoaded); });
+
+function updateLoadedCount(nLoaded){
+    var percentcomplete = nLoaded / sounds.length * 100;
+
+    // could put something fancier here, like a progress bar
+    // or updating text in the DOM.
+    console.log('Loaded '+percentcomplete+'% of audio files');
+}
+
+function startExperiment(){
+    jsPsych.init({
+        timeline: exp
+    });
+}
+</code></pre>
+
+<hr />
+<h2 id="jspsychpluginapipreloadimages_1">jsPsych.pluginAPI.preloadImages</h2>
+<pre><code>jsPsych.pluginAPI.preloadImages(images, callback_complete, callback_load)
+</code></pre>
+
+<h3 id="parameters_8">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>images</td>
+<td>array</td>
+<td>An array of image paths to load. The array can be nested (e.g. if images are in multiple arrays to help sort by condition or task).</td>
+</tr>
+<tr>
+<td>callback_complete</td>
+<td>function</td>
+<td>A function to execute when all the images have been loaded.</td>
+</tr>
+<tr>
+<td>callback_load</td>
+<td>function</td>
+<td>A function to execute after each image has been loaded. A single parameter is passed to this function which contains the number of images that have been loaded so far.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-value_8">Return value</h3>
+<p>Returns nothing.</p>
+<h3 id="description_8">Description</h3>
+<p>Use this function to preload image files that are not part of a plugin with automatic preloading. Image files in official plugins will automatically preload. See <a href="../../features/media-preloading/">Media Preloading</a> for more information.</p>
+<p>It is possible to run this function without specifying a callback function. However, in this case the code will continue executing while the images are loaded. Thus, it is possible that an image would be required for display before it is done preloading. The <code>callback_complete</code> function will only execute after all the images are loaded, and can be used to control the flow of the experiment (e.g. by starting the experiment in the <code>callback_complete</code> function).</p>
+<p>The <code>callback_load</code> function can be used to indicate progress, if the number of images to be loaded is known ahead of time. See example below.</p>
+<h3 id="examples_7">Examples</h3>
+<h4 id="basic-use_1">Basic use</h4>
+<pre><code class="javascript">
+var images = ['img/file1.png', 'img/file2.png', 'img/file3.png'];
+
+jsPsych.preloadImages(images, function(){ startExperiment(); });
+
+function startExperiment(){
+    jsPsych.init({
+        timeline: exp
+    });
+}
+
+</code></pre>
+
+<h4 id="show-progress-of-loading_1">Show progress of loading</h4>
+<pre><code class="javascript">var images = ['img/file1.png', 'img/file2.png', 'img/file3.png'];
+
+jsPsych.preloadImages(images, function(){ startExperiment(); }, function(nLoaded) { updateLoadedCount(nLoaded); });
+
+function updateLoadedCount(nLoaded){
+    var percentcomplete = nLoaded / images.length * 100;
+
+    // could put something fancier here, like a progress bar
+    // or updating text in the DOM.
+    console.log('Loaded '+percentcomplete+'% of images');
+}
+
+function startExperiment(){
+    jsPsych.init({
+        timeline: exp
+    });
+}
+</code></pre>
+
+<hr />
+<h2 id="jspsychpluginapiregisterpreload">jsPsych.pluginAPI.registerPreload</h2>
+<pre><code>jsPsych.pluginAPI.registerPreload(plugin_name, parameter, media_type)
+</code></pre>
+
+<h3 id="parameters_9">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plugin_name</td>
+<td>string</td>
+<td>The name of the plugin. e.g., 'single-stim'.</td>
+</tr>
+<tr>
+<td>parameter</td>
+<td>string</td>
+<td>The name of the parameter that is a media file. e.g., 'stimulus'</td>
+</tr>
+<tr>
+<td>media_type</td>
+<td>string</td>
+<td>The type of media, either 'image' or 'audio'.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-value_9">Return value</h3>
+<p>Nothing.</p>
+<h3 id="description_9">Description</h3>
+<p>Use this method in a plugin file to mark a parameter as containing an element that should be preloaded. The method should be called in the plugin file such that it gets called when the file is loaded.</p>
+<h3 id="example_1">Example</h3>
+<p>For an example, see the <a href="https://github.com/jodeleeuw/jsPsych/blob/master/plugins/jspsych-single-stim.js">single-stim</a> and <a href="https://github.com/jodeleeuw/jsPsych/blob/master/plugins/jspsych-single-audio.js">single-audio</a> plugins.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../plugins/overview/" class="btn btn-neutral float-right" title="Overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../jspsych-turk/" class="btn btn-neutral" title="jsPsych.turk"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
         </div>
+      </div>
 
-        <footer class="col-md-12">
-            <hr>
-            
-            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
-        </footer>
+    </section>
 
-        <script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script>
-        <script src="../../js/base.js"></script>
-        <script src="../../js/extra.js"></script>
-        <script src="../../js/analytics.js"></script>
-    </body>
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../jspsych-turk/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../plugins/overview/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
 </html>

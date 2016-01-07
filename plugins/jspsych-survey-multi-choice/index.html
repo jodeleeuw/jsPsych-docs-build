@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>jspsych-instructions - jsPsych</title>
+  <title>jspsych-survey-multi-choice - jsPsych</title>
   
 
   <link rel="shortcut icon" href="../../favicon.ico">
@@ -22,7 +22,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "jspsych-instructions";
+    var mkdocs_page_name = "jspsych-survey-multi-choice";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -258,21 +258,8 @@
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">jspsych-instructions</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#jspsych-instructions-plugin">jspsych-instructions plugin</a></li>
-                
-                    <li><a class="toctree-l4" href="#parameters">Parameters</a></li>
-                
-                    <li><a class="toctree-l4" href="#data-generated">Data Generated</a></li>
-                
-                    <li><a class="toctree-l4" href="#example">Example</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-instructions/">jspsych-instructions</a>
         
     </li>
 
@@ -334,8 +321,21 @@
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../jspsych-survey-multi-choice/">jspsych-survey-multi-choice</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">jspsych-survey-multi-choice</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#jspsych-survey-multi-choice-plugin">jspsych-survey-multi-choice plugin</a></li>
+                
+                    <li><a class="toctree-l4" href="#parameters">Parameters</a></li>
+                
+                    <li><a class="toctree-l4" href="#data-generated">Data Generated</a></li>
+                
+                    <li><a class="toctree-l4" href="#examples">Examples</a></li>
+                
+            
+            </ul>
         
     </li>
 
@@ -447,7 +447,7 @@
         
       
     
-    <li>jspsych-instructions</li>
+    <li>jspsych-survey-multi-choice</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -461,8 +461,8 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="jspsych-instructions-plugin">jspsych-instructions plugin</h1>
-<p>This plugin is for showing instructions to the subject. Navigation can be done using the mouse or keyboard.</p>
+                <h1 id="jspsych-survey-multi-choice-plugin">jspsych-survey-multi-choice plugin</h1>
+<p>The survey-text plugin displays a set of questions with multiple choice response fields. The subject selects a single answer.</p>
 <h2 id="parameters">Parameters</h2>
 <p>This table lists the parameters associated with this plugin. Parameters with a default value of <em>undefined</em> must be specified. Other parameters can be left unspecified if the default value is acceptable.</p>
 <table>
@@ -476,40 +476,34 @@
 </thead>
 <tbody>
 <tr>
-<td>pages</td>
+<td>questions</td>
 <td>array</td>
 <td><em>undefined</em></td>
-<td>Each element of the array is the content for a single page. Each page should be an HTML-formatted string.</td>
+<td>An array of strings. The strings are the prompts/questions that will be associated with a group of options (radio buttons). All questions will get presented on the same page (trial).</td>
 </tr>
 <tr>
-<td>key_forward</td>
-<td>key code</td>
-<td>'rightarrow'</td>
-<td>This is the key that the subject can press in order to advance to the next page. Keys can be specified as their <a href="http://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes">numeric key code</a> or as characters (e.g. <code>'a'</code>, <code>'q'</code>).</td>
+<td>options</td>
+<td>array</td>
+<td><em>undefined</em></td>
+<td>An array of arrays. The innermost arrays contain a set of options to display for an individual question. The length of the outer array should be the same as the number of questions.</td>
 </tr>
 <tr>
-<td>key_backward</td>
-<td>key code</td>
-<td>'leftarrow'</td>
-<td>This is the key that the subject can press to return to the previous page.</td>
+<td>required</td>
+<td>array</td>
+<td>null</td>
+<td>An array of boolean values. Each boolean indicates if a question is required (<code>true</code>) or not (<code>false</code>), using the HTML5 <code>required</code> attribute. The length of this array should correspond to the length of the questions array. If this parameter is undefined, all questions will be optional. Note: The HTML5 <code>required</code> attribute is <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Browser_compatibility">not currently supported by the Safari browser</a>.</td>
 </tr>
 <tr>
-<td>allow_backward</td>
-<td>boolean</td>
-<td>true</td>
-<td>If true, the subject can return to previous pages of the instructions. If false, they may only advace to the next page.</td>
-</tr>
-<tr>
-<td>allow_keys</td>
-<td>boolean</td>
-<td>true</td>
-<td>If true, the subject can use keyboard keys to navigate the pages. If false, they may not.</td>
-</tr>
-<tr>
-<td>show_clickable_nav</td>
+<td>horizontal</td>
 <td>boolean</td>
 <td>false</td>
-<td>If true, then a <code>Previous</code> and <code>Next</code> button will be displayed beneath the instructions. Subjects can click the buttons to navigate.</td>
+<td>If true, then questions are centered and options are displayed horizontally.</td>
+</tr>
+<tr>
+<td>preamble</td>
+<td>array</td>
+<td>empty string</td>
+<td>Array of HTML formatted strings to display at the top of each page above all the questions. Each element of the array corresponds to a trial/page of questions.</td>
 </tr>
 </tbody>
 </table>
@@ -525,39 +519,20 @@
 </thead>
 <tbody>
 <tr>
-<td>view_history</td>
+<td>responses</td>
 <td>JSON string</td>
-<td>A JSON string containing the order of pages the subject viewed (including when the subject returned to previous pages) and the time spent viewing each page.</td>
+<td>A string in JSON format containing the responses for each question. The encoded object will have a separate variable for the response to each question, with the first question in the trial being recorded in <code>Q0</code>, the second in <code>Q1</code>, and so on. The responses recorded as the name of the option label.</td>
 </tr>
 <tr>
 <td>rt</td>
 <td>numeric</td>
-<td>The response time in milliseconds for the subject to view all of the pages.</td>
+<td>The response time in milliseconds for the subject to make a response. The time is measured from when the questions first appear on the screen until the subject's response.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="example">Example</h2>
-<h4 id="showing-simple-text-instructions">Showing simple text instructions</h4>
-<pre><code class="javascript">var trial = {
-    type: 'instructions',
-    pages: [
-        'Welcome to the experiment. Click next to begin.',
-        'This is the second page of instructions.',
-        'This is the final page.'
-    ],
-    show_clickable_nav: true
-}
-</code></pre>
-
-<h4 id="including-images">Including images</h4>
-<pre><code class="javascript">var trial = {
-    type: 'instructions',
-    pages: [
-        'Welcome to the experiment. Click next to begin.',
-        'Here is a picture of what you will do: &lt;img src=&quot;instruction_image.jpg&quot;&gt;&lt;/img&gt;'
-    ],
-    show_clickable_nav: true
-}
+<h2 id="examples">Examples</h2>
+<h4 id="basic-example-with-multiple-questions-on-a-page">Basic example with multiple questions on a page.</h4>
+<pre><code class="javascript">
 </code></pre>
               
             </div>
@@ -566,10 +541,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../jspsych-multi-stim-multi-response/" class="btn btn-neutral float-right" title="jspsych-multi-stim-multi-response"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../jspsych-survey-text/" class="btn btn-neutral float-right" title="jspsych-survey-text"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../jspsych-html/" class="btn btn-neutral" title="jspsych-html"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../jspsych-survey-likert/" class="btn btn-neutral" title="jspsych-survey-likert"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -597,10 +572,10 @@
           <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../jspsych-html/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../jspsych-survey-likert/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../jspsych-multi-stim-multi-response/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../jspsych-survey-text/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

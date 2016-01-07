@@ -1,353 +1,494 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../favicon.ico">
-        
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview - jsPsych</title>
+  
 
-	<title>Overview - jsPsych</title>
+  <link rel="shortcut icon" href="../../favicon.ico">
+  
 
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link href="../../css/extra.css" rel="stylesheet">
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/extra.css" rel="stylesheet">
 
-        
-    </head>
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Overview";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../js/extra.js"></script>
+  <script src="../../js/analytics.js"></script>
 
-    <body>
+  
+</head>
 
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+<body class="wy-body-for-nav" role="document">
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+  <div class="wy-grid-for-nav">
 
-            <!-- Main title -->
-            <a class="navbar-brand" href="../..">jsPsych</a>
-        </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-            <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-            
-            
-                <li >
-                    <a href="../..">Introduction</a>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../tutorials/hello-world/">The Basics: Hello World</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../tutorials/go-nogo-task/">Demo Experiment: Simple Reaction Time Task</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Core Library API <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../core_library/overview/">Overview</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../core_library/jspsych-core/">jsPsych core</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../core_library/jspsych-data/">jsPsych.data</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../core_library/jspsych-randomization/">jsPsych.randomization</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../core_library/jspsych-turk/">jsPsych.turk</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../core_library/jspsych-pluginAPI/">jsPsych.pluginAPI</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Plugins <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li class="active">
-                            <a href="./">Overview</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../creating-a-plugin/">Creating a New Plugin</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-animation/">jspsych-animation</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-call-function/">jspsych-call-function</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-categorize/">jspsych-categorize</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-categorize-animation/">jspsych-categorize-animation</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-free-sort/">jspsych-free-sort</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-html/">jspsych-html</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-instructions/">jspsych-instructions</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-multi-stim-multi-response/">jspsych-multi-stim-multi-response</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-palmer/">jspsych-palmer</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-reconstruction/">jspsych-reconstruction</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-same-different/">jspsych-same-different</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-similarity/">jspsych-similarity</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-single-audio/">jspsych-single-audio</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-single-stim/">jspsych-single-stim</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-survey-likert/">jspsych-survey-likert</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-survey-text/">jspsych-survey-text</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-text/">jspsych-text</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-visual-search-circle/">jspsych-visual-search-circle</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-vsl-animate-occlusion/">jspsych-vsl-animate-occlusion</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-vsl-grid-scene/">jspsych-vsl-grid-scene</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../jspsych-xab/">jspsych-xab</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../features/chunks-blocks-trials/">Creating an Experiment: Chunks, Blocks, & Trials</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../features/progress-bar/">Automatic Progress Bar</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../features/mturk/">Integrating with Mechanical Turk</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../features/data/">Data Storage</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../features/randomization-repetition/">Randomization & Repetition</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../features/functions-as-parameters/">Using Functions as Plugin Parameters</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../features/callbacks/">Event-related Callback Functions</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../features/image-preloading/">Image Preloading</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li >
-                    <a href="../../support/">Support</a>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../about/about/">About jsPsych</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../about/license/">License</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../about/contributing/">Contributing to jsPsych</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            </ul>
-
-            <!-- Search, Navigation and Repo links -->
-            <ul class="nav navbar-nav navbar-right">
-                <li >
-                    <a rel="next" href="../../core_library/jspsych-pluginAPI/">
-                        <i class="fa fa-arrow-left"></i> Previous
-                    </a>
-                </li>
-                <li >
-                    <a rel="prev" href="../creating-a-plugin/">
-                        Next <i class="fa fa-arrow-right"></i>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://github.com/jodeleeuw/jsPsych">
-                        
-                            <i class="fa fa-github"></i>
-                        
-                        GitHub
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> jsPsych</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
 </div>
+      </div>
 
-        <div class="container">
-            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-    
-        <li class="main active"><a href="#plugins">Plugins</a></li>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Introduction</a>
         
-            <li><a href="#using-a-plugin">Using a plugin</a></li>
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tutorials</span></li>
+
         
-            <li><a href="#parameters-available-plugins">Parameters available plugins</a></li>
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tutorials/hello-world/">The Basics: Hello World</a>
         
-            <li><a href="#data-collected-by-plugins">Data collected by plugins</a></li>
+    </li>
+
         
-            <li><a href="#list-of-available-plugins">List of available plugins</a></li>
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tutorials/rt-task/">Demo Experiment: Simple Reaction Time Task</a>
         
-    
+    </li>
+
+        
     </ul>
-</div></div>
-            <div class="col-md-9" role="main">
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Features</span></li>
 
-<h1 id="plugins">Plugins</h1>
-<p>In jsPsych, plugins define the kinds of tasks that subjects perform in experiments. Some plugins define very general tasks, like displaying instructions or displaying a visual stimulus and getting a keyboard response. Other plugins are more specific, displaying particular kinds of interactive stimuli, or running a specific kind of perceptual discrimination task. Creating an experiment with jsPsych involves figuring out which plugins are needed for the kinds of tasks you want to have your subjects perform.</p>
-<p>Plugins provide a structure for a particular task. For example, the <code>jspsych-single-stim</code> plugin defines a simple structure for showing a visual stimulus and collecting a keyboard response. To use the plugin, you need to specify the content, such as what the stimulus is, what keys the subject is allowed to press, and how long the stimulus should be on the screen. Many of these content options have reasonable default values; even though the <code>jspsych-single-stim</code> plugin has many different options, you only <em>need</em> to specify the stimulus in order to use it. Each plugin has its own documentation page, which describes what the plugin does and what options are available.</p>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../features/timeline/">Creating an Experiment: The Timeline</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../features/data/">Data Storage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../features/functions-as-parameters/">Dynamic Content:  Using Functions as Plugin Parameters</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../features/callbacks/">Event-related Callback Functions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../features/media-preloading/">Media Preloading</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../features/fullscreen/">Fullscreen Experiments</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../features/progress-bar/">Automatic Progress Bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../features/mturk/">Integrating with Mechanical Turk</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Core Library API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../core_library/overview/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../core_library/jspsych-core/">jsPsych core</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../core_library/jspsych-data/">jsPsych.data</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../core_library/jspsych-randomization/">jsPsych.randomization</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../core_library/jspsych-turk/">jsPsych.turk</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../core_library/jspsych-pluginAPI/">jsPsych.pluginAPI</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Plugins</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Overview</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#plugins">Plugins</a></li>
+                
+                    <li><a class="toctree-l4" href="#using-a-plugin">Using a plugin</a></li>
+                
+                    <li><a class="toctree-l4" href="#parameters-available-in-all-plugins">Parameters available in all plugins</a></li>
+                
+                    <li><a class="toctree-l4" href="#data-collected-by-plugins">Data collected by plugins</a></li>
+                
+                    <li><a class="toctree-l4" href="#list-of-available-plugins">List of available plugins</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../creating-a-plugin/">Creating a New Plugin</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-animation/">jspsych-animation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-call-function/">jspsych-call-function</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-categorize/">jspsych-categorize</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-categorize-animation/">jspsych-categorize-animation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-free-sort/">jspsych-free-sort</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-html/">jspsych-html</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-instructions/">jspsych-instructions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-multi-stim-multi-response/">jspsych-multi-stim-multi-response</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-palmer/">jspsych-palmer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-reconstruction/">jspsych-reconstruction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-same-different/">jspsych-same-different</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-similarity/">jspsych-similarity</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-single-audio/">jspsych-single-audio</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-single-stim/">jspsych-single-stim</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-survey-likert/">jspsych-survey-likert</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-survey-multi-choice/">jspsych-survey-multi-choice</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-survey-text/">jspsych-survey-text</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-text/">jspsych-text</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-visual-search-circle/">jspsych-visual-search-circle</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-vsl-animate-occlusion/">jspsych-vsl-animate-occlusion</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-vsl-grid-scene/">jspsych-vsl-grid-scene</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jspsych-xab/">jspsych-xab</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/">Support</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>About</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../about/about/">About jsPsych</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../about/license/">License</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../about/contributing/">Contributing to jsPsych</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">jsPsych</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Plugins &raquo;</li>
+        
+      
+    
+    <li>Overview</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/jodeleeuw/jsPsych" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="plugins">Plugins</h1>
+<p>In jsPsych, plugins define the kinds of tasks that subjects perform in experiments. Some plugins define very general tasks, like displaying instructions or displaying a visual stimulus and getting a keyboard response. Other plugins are more specific, displaying particular kinds of interactive stimuli, or running a specific version of particular kind of task. Creating an experiment with jsPsych involves figuring out which plugins are needed for the kinds of tasks you want to have your subjects perform.</p>
+<p>Plugins provide a structure for a particular task, but often allow for significant customization and flexibility. For example, the <code>jspsych-single-stim</code> plugin defines a simple structure for showing a visual stimulus and collecting a keyboard response. You can specify the what the stimulus is, what keys the subject is allowed to press, and how long the stimulus should be on the screen, how long the subject has to respond, and so on. Many of these content options have reasonable default values; even though the <code>jspsych-single-stim</code> plugin has many different options, you only <em>need</em> to specify the stimulus in order to use it. Each plugin has its own documentation page, which describes what the plugin does and what options are available.</p>
 <h2 id="using-a-plugin">Using a plugin</h2>
 <p>To use a plugin, you'll need to load the plugin's JavaScript file on your experiment page:</p>
-<pre><code class="html">&lt;script src=&quot;jspsych/plugins/jspsych-single-stim.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+<pre><code class="html">&lt;head&gt;
+&lt;script src=&quot;jspsych/plugins/jspsych-single-stim.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
 </code></pre>
 
-<p>Once a plugin is loaded, you can define a block that uses that plugin. The following JavaScript code defines a trial using the <code>jspsych-single-stim</code> plugin to display an image file ('images/happy_face.jpg'). This trial uses the default values for valid keys, length of display, and so on. You could override these values by adding them to the object.</p>
-<pre><code class="javascript">var single_stim_block = {
+<p>Once a plugin is loaded, you can define a trial that uses that plugin. The following JavaScript code defines a trial using the <code>jspsych-single-stim</code> plugin to display an image file ('images/happy_face.jpg'). This trial uses the default values for valid keys, length of display, and other parameters. You could override these values by adding them to the object.</p>
+<pre><code class="javascript">var single_stim_trial = {
     type: 'single-stim',
-    stimuli: 'images/happy_face.jpg'
+    stimulus: 'images/happy_face.jpg'
 }
 </code></pre>
 
 <p>Here's an exampe of overriding the default value for <code>timing_post_trial</code>:</p>
-<pre><code class="javascript">var single_stim_block = {
+<pre><code class="javascript">var single_stim_trial = {
     type: 'single-stim',
-    stimuli: 'images/happy_face.jpg',
+    stimulus: 'images/happy_face.jpg',
     timing_post_trial: 2000
 }
 </code></pre>
 
-<h2 id="parameters-available-plugins">Parameters available plugins</h2>
+<h2 id="parameters-available-in-all-plugins">Parameters available in all plugins</h2>
 <p>Each plugin specifies its own set of parameters. Check the documentation for a plugin to see what parameters are available and what they do.</p>
 <p>In addition, there is a set of parameters that can be specified for any plugin.</p>
 <table>
@@ -378,6 +519,12 @@
 <td><em>undefined</em></td>
 <td>An object containing additional data to store for the trial. See <a href="../../features/data/">this page</a> for more details.</td>
 </tr>
+<tr>
+<td>display_element</td>
+<td>jQuery DOM selection</td>
+<td>Change the target display at the trial level by specifying a new target for content.</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h2 id="data-collected-by-plugins">Data collected by plugins</h2>
@@ -400,11 +547,6 @@
 <tr>
 <td>trial_index</td>
 <td>numeric</td>
-<td>The index of the current trial in the <strong>block</strong>.</td>
-</tr>
-<tr>
-<td>trial_index_global</td>
-<td>numeric</td>
 <td>The index of the current trial across the whole experiment.</td>
 </tr>
 <tr>
@@ -413,9 +555,9 @@
 <td>The number of milliseconds since the start of the experiment when the trial ended.</td>
 </tr>
 <tr>
-<td>internal_chunk_id</td>
+<td>internal_node_id</td>
 <td>string</td>
-<td>A string identifier for the current chunk.</td>
+<td>A string identifier for the current TimelineNode.</td>
 </tr>
 </tbody>
 </table>
@@ -430,100 +572,144 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../plugins/jspsych-animation">jspsych&#8209;animation</a></td>
+<td><a href="../jspsych-animation">jspsych&#8209;animation</a></td>
 <td>Shows a sequence of images at a specified frame rate. Records key presses (including timing information) made by the subject while they are viewing the animation.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-call-function">jspsych&#8209;call&#8209;function</a></td>
+<td><a href="../jspsych-button-response">jspsych&#8209;button&#8209;response</a></td>
+<td>Present a stimulus and collect a response via the subject clicking a button. The button can be customized extensively (e.g., to use images in place of buttons).</td>
+</tr>
+<tr>
+<td><a href="../jspsych-call-function">jspsych&#8209;call&#8209;function</a></td>
 <td>Executes an arbitrary function call. Doesn't display anything to the subject, and the subject is usually unaware that this plugin has even executed. It's useful for performing tasks at specified times in the experiment, such as saving data.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-categorize">jspsych&#8209;categorize</a></td>
+<td><a href="../jspsych-categorize">jspsych&#8209;categorize</a></td>
 <td>The subject responds to a stimulus using the keyboard and can be given feedback about the correctness of their response.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-categorize-animation">jspsych&#8209;categorize&#8209;animation</a></td>
+<td><a href="../jspsych-categorize-animation">jspsych&#8209;categorize&#8209;animation</a></td>
 <td>A mash-up of the animation and categorize plugin. The subject responds to an animation and can be given feedback about their response.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-free-sort">jspsych&#8209;free&#8209;sort</a></td>
+<td><a href="../jspsych-free-sort">jspsych&#8209;free&#8209;sort</a></td>
 <td>Displays a set of images on the screen in random locations. Subjects can click and drag the images to move them around the screen. Records all the moves made by the subject, so the sequence of moves can be recovered from the data.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-instructions">jspsych&#8209;instructions</a></td>
-<td>For displaying instructions to the subject.</td>
-</tr>
-<tr>
-<td><a href="../plugins/jspsych-html">jspsych&#8209;html</a></td>
+<td><a href="../jspsych-html">jspsych&#8209;html</a></td>
 <td>Displays an external HTML page (such as a consent form) and lets the subject respond by clicking a button or pressing a key. Plugin can validate their response, which is useful for making sure that a subject has granted consent before starting the experiment.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-multi-stim-multi-response">jspsych&#8209;multi&#8209;stim&#8209;multi&#8209;response</a></td>
+<td><a href="../jspsych-instructions">jspsych&#8209;instructions</a></td>
+<td>For displaying instructions to the subject.</td>
+</tr>
+<tr>
+<td><a href="../jspsych-multi-stim-multi-response">jspsych&#8209;multi&#8209;stim&#8209;multi&#8209;response</a></td>
 <td>A more generalized version of the single-stim plugin. Can display multiple stimuli in a single trial, and collect multiple responses in a single trial.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-palmer">jspsych&#8209;palmer</a></td>
+<td><a href="../jspsych-palmer">jspsych&#8209;palmer</a></td>
 <td>Shows grid-like stimuli inspired by Stephen Palmer's work. The stimuli are editable: subjects can add and subtract parts interactively. Also contains a method for generating the HTML code to render the stimuli, allowing them to be used in other plugins.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-reconstruction">jspsych&#8209;reconstruction</a></td>
+<td><a href="../jspsych-reconstruction">jspsych&#8209;reconstruction</a></td>
 <td>The subject interacts with a stimulus by modifying a parameter of the stimulus and observing the change in the stimulus in real-time.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-same-different">jspsych&#8209;same&#8209;different</a></td>
+<td><a href="../jspsych-same-different">jspsych&#8209;same&#8209;different</a></td>
 <td>A same-different judgment task. A stimulus is shown, followed by a brief gap, and then another stimulus is shown. The subject indicates whether the stimuli are the same or different.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-similarity">jspsych&#8209;similarity</a></td>
+<td><a href="../jspsych-similarity">jspsych&#8209;similarity</a></td>
 <td>Two stimuli are shown sequentially, and the subject indicates how similar they are by dragging a slider object.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-single-stim">jspsych&#8209;single&#8209;stim</a></td>
+<td><a href="../jspsych-single-audio">jspsych&#8209;single&#8209;audio</a></td>
+<td>A basic plugin for playing an audio stimulus and getting a keyboard response.</td>
+</tr>
+<tr>
+<td><a href="../jspsych-single-stim">jspsych&#8209;single&#8209;stim</a></td>
 <td>A basic plugin for displaying a stimulus and getting a keyboard response.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-survey-likert">jspsych&#8209;survey&#8209;likert</a></td>
-<td>Displays likert-style questions. The subject responds by dragging a slider.</td>
+<td><a href="../jspsych-survey-likert">jspsych&#8209;survey&#8209;likert</a></td>
+<td>Displays likert-style questions.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-survey-text">jspsych&#8209;survey&#8209;text</a></td>
+<td><a href="../jspsych-survey-multi-choice">jspsych&#8209;survey&#8209;multi&#8209;choice</a></td>
+<td>Displays multiple choice questions.</td>
+</tr>
+<tr>
+<td><a href="../jspsych-survey-text">jspsych&#8209;survey&#8209;text</a></td>
 <td>Shows a prompt with a text box. The subject writes a response and then submits by clicking a button.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-text">jspsych&#8209;text</a></td>
+<td><a href="../jspsych-text">jspsych&#8209;text</a></td>
 <td>Shows HTML-formatted text on the screen.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-visual-search-circle">jspsych&#8209;visual&#8209;search&#8209;circle</a></td>
+<td><a href="../jspsych-visual-search-circle">jspsych&#8209;visual&#8209;search&#8209;circle</a></td>
 <td>A customizable visual-search task modelled after <a href="http://dx.doi.org/10.3758/BF03206946">Wang, Cavanagh, &amp; Green (1994)</a>. The subject indicates whether or not a target is present among a set of distractors. The stimuli are displayed in a circle, evenly-spaced, equidistant from a fixation point.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-vsl-animate-occlusion">jspsych&#8209;vsl&#8209;animate&#8209;occlusion</a></td>
+<td><a href="../jspsych-vsl-animate-occlusion">jspsych&#8209;vsl&#8209;animate&#8209;occlusion</a></td>
 <td>A visual statistical learning paradigm based on <a href="http://dx.doi.org/10.1037//0278-7393.28.3.458">Fiser &amp; Aslin (2002)</a>. A sequence of stimuli are shown in an oscillatory motion. An occluding rectangle is in the center of the display, and the stimuli change when they are behind the rectangle.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-vsl-grid-scene">jspsych&#8209;vsl&#8209;grid&#8209;scene</a></td>
+<td><a href="../jspsych-vsl-grid-scene">jspsych&#8209;vsl&#8209;grid&#8209;scene</a></td>
 <td>A visual statistical learning paradigm based on <a href="http://dx.doi.org/10.1111/1467-9280.00392">Fiser &amp; Aslin (2001)</a>. A scene made up of individual stimuli arranged in a grid is shown. This plugin can also generate the HTML code to render the stimuli for use in other plugins.</td>
 </tr>
 <tr>
-<td><a href="../plugins/jspsych-xab">jspsych&#8209;xab</a></td>
+<td><a href="../jspsych-xab">jspsych&#8209;xab</a></td>
 <td>A two-alternative forced choice task. A target (X) is shown, followed by a brief gap, and then two choices (A &amp; B) are displayed. The subject must pick whichever one matches X (matches is defined however the experimenter wishes; it could be a literal match, or it could be a match on some particular property).</td>
 </tr>
 </tbody>
-</table></div>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../creating-a-plugin/" class="btn btn-neutral float-right" title="Creating a New Plugin"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../core_library/jspsych-pluginAPI/" class="btn btn-neutral" title="jsPsych.pluginAPI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
         </div>
+      </div>
 
-        <footer class="col-md-12">
-            <hr>
-            
-            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
-        </footer>
+    </section>
 
-        <script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script>
-        <script src="../../js/base.js"></script>
-        <script src="../../js/extra.js"></script>
-        <script src="../../js/analytics.js"></script>
-    </body>
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../core_library/jspsych-pluginAPI/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../creating-a-plugin/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
 </html>

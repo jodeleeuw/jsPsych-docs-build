@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Overview - jsPsych</title>
+  <title>Fullscreen Experiments - jsPsych</title>
   
 
   <link rel="shortcut icon" href="../../favicon.ico">
@@ -22,7 +22,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Overview";
+    var mkdocs_page_name = "Fullscreen Experiments";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -89,56 +89,63 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../features/timeline/">Creating an Experiment: The Timeline</a>
+        <a class="" href="../timeline/">Creating an Experiment: The Timeline</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../features/data/">Data Storage</a>
+        <a class="" href="../data/">Data Storage</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../features/functions-as-parameters/">Dynamic Content:  Using Functions as Plugin Parameters</a>
+        <a class="" href="../functions-as-parameters/">Dynamic Content:  Using Functions as Plugin Parameters</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../features/callbacks/">Event-related Callback Functions</a>
+        <a class="" href="../callbacks/">Event-related Callback Functions</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../features/media-preloading/">Media Preloading</a>
+        <a class="" href="../media-preloading/">Media Preloading</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Fullscreen Experiments</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#fullscreen-experiments">Fullscreen Experiments</a></li>
+                
+            
+            </ul>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../features/fullscreen/">Fullscreen Experiments</a>
+        <a class="" href="../progress-bar/">Automatic Progress Bar</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../features/progress-bar/">Automatic Progress Bar</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../features/mturk/">Integrating with Mechanical Turk</a>
+        <a class="" href="../mturk/">Integrating with Mechanical Turk</a>
         
     </li>
 
@@ -152,52 +159,43 @@
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Overview</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#the-jspsych-core-library">The jsPsych core library</a></li>
-                
-                    <li><a class="toctree-l4" href="#core-library-api">Core library API</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../../core_library/overview/">Overview</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../jspsych-core/">jsPsych core</a>
+        <a class="" href="../../core_library/jspsych-core/">jsPsych core</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../jspsych-data/">jsPsych.data</a>
+        <a class="" href="../../core_library/jspsych-data/">jsPsych.data</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../jspsych-randomization/">jsPsych.randomization</a>
+        <a class="" href="../../core_library/jspsych-randomization/">jsPsych.randomization</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../jspsych-turk/">jsPsych.turk</a>
+        <a class="" href="../../core_library/jspsych-turk/">jsPsych.turk</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../jspsych-pluginAPI/">jsPsych.pluginAPI</a>
+        <a class="" href="../../core_library/jspsych-pluginAPI/">jsPsych.pluginAPI</a>
         
     </li>
 
@@ -439,11 +437,11 @@
     
       
         
-          <li>Core Library API &raquo;</li>
+          <li>Features &raquo;</li>
         
       
     
-    <li>Overview</li>
+    <li>Fullscreen Experiments</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -457,72 +455,16 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="the-jspsych-core-library">The jsPsych core library</h1>
-<p>Every jsPsych experiment utilizes the core library (contained in the <code>jspsych.js</code> file). The core library is the glue that holds all of the various plugins together. There are also several modules that are contained in the core library for tasks that are common to many different experiments. These modules are available whenever the <code>jspsych.js</code> file is loaded.</p>
-<h2 id="core-library-api">Core library API</h2>
-<h3 id="core"><a href="../jspsych-core/">Core</a></h3>
-<ul>
-<li><a href="../jspsych-core/#jspsychcurrenttimelinenodeid">jsPsych.currentTimelineNodeID</a></li>
-<li><a href="../jspsych-core/#jspsychcurrenttrial">jsPsych.currentTrial</a></li>
-<li><a href="../jspsych-core/#jspsychendcurrenttimeline">jsPsych.endCurrentTimeline</a></li>
-<li><a href="../jspsych-core/#jspsychendexperiment">jsPsych.endExperiment</a></li>
-<li><a href="../jspsych-core/#jspsychfinishtrial">jsPsych.finishTrial</a></li>
-<li><a href="../jspsych-core/#jspsychgetdisplayelement">jsPsych.getDisplayElement</a></li>
-<li><a href="../jspsych-core/#jspsychinit">jsPsych.init</a></li>
-<li><a href="../jspsych-core/#jspsychinitSettings">jsPsych.initSettings</a></li>
-<li><a href="../jspsych-core/#jspsychprogress">jsPsych.progress</a></li>
-<li><a href="../jspsych-core/#jspsychstarttime">jsPsych.startTime</a></li>
-<li><a href="../jspsych-core/#jspsychtotaltime">jsPsych.totalTime</a></li>
-</ul>
-<h3 id="data-module"><a href="../jspsych-data/">Data module</a></h3>
-<ul>
-<li><a href="../jspsych-data/#jspsychdataadddatatolasttrial">jsPsych.data.addDataToLastTrial</a></li>
-<li><a href="../jspsych-data/#jspsychdataaddproperties">jsPsych.data.addProperties</a></li>
-<li><a href="../jspsych-data/#jspsychdatadataascsv">jsPsych.data.dataAsCSV</a></li>
-<li><a href="../jspsych-data/#jspsychdatadataasjson">jsPsych.data.dataAsJSON</a></li>
-<li><a href="../jspsych-data/#jspsychdatadisplaydata">jsPsych.data.displayData</a></li>
-<li><a href="../jspsych-data/#jspsychdatagetdata">jsPsych.data.getData</a></li>
-<li><a href="../jspsych-data/#jspsychdatagetdatabytimelinenode">jsPsych.data.getDataByTimelineNode</a></li>
-<li><a href="../jspsych-data/#jspsychdatagetdatabytrialindex">jsPsych.data.getDataByTrialIndex</a></li>
-<li><a href="../jspsych-data/#jspsychdatagetlasttimelinedata">jsPsych.data.getLastTimelineData</a></li>
-<li><a href="../jspsych-data/#jspsychdatagetlasttrialdata">jsPsych.data.getLastTrialData</a></li>
-<li>
-<p><a href="../jspsych-data/#jspsychdatagettrialsoftype">jsPsych.data.getTrialsOfType</a></p>
-</li>
-<li>
-<p><a href="../jspsych-data/#jspsychdatageturlvariable">jsPsych.data.getURLVariable</a></p>
-</li>
-<li><a href="../jspsych-data/#jspsychdatalocalsave">jsPsych.data.localSave</a></li>
-<li><a href="../jspsych-data/#jspsychdatawrite">jsPsych.data.write</a></li>
-<li><a href="../jspsych-data/#jspsychdataurlvariables">jsPsych.data.urlVariables</a></li>
-</ul>
-<h3 id="turk-module"><a href="../jspsych-turk/">Turk module</a></h3>
-<ul>
-<li><a href="../jspsych-turk/#jspsychturksubmittoturk">jsPsych.turk.submitToTurk</a></li>
-<li><a href="../jspsych-turk/#jspsychturkturkinfo">jsPsych.turk.turkInfo</a></li>
-</ul>
-<h3 id="randomization-module"><a href="../jspsych-randomization/">Randomization module</a></h3>
-<ul>
-<li><a href="../jspsych-randomization/#jspsychrandomizationfactorial">jsPsych.randomization.factorial</a></li>
-<li><a href="../jspsych-randomization/#jspsychrandomizationrandomid">jsPsych.randomization.randomID</a></li>
-<li><a href="../jspsych-randomization/#jspsychrandomizationrepeat">jsPsych.randomization.repeat</a></li>
-<li><a href="../jspsych-randomization/#jspsychrandomizationsample">jsPsych.randomization.sample</a></li>
-<li><a href="../jspsych-randomization/#jspsychrandomizationshuffle">jsPsych.randomization.shuffle</a></li>
-<li><a href="../jspsych-randomization/#jspsychrandomizationshufflenorepeats">jsPsych.randomization.shuffleNoRepeats</a></li>
-</ul>
-<h3 id="pluginapi-module"><a href="../jspsych-pluginAPI/">PluginAPI module</a></h3>
-<ul>
-<li><a href="../jspsych-pluginAPI/#jspsychpluginapiautopreload">jsPsych.pluginAPI.autoPreload</a></li>
-<li><a href="../jspsych-pluginAPI/#jspsychpluginapicancelallkeyboardresponses">jsPsych.pluginAPI.cancelAllKeyboardResponses</a></li>
-<li><a href="../jspsych-pluginAPI/#jspsychpluginapicancelkeyboardresponse">jsPsych.pluginAPI.cancelKeyboardResponse</a></li>
-<li><a href="../jspsych-pluginAPI/#jspsychpluginapiconvertkeycharactertokeycode">jsPsych.pluginAPI.convertKeyCharacterToKeyCode</a></li>
-<li><a href="../jspsych-pluginAPI/#jspsychpluginapigetaudiobuffer">jsPsych.pluginAPI.getAudioBuffer</a></li>
-<li><a href="../jspsych-pluginAPI/#jspsychpluginapigetkeyboardresponse">jsPsych.pluginAPI.getKeyboardResponse</a></li>
-<li><a href="../jspsych-pluginAPI/#jspsychpluginapievaluatefunctionparameters">jsPsych.pluginAPI.evaluateFunctionParameters</a></li>
-<li><a href="../jspsych-pluginAPI/#jspsychpluginapipreloadaudiofiles">jsPsych.pluginAPI.preloadAudioFiles</a></li>
-<li><a href="../jspsych-pluginAPI/#jspsychpluginapipreloadimages">jsPsych.pluginAPI.preloadImages</a></li>
-<li><a href="../jspsych-pluginAPI/#jspsychpluginapiregisterpreload">jsPsych.pluginAPI.registerPreload</a></li>
-</ul>
+                <h1 id="fullscreen-experiments">Fullscreen Experiments</h1>
+<p>You can run your experiment in fullscreen mode by setting the <code>fullscreen</code> parameter in the <code>jsPsych.init</code> call that launches the experiment.</p>
+<pre><code class="javascript">jsPsych.init({
+  experiment_structure: timeline,
+  fullscreen: true
+});
+</code></pre>
+
+<p>For security reasons, launching the browser into fullscreen mode requires that the user take an action. Therefore, if fullscreen mode is requested, a button will be displayed on the page to launch the experiment into fullscreen mode. The experiment will not begin until this button is pressed.</p>
+<p>Safari does not support keyboard input when the browser is in fullscreen mode. Therefore, the function will not launch fullscreen mode on Safari.</p>
               
             </div>
           </div>
@@ -530,10 +472,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../jspsych-core/" class="btn btn-neutral float-right" title="jsPsych core"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../progress-bar/" class="btn btn-neutral float-right" title="Automatic Progress Bar"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../features/mturk/" class="btn btn-neutral" title="Integrating with Mechanical Turk"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../media-preloading/" class="btn btn-neutral" title="Media Preloading"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -561,10 +503,10 @@
           <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../../features/mturk/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../media-preloading/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../jspsych-core/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../progress-bar/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
