@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,13 +13,13 @@
         
     <url>
      <loc>None/tutorials/hello-world/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/tutorials/rt-task/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -29,49 +29,49 @@
         
     <url>
      <loc>None/features/timeline/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/features/data/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/features/functions-as-parameters/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/features/callbacks/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/features/media-preloading/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/features/fullscreen/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/features/progress-bar/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/features/mturk/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -81,37 +81,37 @@
         
     <url>
      <loc>None/core_library/overview/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/core_library/jspsych-core/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/core_library/jspsych-data/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/core_library/jspsych-randomization/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/core_library/jspsych-turk/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/core_library/jspsych-pluginAPI/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -121,151 +121,151 @@
         
     <url>
      <loc>None/plugins/overview/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/creating-a-plugin/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-animation/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-button-response/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-call-function/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-categorize/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-categorize-animation/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-free-sort/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-html/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-instructions/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-multi-stim-multi-response/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-palmer/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-reconstruction/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-same-different/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-similarity/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-single-audio/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-single-stim/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-survey-likert/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-survey-multi-choice/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-survey-text/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-text/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-visual-search-circle/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-vsl-animate-occlusion/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-vsl-grid-scene/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/jspsych-xab/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -274,7 +274,7 @@
     
     <url>
      <loc>None/support/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -283,19 +283,19 @@
         
     <url>
      <loc>None/about/about/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/about/license/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/about/contributing/</loc>
-     <lastmod>2016-01-25</lastmod>
+     <lastmod>2016-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
